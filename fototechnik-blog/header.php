@@ -4,7 +4,7 @@
 
 
 <?php 
-wp_head(); //-> Wordpress passt den Header an und lädt alle Regestrieten Dateien (z.B. Style.css)
+wp_head(); //-> Wordpress passt den Header an und lädt alle registrierten Dateien (z.B. Style.css)
 ?>
 
 
