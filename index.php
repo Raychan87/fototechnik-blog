@@ -1,4 +1,6 @@
-
+<!DOCTYP html>
+<!-- die Sprache die verwendet wird (deutsch) -->
+<html lang="">
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
 <!-- Start des Contents Container -->
