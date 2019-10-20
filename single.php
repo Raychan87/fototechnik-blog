@@ -1,6 +1,6 @@
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
-
+<!-- Start des Contents Container -->
 <main>
 <!-- Start Loop -->
     <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
@@ -16,9 +16,10 @@
 
     <?php endif; ?>
 <!-- end Loop -->
-
     <?php get_sidebar() ;?>
 </main>
+
+<!-- Ende des Contents Container -->
 
 <!-- Footer aufrufen -->
 <?php get_footer(); ?>

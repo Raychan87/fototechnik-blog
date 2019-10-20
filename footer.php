@@ -1,29 +1,9 @@
+    <footer>
+        <!-- gibt das aktuelle Jahr und den Namen der Webseite aus -->
+        <p>Copyright 2018 - <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+    </footer>
 
-
-
-
-
-<?php
-
-/*
-<------ Menü anzeigen ------>
-*/
-wp_nav_menu(
-    array(
-        'theme_location' => 'foot_menu',  //-> id des aufzurufendes Menüs
-        'menu_class' => 'meta-nav-list' //-> ein Klassen Name wird hinzugefügt
-        'depth' => 1                        //-> gibt die Tiefe des Menüs an
-    )
-)
-/*
-<------ Ende Menü ------>
-*/
-
-?>
-
-
-
-
-
+    <!-- Wird für die Adminleiste geladen (wp_head() wird auch benötigt)) -->
+    <?php wp_footer();?> 
 </body>
 </html>

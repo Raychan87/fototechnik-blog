@@ -1,39 +1,31 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset"UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Der Meta viewport soll immer so groß sein wie das Gerät -->
+<head>
 
-        <title> Hallo </title>
+    <meta charset"UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Der Meta viewport soll immer so groß sein wie das Gerät -->
 
-        <!-- CSS Code laden -->
-        <link rel="skylesheet" href="<?php bloginfo('template_url');?>/css/normalize.css">
-        <link rel="skylesheet" href="#">
+    <!-- Browser Titel Namen -->
+    <title><?php wp_title('->');?> <?php bloginfo( 'name' ); ?></title> 
+    
 
-        <?php 
-        wp_head(); //-> Wordpress passt den Header an und lädt alle registrierten Dateien (z.B. Style.css)
-        ?>
+    <!-- CSS Code laden -->
+        <!-- Öffnent Style.css -->
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">  
+        <!-- "normalize" für Browser kompatibilität --> 
+    <link rel="skylesheet" href="<?php bloginfo('template_url');?>/css/normalize.css">
+    <link rel="skylesheet" href="#">
 
-
-        <nav class="main-menu-class">
-                <?php 
-                /*
-                <------ Menü anzeigen ------>
-                */
-                wp_nav_menu(
-                    array(
-                        'theme_location'    => 'main_menu',         //-> id des aufzurufendes Menüs
-                        'menu_class'        => 'nav navbar-nav',    //-> ein Klassen Name wird hinzugefügt
-                        'depth'             => 5,                   //-> gibt die Tiefe des Menüs an
-                        'container'         => ''                   //-> Um den "div" zu entfernen
-                    )
-                )
-                /*
-                <------ Ende Menü ------>
-                */
-                ?>
-        </nav>
-
-
-
-    </head>
-<body>
+    <?php 
+        wp_head(); //-> Lädt Wordpress eigene Scripte, CSS Code für Emoji und Meta Informationen (Auch die Adminbar und wp_footer() wird benötigt)
+    ?>
+</head>
+<body <?php body_class();?>>
+    <header>
+        <!-- Namen der Webseite aufrufen -->
+        <h1><?php bloginfo( 'name' ); ?></a></h1>
+        <!-- Untertitel bzw. Beschreibung der Webseite -->
+        <p><?php bloginfo( 'description' ); ?></a></p>
+        
+        <?php get_template_part('template_parts/navi');?>
+    </header>
