@@ -19,23 +19,24 @@ Tags:
 }
 
 body {
-  font: 1em Arial;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333; /* Schriftfarbe */
+  background-color: #ffffff; /* Hintergrundfarbe */
 }
 
-main {
-  pedding: 1em 0; /* Innenabstände nur oben und unten 1em 0 */
-}
-
-header {
-  background: lightblue; /* Hintergrundfarbe */
+.container_header {
   padding:1em; /* Innenabstände 1em */
 }
 
 /* Artikel */
 article {
-  background: lightblue; /* Hintergrundfarbe */
-  padding:1em; /* Innenabstände 1em */
-  margin-botton: 1em; /* Abstand nach unten von 1em */
+  padding: 30px 15px;
+  background-color:rgba(0, 0, 0, 0.04); /* Hintergrundfarbe */
+  border: 1px solid #dddddd; /* Rahmenfarbe */
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* Seitenleiste */
@@ -49,23 +50,33 @@ footer {
   padding:1em; /* Innenabstände 1em */
 }
 
-/* Wenn die Bildschirmauflösung über 600px ist */
-@meida screen and (min-width: 600px) {
+/* Wenn die Bildschirmauflösung über 768px ist */
+@media screen and (min-width: 1000px) {
   
-  /* Container "site" ist die ganze Seite */
-  .site {
-    max-width: 1000px;
+  /* Container der ganze Webseite */
+  .container_blog {
     margin:0 auto;
   }
     
-  /* Container "loop" für Artikel, Seiten usw. */
-  .loop {
-    float:left;
-    width:60%;
-    
+  /* Container "mainloop" für Artikel, Seiten usw. */
+  .container_mainloop {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
+  .container_article {
+    float:left;
+    width:75%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  /* Seitenleiste */
   aside {
-    width:36%;
+    width:25%;
     float:right;
   }
     

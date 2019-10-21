@@ -1,8 +1,10 @@
     <footer>
-        <!-- gibt das aktuelle Jahr und den Namen der Webseite aus -->
-        <p>Copyright 2018 - <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+        <div class="container_footer">
+            <!-- gibt das aktuelle Jahr und den Namen der Webseite aus -->
+            <p>Copyright 2018 - <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+        </div>
     </footer>
-</div> <!-- die Classe "site" wird hier wieder geschlossen -->
+</div> <!-- die Classe "container_blog" wird hier wieder geschlossen -->
 
     <!-- Wird für die Adminleiste geladen (wp_head() wird auch benötigt)) -->
     <?php wp_footer();?> 
