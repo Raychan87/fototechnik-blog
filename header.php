@@ -18,13 +18,15 @@
     <!-- Lädt Wordpress eigene Scripte, CSS Code für Emoji, Metainformationen und Adminbar (wp_footer() wird benötigt) -->
     <?php wp_head(); ?>
 </head>
+<!-- ??? -->
 <body <?php body_class();?>>
+<div class="site"> <!-- der Container "site" geht bis footer.php -->
     <header>
         <!-- Namen der Webseite aufrufen -->
         <h1><?php bloginfo( 'name' ); ?></a></h1>
         <!-- Untertitel bzw. Beschreibung der Webseite -->
         <p><?php bloginfo( 'description' ); ?></a></p>
-        
+
         <!-- Navigations Bar wird aufgerufen -->
         <?php get_template_part('template_parts/navi');?>
     </header>
