@@ -11,3 +11,67 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: fototechnik-blog
 Tags:
 */
+
+* {
+/* Die Breite wird anhand von border-box gerechnet
+  Damit sind alle Breiten gleich */
+ box-sizing: border-box; 
+}
+
+body {
+  font: 1em Arial;
+}
+
+main {
+  pedding: 1em 0; /* Innenabstände nur oben und unten 1em 0 */
+}
+
+header {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+}
+
+/* Artikel */
+article {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+  margin-botton: 1em; /* Abstand nach unten von 1em */
+}
+
+/* Seitenleiste */
+aside {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+}
+
+footer {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+}
+
+/* Wenn die Bildschirmauflösung über 600px ist */
+@meida screen and (min-width: 600px) {
+  .site {
+    max-width: 1000px;
+    margin:0 auto;
+  }
+    
+  .loop {
+    float:left;
+    width:60%;
+    
+  }
+  aside {
+    width:36%;
+    float:right;
+  }
+    
+  footer {
+    clear:both; /* die floats werden wieder aufgehoben damit der footer ganz unten sitzt */
+  }
+}
+  
+  
+  
+
+
