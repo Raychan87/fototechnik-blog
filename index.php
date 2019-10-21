@@ -3,6 +3,8 @@
 
 <main>
 <!-- Start Loop -->
+    <!-- Der Loop wird in ein Container gepackt -->
+    <div class="loop"> 
     <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
@@ -15,6 +17,7 @@
             <?php get_template_part('template_parts/content','error');?>
 
     <?php endif; ?>
+    </div>
 <!-- end Loop -->
 
     <?php get_sidebar() ;?>
