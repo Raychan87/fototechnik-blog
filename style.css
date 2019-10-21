@@ -51,11 +51,14 @@ footer {
 
 /* Wenn die Bildschirmauflösung über 600px ist */
 @meida screen and (min-width: 600px) {
+  
+  /* Container "site" ist die ganze Seite */
   .site {
     max-width: 1000px;
     margin:0 auto;
   }
     
+  /* Container "loop" für Artikel, Seiten usw. */
   .loop {
     float:left;
     width:60%;
