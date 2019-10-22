@@ -16,6 +16,10 @@
                 <?php get_template_part('template_parts/content','error');?>
 
         <?php endif; ?>
+        
+        <!-- Beitrags Navigations (vor und zurück) -->
+        <?php previous_posts_link();?>
+        <?php next_posts_link();?>
     </div>
     <!-- sidebar.php aufrufen -->
     <?php get_sidebar() ;?>
