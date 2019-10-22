@@ -1,7 +1,13 @@
 <nav class="container_navibar">
     <ul>
         <!-- Wordpress generiertes Inhaltsverzeichniss -->
-        <?php wp_list_pages();?>
+        <?php 
+            $args = array(
+                    title_li => ''
+                );
+
+            wp_list_pages($args);
+        ?>
     </ul>
 </nav>
  
