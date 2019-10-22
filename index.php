@@ -2,7 +2,7 @@
 <?php get_header(); ?> 
 
 <!-- Der Loop wird in ein Container gepackt -->
-<div class="container_mainloop"> 
+<main class="container_main"> 
     <div class="container_article">
         <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -19,7 +19,7 @@
     </div>
     <!-- sidebar.php aufrufen -->
     <?php get_sidebar() ;?>
-</div>
+</main>
 
 <!-- footer.php aufrufen -->
 <?php get_footer(); ?>
