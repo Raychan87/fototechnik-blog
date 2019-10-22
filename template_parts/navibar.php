@@ -3,11 +3,10 @@
         <!-- Wordpress generiertes Inhaltsverzeichniss -->
         <?php 
             $args = array(
-                    title_li => ''
+                    'title_li' => ''
                 );
 
-            wp_list_pages($args);
-        ?>
+        wp_list_pages($args);?>
     </ul>
 </nav>
  

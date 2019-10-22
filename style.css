@@ -3,7 +3,7 @@ Theme Name: FotoTechnik Blog
 Theme URI: https://github.com/Raychan87/FotoTechnik-Blog
 Author: Raychan
 Author URI: https://Fototour-und-Technik.de
-Description: Dieses Theme wird ich für meine Webseite "FotoTour und Technik" entwickelt.
+Description: Dieses Theme habe ich für meinen Blog "FotoTour-und-Technik.de" entwickelt.
 Requires at least: WordPress 5
 Version: 0.1
 License: GNU General Public License v3
@@ -13,74 +13,85 @@ Tags:
 */
 
 /* Debug */
-
-header, main, nav, article, aside, footer {
-  background: rgba(0,0,0,0.2);
+ nav {
+  background:rgba(247, 247, 247, 0.73);
   padding:0.5em;
   margin-bottom:0.5em;
 }
 
 /* Globals */
-
 * {
 /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
  box-sizing: border-box; 
 }
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333; /* Schriftfarbe */
-  background-color: #ffffff; /* Hintergrundfarbe */
+  /* background-color: #ffffff; */ /* Hintergrundfarbe */
+  background-image: url("assets/images/background.png");
+  margin: 0px;
+  padding: 0;
 }
 
 /* Befehle für Links */
 a {
-  color: #333333;
+   color: #333333;
 }
 
 /* Header */
-
 .container_header {
   padding:1em; /* Innenabstände 1em */
+  background:rgba(247, 247, 247, 0.73);
+  color: white;
+  text-align: center;
+  text-shadow: 0.2em 0.2em 0.5em #333333ad;
 }
-@media screen and (min-width: 1000px) {
- 
+@media screen and (min-width: 720px) {
   .container_website {
     margin:0 auto;
   }
 }
+
 /* Navigation */
 
 
-/* Main */
 
-@media screen and (min-width: 1000px) {
+/* Main */
+@media screen and (min-width: 720px) {
   .container_main {
-    width: 1170px;
+    width: 850px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
   }
 }
+@media screen and (min-width: 1000px) {
+  .container_main {
+    width: 1000px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .container_main {
+    width: 1170px;
+  }
+}
 
 /* Content - Artikel */
-
 article {
   padding: 30px 15px;
-  background-color:rgba(0, 0, 0, 0.04); /* Hintergrundfarbe */
-  border: 1px solid #dddddd; /* Rahmenfarbe */
+  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  border: 1px solid #888; /* Rahmenfarbe */
   margin-bottom: 30px;
   text-align: center;
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 720px) {
     .container_article {
     float:left;
-    width:75%;
+    width:80%;
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -89,29 +100,26 @@ article {
 }
 
 /* Seitenleiste - Sidebar */
-
 aside {
-  background: lightblue; /* Hintergrundfarbe */
-  padding:1em; /* Innenabstände 1em */
+  padding: 30px 15px;
+  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  border: 1px solid #888; /* Rahmenfarbe */
+  margin-bottom: 30px;
+  text-align: center;
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 720px) {
   aside {
-    width:25%;
-    float:right;
+  width:20%;
+  float:right;
   }
 }
 
 /* Footer */
-
 footer {
-  background: lightblue; /* Hintergrundfarbe */
-  padding:1em; /* Innenabstände 1em */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #1e1e1e;
+  color:rgba(255, 255, 255, 0.87);
+  text-align: center;
+  clear: both;
 }
-
-@media screen and (min-width: 1000px) {
-  footer {
-    clear:both; /* die floats werden wieder aufgehoben damit der footer ganz unten sitzt */
-  }
-}
-

@@ -3,7 +3,7 @@
 <html lang="<?php bloginfo('language');?>">
 <head>
     <!-- Der Zeichensatz wird Automatisch ausgewiesen (Standard UTF-8) -->
-    <meta charset"<?php bloginfo('charset');?>">
+    <meta charset"<?php bloginfo('charset'); ?>">
     <!-- Der Meta viewport soll immer so groß sein wie das Gerät -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
@@ -14,7 +14,7 @@
         <!-- Öffnet Style.css -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">  
         <!-- "normalize" für Browser kompatibilität --> 
-    <link rel="skylesheet" href="<?php bloginfo('template_url');?>/css/normalize.css">
+    <link rel="skylesheet" href="<?php bloginfo('template_url');?>assets/css/normalize.css">
 
     <!-- Lädt Wordpress eigene Scripte, CSS Code für Emoji, Metainformationen und Adminbar (wp_footer() wird benötigt) -->
     <?php wp_head(); ?>
@@ -26,7 +26,7 @@
         <!-- Namen der Webseite aufrufen -->
         <h1><?php bloginfo( 'name' ); ?></a></h1>
         <!-- Untertitel bzw. Beschreibung der Webseite -->
-        <p><?php bloginfo( 'description' ); ?></a></p>
+        <!-- <p><?php bloginfo( 'description' ); ?></a></p> -->
     </header>
     <!-- Navigations Bar wird aufgerufen -->
     <?php get_template_part('template_parts/navibar');?>
