@@ -20,12 +20,12 @@
 </head>
 <!-- ??? -->
 <body <?php body_class();?>>
-<div class="container_blog"> <!-- der Container "container_blog" geht bis footer.php -->
-    <div class="container_header">
+<div class="container_website"> <!-- der Container "container_website" geht bis footer.php -->
+    <header class="container_header">
         <!-- Namen der Webseite aufrufen -->
         <h1><?php bloginfo( 'name' ); ?></a></h1>
         <!-- Untertitel bzw. Beschreibung der Webseite -->
         <p><?php bloginfo( 'description' ); ?></a></p>
-    </div>
+    </header>
     <!-- Navigations Bar wird aufgerufen -->
     <?php get_template_part('template_parts/navibar');?>
