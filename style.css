@@ -12,6 +12,16 @@ Text Domain: fototechnik-blog
 Tags:
 */
 
+/* Debug */
+
+header, main, nav, article, aside, footer {
+  background: rgba(0,0,0,0.2);
+  padding:0.5em;
+  margin-bottom:0.5em;
+}
+
+/* Globals */
+
 * {
 /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
@@ -26,11 +36,34 @@ body {
   background-color: #ffffff; /* Hintergrundfarbe */
 }
 
+/* Header */
+
 .container_header {
   padding:1em; /* Innenabstände 1em */
 }
+@media screen and (min-width: 1000px) {
+ 
+  .container_website {
+    margin:0 auto;
+  }
+}
+/* Navigation */
 
-/* Artikel */
+
+/* Main */
+
+@media screen and (min-width: 1000px) {
+  .container_main {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Content - Artikel */
+
 article {
   padding: 30px 15px;
   background-color:rgba(0, 0, 0, 0.04); /* Hintergrundfarbe */
@@ -39,34 +72,8 @@ article {
   text-align: center;
 }
 
-/* Seitenleiste */
-aside {
-  background: lightblue; /* Hintergrundfarbe */
-  padding:1em; /* Innenabstände 1em */
-}
-
-footer {
-  background: lightblue; /* Hintergrundfarbe */
-  padding:1em; /* Innenabstände 1em */
-}
-
-/* Wenn die Bildschirmauflösung über 768px ist */
 @media screen and (min-width: 1000px) {
-  
-  /* Container der ganze Webseite */
-  .container_website {
-    margin:0 auto;
-  }
-    
-  /* Container "mainloop" für Artikel, Seiten usw. */
-  .container_main {
-    width: 1170px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .container_article {
+    .container_article {
     float:left;
     width:75%;
     position: relative;
@@ -74,18 +81,32 @@ footer {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* Seitenleiste */
+}
+
+/* Seitenleiste - Sidebar */
+
+aside {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+}
+
+@media screen and (min-width: 1000px) {
   aside {
     width:25%;
     float:right;
   }
-    
+}
+
+/* Footer */
+
+footer {
+  background: lightblue; /* Hintergrundfarbe */
+  padding:1em; /* Innenabstände 1em */
+}
+
+@media screen and (min-width: 1000px) {
   footer {
     clear:both; /* die floats werden wieder aufgehoben damit der footer ganz unten sitzt */
   }
 }
-  
-  
-  
-
 
