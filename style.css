@@ -36,6 +36,11 @@ body {
   background-color: #ffffff; /* Hintergrundfarbe */
 }
 
+/* Befehle für Links */
+a {
+  color: #333333;
+}
+
 /* Header */
 
 .container_header {
