@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-DE">
 <head>
     <meta charset"UTF-8">
     <!-- Der Meta viewport soll immer so groß sein wie das Gerät -->
