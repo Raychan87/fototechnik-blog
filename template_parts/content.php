@@ -8,4 +8,8 @@
     
     <!-- Der Inhalt des Beitrages -->
     <?php the_content();?>
+    
+    <!-- Beitrags Navigations (vor und zurück) -->
+    <?php previous_post_link();?>
+    <?php next_post_link();?>
 </article>
