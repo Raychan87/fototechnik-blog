@@ -54,12 +54,12 @@ footer {
 @media screen and (min-width: 1000px) {
   
   /* Container der ganze Webseite */
-  .container_blog {
+  .container_website {
     margin:0 auto;
   }
     
   /* Container "mainloop" für Artikel, Seiten usw. */
-  .container_mainloop {
+  .container_main {
     width: 1170px;
     margin-right: auto;
     margin-left: auto;
