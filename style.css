@@ -114,6 +114,18 @@ aside {
   }
 }
 
+/* Suche */
+.site-search {
+  background:black;
+ padding: 1em;
+}
+.site-search input{type=search} {
+ color: black;
+}
+.site-search input{type=submit} {
+ color: black;
+}
+
 /* Footer */
 footer {
   padding-top: 2px;
