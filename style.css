@@ -119,10 +119,10 @@ aside {
   background:black;
  padding: 1em;
 }
-.site-search input{type=search} {
+.site-search input[type=search] {
  color: black;
 }
-.site-search input{type=submit} {
+.site-search input[type=submit] {
  color: black;
 }
 
