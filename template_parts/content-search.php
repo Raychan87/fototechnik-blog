@@ -1,5 +1,5 @@
 <!-- Beitrag -->
-<article <?php post_class();?>>
+<section <?php post_class();?>>
     <!-- Überschrift des Beitrages -->
     <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
     
@@ -12,4 +12,4 @@
     <!-- Beitrags Navigations (vor und zurück) -->
     <?php previous_post_link();?>
     <?php next_post_link();?>
-</article>
+</section>
