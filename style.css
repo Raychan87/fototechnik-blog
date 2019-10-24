@@ -81,6 +81,10 @@ a {
 }
 
 /* Content - Artikel */
+.post-meta { /* Kategory und Schlagwörter */
+ font-size: .8em;
+ opacity: .7; /* Durchsichtigkeit */
+}
 article {
   padding: 30px 15px;
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
