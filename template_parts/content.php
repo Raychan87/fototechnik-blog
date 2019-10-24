@@ -1,7 +1,14 @@
 <!-- Beitrag -->
 <article <?php post_class();?>>
-    <!-- Überschrift des Beitrages -->
-    <h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+    
+    <!-- Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird -->
+    <?php if (is_archive()) { ?>
+        <!-- Überschrift des Beitrages -->
+        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+    <?php } else { ?>
+        <!-- Überschrift des Beitrages -->
+        <h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+    <?php } ?>
     
     <!-- Kategorie anzeigen -->
     <?php the_category(', ');?>
