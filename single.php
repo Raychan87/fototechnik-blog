@@ -1,4 +1,4 @@
-<!-- Template für Beiträge/Posts -->
+<!-- Wird zur Ausgabe von einzelnen Beiträgen geladen. -->
 
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
