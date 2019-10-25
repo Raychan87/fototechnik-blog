@@ -1,4 +1,4 @@
-<!-- Template für Seiten/Pages -->
+<!-- Um eine einzelne, statische Seite anzuzeigen, wird die page.php des Themes aufgerufen. -->
 
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
