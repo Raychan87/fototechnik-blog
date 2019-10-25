@@ -1,3 +1,5 @@
+<!-- Template für Seiten/Pages -->
+
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
 
