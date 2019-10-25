@@ -1,3 +1,5 @@
+<!-- Template für Beiträge/Posts -->
+
 <!-- Header aufrufen -->
 <?php get_header(); ?> 
 
