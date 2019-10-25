@@ -1,4 +1,4 @@
-<nav class="container_navibar">
+<nav class="container_navibar_main">
     <?php 
     
     $args = array(
