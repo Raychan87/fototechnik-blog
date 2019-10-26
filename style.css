@@ -12,12 +12,6 @@ Text Domain: fototechnik-blog
 Tags:
 */
 
-/* Debug */
- nav {
-  background:rgba(247, 247, 247, 0.73);
-  padding:0.5em;
-  margin-bottom:0.5em;
-}
 
 /* Globals */
 * {
@@ -105,10 +99,7 @@ article {
 
 /* Seitenleiste - Sidebar */
 aside {
-  padding: 30px 15px;
-  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-  border: 1px solid #888; /* Rahmenfarbe */
-  margin-bottom: 30px;
+
   text-align: center;
 }
 @media screen and (min-width: 720px) {
@@ -118,16 +109,29 @@ aside {
   }
 }
 
-/* Suche */
-.site-search {
-  background:black;
- padding: 1em;
+/* Widgets */
+.widget {
+  padding: 30px 15px;
+  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  border: 1px solid #888; /* Rahmenfarbe */
+  margin-bottom: 30px;
+  text-align: center;
 }
+
+/* Suche */
 .site-search input[type=search] {
+  width: 100%;
+  padding-right: 90px;
  color: black;
 }
 .site-search input[type=submit] {
- color: black;
+  position: relative;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: 80px;
+  color: #fff;
+  background-color: #8a6d3b;
 }
 
 /* Footer */
