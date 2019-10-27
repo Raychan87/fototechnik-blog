@@ -12,12 +12,19 @@
                 <!-- Ruft die Content.php Datei auf um die Beiträge bzw Seite aufzurufen -->
                 <?php get_template_part('template_parts/content');?>
             
+                <!-- Kommentare -->
+                <?php comments_template();?>
+
             <?php endwhile; else : ?>
                 
                 <!-- Fehlermeldung, es konnten keine Beiträge gefunden werden -->
                 <?php get_template_part('template_parts/content','error');?>
 
         <?php endif; ?>
+
+        <!-- Beitrags Navigations (vor und zurück) -->
+        <?php previous_posts_link();?>
+        <?php next_posts_link();?>
     </div>
     <!-- sidebar.php aufrufen -->
     <?php get_sidebar() ;?>

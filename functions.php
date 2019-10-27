@@ -34,5 +34,16 @@
           )
       );
     }
+    ?>
+    <!-- Kommentar Funktion -->   
+    <!-- Die Funktion für einen einzelnen Kommentar -->
+    <?php function wpv_comments( $comment, $args, $depth ) { $GLOBALS['comment'] = $comment; ?>
 
+    <li class="single-comment">
+     <?php echo get_avatar( $comment, $size='90' ); ?> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
+     <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
+     <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
+     <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
+
+    <?php }?>
 ?>
