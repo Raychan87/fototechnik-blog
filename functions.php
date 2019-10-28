@@ -1,10 +1,10 @@
 
     <!-- Navigations Menü -->
     <!-- Navigation Funktion wird aufgerufen -->
-    <?php add_action( 'after_setup_theme', 'wpftb_register_navibar' ); ?>
+    <?php add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
 
     <!-- Die Funktion wird Deklariert -->
-    <?php function wpftb_register_navibar() {
+    <?php function fototechnikblog_register_navibar() {
       register_nav_menu('navibar_main','Navigation in der Kopfzeile'); 
     } ?>
 
@@ -39,11 +39,11 @@
 
     <!-- Kommentar Funktion -->   
     <!-- Die Funktion für einen einzelnen Kommentar -->
-    <?php function wpv_comments( $comment, $args, $depth ) { 
+    <?php function fototechnikblog_comments( $comment, $args, $depth ) { 
         $GLOBALS['comment'] = $comment; ?>
 
         <li class="single-comment">
-        <?php echo get_avatar( $comment, $size='90' ); ?> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
+        <!-- <?php echo get_avatar( $comment, $size='90' ); ?> --> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
         <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
         <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
         <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
