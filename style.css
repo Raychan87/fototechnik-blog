@@ -30,7 +30,7 @@ body {
   padding: 0;
 }
 
-/* Befehle für Links */
+/* alle Verlinkungen */
 a {
    color: #333333;
 }
@@ -97,9 +97,38 @@ article {
   }
 }
 
+/* Kommentare */
+div.comment-form { /* Container des ganzen Kommentarbereichs */
+  margin-top: 1px;
+}
+.comment-form input[type=text], /* Das Kommentator Eingabefeld */
+.comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
+.comment-form input[type=url], /* Das URL Eingabefeld */
+.comment-form textarea{ /* Kommentar Eingabefeld */
+  background-color: rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  border: 1px solid #888; /* Rahmenfarbe */
+  box-shadow: inset 0 1px 3px rgna(0,0,0,25); /* Schatten vom Feld Rand nach innen */
+  margin: .2em 0 1em 0;
+  width: 100%; /* die Breite der Elemente */
+}
+.comment-form input[type=submit], /* Kommentar "abschicken" Button */
+  background: rgba(255,255,255, 0.33);
+  border: 1px solid #888; /* Rahmenfarbe */
+}
+.commend-list ul { /* Container des Ausgabefeld der Kommentare */
+  padding: 0;
+  margin: 0;
+  list-style:none; /* Listen Punkte entfernen */
+}
+.single-comment { /* Einzelnes Kommentarfeld */
+  padding: 2px;
+}
+.single-comment .childeren { /* Das Antwortfeld im Kommentarfeld */
+  padding: 2px;
+}
+
 /* Seitenleiste - Sidebar */
 aside {
-
   text-align: center;
 }
 @media screen and (min-width: 720px) {
@@ -119,13 +148,13 @@ aside {
 }
 
 /* Suche */
-.site-search input[type=search] {
+.site-search input[type=search] { /* Suchfeld zur Texteingabe */
   width: 100%;
   padding-right: 90px;
  color: black;
 }
-.site-search input[type=submit] {
-  position: relative;
+.site-search input[type=submit] { /* Suchen Button */
+  position: relative; /* ??? */
   top: 2px;
   right: 2px;
   bottom: 2px;
