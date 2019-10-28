@@ -9,7 +9,7 @@
     } ?>
 
     <!-- Widgets Initialisierung -->
-    <! --Widgets in die Seitenleiste einbinden -->
+    <!-- Widgets in die Seitenleiste einbinden -->
     <?php add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
 
     <?php function fototechnikblog_widgets_inits() {
