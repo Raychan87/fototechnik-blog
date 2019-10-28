@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">  
         <!-- "normalize" für Browser kompatibilität --> 
     <link rel="skylesheet" href="<?php bloginfo('template_url');?>assets/css/normalize.css">
+    
+    <!-- Scripte laden -->
+        <!-- Um auf Kommentare zu antworten -->
+    <?php wp_enqueue_script('comment-replay');?>
 
     <!-- Lädt Wordpress eigene Scripte, CSS Code für Emoji, Metainformationen und Adminbar (wp_footer() wird benötigt) -->
     <?php wp_head(); ?>
