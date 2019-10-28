@@ -2,13 +2,13 @@
     <!-- Kommentar Formular -->
     <?php $fields = array(
         'author' => '<p><label for="author">' . __( 'Dein Name <em>(erforderlich)</em>' ) . '</label><br /><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-        'email' => '<p><label for="email">' . __( 'Deine E-Mail-Adresse <em>(erforderlich, wird aber nicht veröffentlicht)</em>' ) . '</label><br /><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+     // 'email' => '<p><label for="email">' . __( 'Deine E-Mail-Adresse <em>(erforderlich, wird aber nicht veröffentlicht)</em>' ) . '</label><br /><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
         'url' => '<p><label for="url">' . __( 'Deine Website' ) . '</label><br /><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
     );
     comment_form( array (
         'fields' => apply_filters( 'comment_form_default_fields', $fields ), 
         'comment_notes_before' => '<p>Bitte verfasse einen Kommentar.</p>', 
-        'comment_notes_after' => '<p>Dein Kommentar wird vor der Freischaltung von einem Admin moderiert. </p>', 
+        'comment_notes_after' => '<p>Dein Kommentar wird vor der Freischaltung von einem Admin geprüft.</p>', 
         'title_reply' => __( '<h3>Beitrag kommentieren</h3>' )
     )); ?>
 </div>
@@ -27,7 +27,7 @@
         
         <ul>
             <!-- eine Liste der Kommentare -->
-            <?php wp_list_comments('type=all&callback=wpv_comments'); ?>
+            <?php wp_list_comments('type=all&callback=fototechnikblog_comments'); ?>
         </ul>
         
         <!-- Wenn die Kommentare geschlossen sind -->
