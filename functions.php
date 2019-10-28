@@ -1,18 +1,19 @@
-<?php
-    /* Navigations Menü */
-    //Navigation Funktion wird aufgerufen
-    add_action( 'after_setup_theme', 'wpftb_register_navibar' );
 
-    //Die Funktion wird Deklariert
-    function wpftb_register_navibar() {
-      register_nav_menu('navibar_main','Navigation in der Kopfzeile');
-    }
+    <!-- Navigations Menü -->
+    <!-- Navigation Funktion wird aufgerufen -->
+    <?php add_action( 'after_setup_theme', 'wpftb_register_navibar' ); ?>
 
-    /* Widgets Initialisierung */
-    //Widgets in die Seitenleiste einbinden
-    add_action( 'widgets_init','fototechnikblog_widgets_inits');
+    <!-- Die Funktion wird Deklariert -->
+    <?php function wpftb_register_navibar() {
+      register_nav_menu('navibar_main','Navigation in der Kopfzeile'); 
+    } ?>
 
-    function fototechnikblog_widgets_inits() {
+    <!-- Widgets Initialisierung -->
+    <! --Widgets in die Seitenleiste einbinden -->
+    <?php add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
+
+    <?php function fototechnikblog_widgets_inits() {
+      // Seitenleiste Rechts
       register_sidebar( 
         array(
             'name' => 'Seitenleiste rechts', //Anzeige Name im Widget Menü
@@ -23,6 +24,7 @@
             'after_title'   => '</h5>',
           )
       );
+      // Footer Abschnitt
       register_sidebar( 
         array(
             'name' => 'Footer-Abschnitt', //Anzeige Name im Widget Menü
@@ -33,17 +35,20 @@
             'after_title'   => '</h5>',
           )
       );
-    }
-    ?>
+    } ?>
+
     <!-- Kommentar Funktion -->   
     <!-- Die Funktion für einen einzelnen Kommentar -->
-    <?php function wpv_comments( $comment, $args, $depth ) { $GLOBALS['comment'] = $comment; ?>
+    <?php function wpv_comments( $comment, $args, $depth ) { 
+        $GLOBALS['comment'] = $comment; ?>
 
-    <li class="single-comment">
-     <?php echo get_avatar( $comment, $size='90' ); ?> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
-     <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
-     <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
-     <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
-
+        <li class="single-comment">
+        <?php echo get_avatar( $comment, $size='90' ); ?> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
+        <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
+        <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
+        <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
+        <div class="reply">
+            <!-- Button um auf Kommentare zu antworten. -->
+            <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </div>
     <?php }?>
-?>
