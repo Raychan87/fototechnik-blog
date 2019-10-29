@@ -12,6 +12,9 @@
     <!-- https://wordpress.org/support/article/post-formats/ -->
     <!-- Training Kapitel 6.4 -->
     <?php add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status')); ?>
+
+    <!-- Aktivierung der Beitragsbilder -->
+    <?php add_theme_support(' post-thumbnails'); ?>
     
     <!-- Widgets Initialisierung -->
     <!-- Widgets in die Seitenleiste einbinden -->
