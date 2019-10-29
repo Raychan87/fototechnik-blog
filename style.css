@@ -12,7 +12,6 @@ Text Domain: fototechnik-blog
 Tags:
 */
 
-
 /* Globals */
 * {
 /* Die Breite wird anhand von border-box gerechnet
@@ -28,6 +27,10 @@ body {
   background-image: url("assets/images/background.png");
   margin: 0px;
   padding: 0;
+}
+img { /* Bilder in die passende Größe einstellen */
+  max-width:100%;
+  height:auto;
 }
 
 /* alle Verlinkungen */
@@ -85,6 +88,9 @@ article {
   border: 1px solid #888; /* Rahmenfarbe */
   margin-bottom: 30px;
   text-align: center;
+}
+.wp-post-image { /* Beitragsbild */
+  float: center;
 }
 @media screen and (min-width: 720px) {
     .container_article {
