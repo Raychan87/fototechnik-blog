@@ -2,7 +2,7 @@
 <article <?php post_class();?>>
     
     <!-- Beitragsbild anzeigen -->
-    <?php the_post_thumbnail(); ?>
+    <?php the_post_thumbnail('medium'); ?>
     
     <!-- Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird -->
     <?php if (is_archive()) { ?>
