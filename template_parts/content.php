@@ -1,6 +1,9 @@
 <!-- Beitrag -->
 <article <?php post_class();?>>
     
+    <!-- Beitragsbild anzeigen -->
+    <?php the_post_thumbnail(); ?>
+    
     <!-- Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird -->
     <?php if (is_archive()) { ?>
         <!-- Überschrift des Beitrages -->
