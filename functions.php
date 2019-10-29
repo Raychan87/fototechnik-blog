@@ -8,6 +8,11 @@
       register_nav_menu('navibar_main','Navigation in der Kopfzeile'); 
     } ?>
 
+    <!-- Aktivierung der Beitragsformate -->
+    <!-- https://wordpress.org/support/article/post-formats/ -->
+    <!-- Training Kapitel 6.4 -->
+    <?php add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status')); ?>
+    
     <!-- Widgets Initialisierung -->
     <!-- Widgets in die Seitenleiste einbinden -->
     <?php add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
