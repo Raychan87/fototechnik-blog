@@ -78,4 +78,6 @@
         add_filter( 'the_generator', create_function( '$x', 'return;'));
      }
      add_action('init','remove_wp_generator'); ?>
+     <!-- Login Fehler deaktivieren -->
+     <?php add_filter('login_errors', create_function('$a',"return null;"));
             
