@@ -1,3 +1,14 @@
+    <!-- HTML5 Converter -->
+    <?php 
+        $args = array(
+            'search-from',
+            'comment-form'.
+            'comment-list',
+            'gallery',
+            'caption'
+        };
+        add_theme_support ('html5', $args);
+    ?> 
 
     <!-- Navigations Menü -->
     <!-- Navigation Funktion wird aufgerufen -->
@@ -60,3 +71,6 @@
             <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
         </div>
     <?php }?>
+            
+     
+            
