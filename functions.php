@@ -72,5 +72,10 @@
         </div>
     <?php }?>
             
-     
+     <!-- Sicherheits Funktionen -->
+     <!-- Wordpress Version ausblenden -->
+     <?php function remove_wp_generator(){
+        add_filter( 'the_generator', create_function( '$x', 'return;'));
+     }
+     add_action('init','remove_wp_generator'); ?>
             
