@@ -2,11 +2,11 @@
     <?php 
         $args = array(
             'search-from',
-            'comment-form'.
+            'comment-form',
             'comment-list',
             'gallery',
             'caption'
-        };
+        );
         add_theme_support ('html5', $args);
     ?> 
 
