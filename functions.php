@@ -13,6 +13,11 @@
     <!-- Navigations Menü -->
     <!-- Navigation Funktion wird aufgerufen -->
     <?php add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
+    <!-- Bootstrap Nav Walker wird geladen -->
+    <?php function register_navwalker(){
+	    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    }
+    add_action( 'after_setup_theme', 'register_navwalker' ); ?>
 
     <!-- Die Funktion wird Deklariert -->
     <?php function fototechnikblog_register_navibar() {
