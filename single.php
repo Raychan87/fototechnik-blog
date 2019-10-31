@@ -17,6 +17,9 @@
             
                 <!-- Kommentare -->
                 <?php comments_template();?>
+        
+                <!-- Beitrag kürzen -->
+                <?php wp_link_pages() ?>
 
             <?php endwhile; else : ?>
                 
