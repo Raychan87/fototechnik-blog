@@ -1,28 +1,25 @@
     <!-- HTML5 Converter -->
-    <?php 
-        $args = array(
-            'search-from',
-            'comment-form'.
-            'comment-list',
-            'gallery',
-            'caption'
-        };
-        add_theme_support ('html5', $args);
-    ?> 
-
+    <?php $args = array(
+        'search-from',
+        'comment-form'.
+        'comment-list',
+        'gallery',
+        'caption'
+    };
+    add_theme_support ('html5', $args);?> 
+   
     <!-- Navigations Menü -->
-    <!-- Navigation Funktion wird aufgerufen -->
-    <?php add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
     <!-- Bootstrap Nav Walker wird geladen -->
-    <?php function register_navwalker(){
-	    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    <?php function fototechnikblog_register_navwalker() {
+    	require_once get_template_directory() . '/assets/lib/class-wp-bootstrap-navwalker.php';
     }
-    add_action( 'after_setup_theme', 'register_navwalker' ); ?>
+    add_action( 'after_setup_theme', 'fototechnikblog_register_navwalker' ); ?>
 
-    <!-- Die Funktion wird Deklariert -->
+    <!-- Navigation Funktion wird aufgerufen -->
     <?php function fototechnikblog_register_navibar() {
       register_nav_menu('navibar_main','Navigation in der Kopfzeile'); 
-    } ?>
+    }
+    add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
 
     <!-- Aktivierung der Beitragsformate -->
     <!-- https://wordpress.org/support/article/post-formats/ -->
@@ -34,8 +31,6 @@
     
     <!-- Widgets Initialisierung -->
     <!-- Widgets in die Seitenleiste einbinden -->
-    <?php add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
-
     <?php function fototechnikblog_widgets_inits() {
       // Seitenleiste Rechts
       register_sidebar( 
@@ -59,7 +54,8 @@
             'after_title'   => '</h5>',
           )
       );
-    } ?>
+    } 
+    add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
 
     <!-- Kommentar Funktion -->   
     <!-- Die Funktion für einen einzelnen Kommentar -->
@@ -79,10 +75,10 @@
             
      <!-- Sicherheits Funktionen -->
      <!-- Wordpress Version ausblenden -->
-     <?php function remove_wp_generator(){
+     <?php function fototechnikblog_remove_generator(){
         add_filter( 'the_generator', create_function( '$x', 'return;'));
      }
-     add_action('init','remove_wp_generator'); ?>
+     add_action('init','fototechnikblog_remove_generator'); ?>
      <!-- Login Fehler deaktivieren -->
      <?php add_filter('login_errors', create_function('$a',"return null;"));
             
