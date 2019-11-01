@@ -1,46 +1,34 @@
-    <!-- Sicherheits Funktionen -->
-    <!-- Wordpress Version ausblenden -->
-    <?php function fototechnikblog_remove_generator(){
-        add_filter( 'the_generator', create_function( '$x', 'return;'));
-    }
-    add_action('init','fototechnikblog_remove_generator'); ?>
-    <!-- Login Fehler deaktivieren -->
-    <?php add_filter('login_errors', create_function('$a',"return null;")); ?>
-    <!-- XML-PRC entfernen / deaktivieren -->
-    <?php add_filter( 'xmlrpc_enabled', '__return_false' ); ?>
+    <!-- Sicherheits Funktion -->
+    <?php function fototechnikblog_safety_function(){
+        add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
+        add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
+        add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
+        add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */
+        add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */
+        add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
+        add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
+        remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
+        /* Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. */
+        remove_action('wp_head', 'rsd_link'); /* RSD Verweis entfernen */
+        /* Das WLW Manifest dient als Beschreibung für externe Editoren, um auf den WordPress Blog zugreifen zu können. */
+        remove_action('wp_head', 'wlwmanifest_link' ); /* WLW Manifest entfernen */
+        remove_action('wp_head', 'print_emoji_detection_script', 7 ); /* Emoticons deaktivieren */
+        remove_action('admin_print_scripts', 'print_emoji_detection_script' ); /* Emoticons deaktivieren */
+        remove_action('wp_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_action('admin_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_filter('the_content_feed', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('comment_text_rss', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('wp_mail', 'wp_staticize_emoji_for_email' ); /* Emoticons deaktivieren */
+        add_filter('tiny_mce_plugins', 'disable_emojis_tinymce' ); /* Emoticons deaktivieren */ 
+    } 
+    add_action('init','fototechnikblog_safety_function'); ?>
     <!-- Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt -->
     <?php function fototechnikblog_remove_x_pingback( $headers ){
         unset( $headers['X-Pingback'] );
         return $headers;
     }
     add_filter( 'wp_headers', 'fototechnikblog_remove_x_pingback' ); ?>
-    <!-- RSET API Schnittstelle deaktivieren -->
-    <?php add_filter('rest_enabled', '__return_false'); ?>
-    <?php add_filter('rest_jsonp_enabled', '__return_false'); ?>
-    <!-- WP-JSON Schnittstelle deaktivieren -->
-    <?php add_filter('json_enabled', '__return_false'); ?>
-    <?php add_filter('json_jsonp_enabled', '__return_false'); ?>
-    <!-- DNS Prefatch entfernen -->
-    <?php remove_action('wp_head', 'wp_resource_hints', 2); ?>
-    <!-- RSD Verweis entfernen -->
-        <!-- Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. -->
-    <?php remove_action('wp_head', 'rsd_link'); ?>
-    <!-- WLW Manifest entfernen -->
-        <!-- Das WLW Manifest dient als Beschreibung für externe Editoren, um auf den WordPress Blog zugreifen zu können. -->
-    <?php remove_action( 'wp_head', 'wlwmanifest_link' ); ?>
-    <!-- Emoticons deaktivieren -->
-    <?php function disable_emojis() {
-       remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-       remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-       remove_action( 'wp_print_styles', 'print_emoji_styles' );
-       remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
-       remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-       remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
-       remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-       add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-    }
-    add_action( 'init', 'disable_emojis' ); ?>
-                    
+               
     <!-- HTML5 Converter -->
     <?php $args = array(
         'search-from',
