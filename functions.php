@@ -14,6 +14,10 @@
     	require_once get_template_directory() . '/assets/lib/class-wp-bootstrap-navwalker.php';
     }
     add_action( 'after_setup_theme', 'fototechnikblog_register_navwalker' ); ?>
+    <!-- Das Nav Walker Menü registrieren -->
+    <?php register_nav_menus( array(
+	    'primary' => __( 'Primary Menu', 'fototechnik-blog' ),
+    ) ); ?>
 
     <!-- Navigation Funktion wird aufgerufen -->
     <?php function fototechnikblog_register_navibar() {
