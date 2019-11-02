@@ -9,11 +9,17 @@
         <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 
+                <!-- Beitragsbild aufrufen -->
+                <?php the_post_thumbnail('post-thumbnail'); ?>
+        
                 <!-- Ruft die Content.php Datei auf um die Beiträge bzw Seite aufzurufen -->
                 <?php get_template_part('template_parts/content');?>
             
                 <!-- Kommentare -->
                 <?php comments_template();?>
+        
+                <!-- Beitrag kürzen -->
+                <?php wp_link_pages() ?>
 
             <?php endwhile; else : ?>
                 

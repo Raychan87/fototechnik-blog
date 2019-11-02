@@ -1,4 +1,36 @@
+    <!-- Sicherheits Funktion -->
+    <?php function fototechnikblog_safety_function(){
+        add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
+        add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
+        add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
+        add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */
+        add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */
+        add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
+        add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
+        remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
+        /* Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. */
+        remove_action('wp_head', 'rsd_link'); /* RSD Verweis entfernen */
+        /* Das WLW Manifest dient als Beschreibung für externe Editoren, um auf den WordPress Blog zugreifen zu können. */
+        remove_action('wp_head', 'wlwmanifest_link' ); /* WLW Manifest entfernen */
+        remove_action('wp_head', 'print_emoji_detection_script', 7 ); /* Emoticons deaktivieren */
+        remove_action('admin_print_scripts', 'print_emoji_detection_script' ); /* Emoticons deaktivieren */
+        remove_action('wp_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_action('admin_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_filter('the_content_feed', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('comment_text_rss', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('wp_mail', 'wp_staticize_emoji_for_email' ); /* Emoticons deaktivieren */
+        add_filter('tiny_mce_plugins', 'disable_emojis_tinymce' ); /* Emoticons deaktivieren */ 
+    } 
+    add_action('init','fototechnikblog_safety_function'); ?>
+    <!-- Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt -->
+    <?php function fototechnikblog_remove_x_pingback( $headers ){
+        unset( $headers['X-Pingback'] );
+        return $headers;
+    }
+    add_filter( 'wp_headers', 'fototechnikblog_remove_x_pingback' ); ?>
+               
     <!-- HTML5 Converter -->
+<<<<<<< HEAD
     <?php 
         $args = array(
             'search-from',
@@ -10,14 +42,33 @@
         add_theme_support ('html5', $args);
     ?> 
 
+=======
+    <?php $args = array(
+        'search-from',
+        'comment-form'.
+        'comment-list',
+        'gallery',
+        'caption'
+    };
+    add_theme_support ('html5', $args);?> 
+   
+>>>>>>> bfb975a05e3c3ead8c997fa48cd119fe3c30ed78
     <!-- Navigations Menü -->
-    <!-- Navigation Funktion wird aufgerufen -->
-    <?php add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
+    <!-- Bootstrap Nav Walker wird geladen -->
+    <?php function fototechnikblog_register_navwalker() {
+    	require_once get_template_directory() . '/assets/lib/class-wp-bootstrap-navwalker.php';
+    }
+    add_action( 'after_setup_theme', 'fototechnikblog_register_navwalker' ); ?>
+    <!-- Das Nav Walker Menü registrieren -->
+    <?php register_nav_menus( array(
+	    'primary' => __( 'Primary Menu', 'fototechnik-blog' ),
+    ) ); ?>
 
-    <!-- Die Funktion wird Deklariert -->
+    <!-- Navigation Funktion wird aufgerufen -->
     <?php function fototechnikblog_register_navibar() {
       register_nav_menu('navibar_main','Navigation in der Kopfzeile'); 
-    } ?>
+    }
+    add_action( 'after_setup_theme', 'fototechnikblog_register_navibar' ); ?>
 
     <!-- Aktivierung der Beitragsformate -->
     <!-- https://wordpress.org/support/article/post-formats/ -->
@@ -29,8 +80,6 @@
     
     <!-- Widgets Initialisierung -->
     <!-- Widgets in die Seitenleiste einbinden -->
-    <?php add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
-
     <?php function fototechnikblog_widgets_inits() {
       // Seitenleiste Rechts
       register_sidebar( 
@@ -54,7 +103,8 @@
             'after_title'   => '</h5>',
           )
       );
-    } ?>
+    } 
+    add_action( 'widgets_init','fototechnikblog_widgets_inits'); ?>
 
     <!-- Kommentar Funktion -->   
     <!-- Die Funktion für einen einzelnen Kommentar -->
@@ -72,12 +122,7 @@
         </div>
     <?php }?>
             
-     <!-- Sicherheits Funktionen -->
-     <!-- Wordpress Version ausblenden -->
-     <?php function remove_wp_generator(){
-        add_filter( 'the_generator', create_function( '$x', 'return;'));
-     }
-     add_action('init','remove_wp_generator'); ?>
-     <!-- Login Fehler deaktivieren -->
-     <?php add_filter('login_errors', create_function('$a',"return null;"));
+    
+    
+            
             
