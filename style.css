@@ -56,6 +56,9 @@ a {
 
 
 
+
+
+
 /* Main */
 @media screen and (min-width: 720px) {
   .container_main {
@@ -117,7 +120,7 @@ div.comment-form { /* Container des ganzen Kommentarbereichs */
   margin: .2em 0 1em 0;
   width: 100%; /* die Breite der Elemente */
 }
-.comment-form input[type=submit], /* Kommentar "abschicken" Button */
+.comment-form input[type=submit]{ /* Kommentar "abschicken" Button */
   background: rgba(255,255,255, 0.33);
   border: 1px solid #888; /* Rahmenfarbe */
 }
