@@ -1,34 +1,106 @@
-nav {
-    float: left;
-    width: 100%;
-    background: #3a3a3a;
-    font-size: 16px;
+/*! custom_navbar.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+
+/* Ausblenden der Checkbox und des Labels */
+input#responsive-nav,
+label.responsive-nav-label {
+  display: none;
+}
+
+/* Der Hauptcontainer der Navigationsleiste */
+.container_navbar {
+  float: left;
+  width: 100%; 
+  font-weight: 400;
+  font-size: 14px; /* Schriftgröße */
+  background: rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  color: #333333; /* Schriftfarbe */
+  line-height: 1.2; /* Höhe der Leiste */
+
+  /* Schattenrand */
+  margin-bottom: 20px;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0px 7px 19px -1px rgba(0,0,0,0.1);
+}
+
+/* Der eigentliche Menü Container */
+  nav {
+    width: 850px;
+    margin-right: auto;
+    margin-left: auto;
   }
   
+  /* Aufzählungslisten */
   nav ul {
     margin: 0;
     padding: 0;
   }
   
+  /* Links */
   nav a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
+    display: block; /* Den Block Klickbar machen */
+    text-decoration: none; /* Unterstreichen der Links deaktivieren */
   }
   
+  /* Listenelemente der ersten Ebene */
   nav ul li {
     position: relative;
     float: left;
     list-style: none;
-    color: #fff;
-    transition: 0.5s;
+    transition: 0.75s; /* Die Zeit der Makierung des Reiters */
   }
   
+  /* die Links der Listenelemente der ersten Ebene */
   nav ul li a {
-    padding: 20px;
+    padding: 15px 10px 15px 15px;
+  }
+
+  /* Die Hintergrundfarbe nach dem markieren */
+  nav ul li:hover {
+    background: #dad8d8;
+  }
+
+   /* Untermenü */
+   nav ul li:hover > ul {
+    top: 100%;
+    left: 0;
+  }
+
+  /* Untermenü */
+  nav ul ul {
+    /* Wird für die dropdown Funktion gebraucht */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+    background: rgba(247, 247, 247); /* Hintergrundfarbe */ 
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
+    z-index: 1; /* Damit das Untermenü über die Artikel steht */
+    border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
+    border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
   }
   
-  nav ul > li.submenu > a:after {
+  /* Einzelnes Fenster des Untermenüs */
+  nav ul ul li {
+    text-align: left;
+    float: none;
+    border-bottom: 1px solid rgba(85, 85, 85, 0.05); 
+  }
+  
+  /* Link des einelnes Fensters des Untermenüs */
+  nav ul ul li a {
+    padding: 10px 10px 10px 10px;
+    width: max-content; /* Fenster größe richtet sich nach den Inhalt */
+  }
+    
+  /* Untermenü vom Untermenü */
+  nav ul ul li:hover > ul {
+    top: 5%;
+    left: 100%;
+  }
+
+  /* Pfeil nach unten für Buttons mit Untermenüs */
+  nav li > a:after {
     position: relative;
     float: right;
     content: '';
@@ -36,54 +108,107 @@ nav {
     margin-top: 5px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-top: 5px solid rgb(138, 138, 138);
     border-bottom: 5px solid transparent;
   }
-  
-  nav ul ul li.submenu > a:after {
-    margin-left: auto;
-    margin-right: -10px;
-    border-left: 5px solid #fff;
+
+   /* Pfeil nach rechts für Untermenüs mit Untermenüs */
+   nav ul ul li > a:after {
+    position: relative;
+    float: right;
+    content: '';
+    margin-left: 15px;
+    margin-top: 5px;
+    border-left: 5px solid rgb(180, 180, 180);
     border-right: 5px solid transparent;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
   }
+
+  /* Ausblenden des Pfeils für Buttons ohne Untermenü */
+  nav li > a:only-child:after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+ 
+
+
+
+  /* ----------------------------- UNFERTIG ----------------------------- */
+  /* http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/ */
+
+  /* Declarations for the responsive menu */
+
+@media screen and (max-width: 680px) {
   
-  nav ul li:hover {
-    background: #4096ee;
+  * {
+    font-size: 18px;
+  }
+    
+  label.responsive-nav-label {
+      position: relative;
+    display: block;
+    padding: 20px;
+    background: #222;
+    cursor: pointer;
+    color: #fff;
+  }
+    
+  label.responsive-nav-label span {
+    margin-right: 10px;  
   }
   
-  nav ul ul {
+  nav {
     position: absolute;
     top: -9999px;
-    left: -9999px;
-    background: #333;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    padding: 10px;
   }
   
-  nav ul ul li {
-    float: none;
-    width: 200px;
-    border-bottom: 1px solid #555;
-  }
-  
-  nav ul ul li a {
-    padding: 10px 20px;
-  }
-  
-  nav ul ul li:last-child {
-    border-bottom: none;
-  }
-  
-  nav ul li:hover > ul {
-    top: 100%;
-    left: 0;
-  }
-  
-  nav ul ul li:hover > ul {
+  input#responsive-nav[type=checkbox]:checked ~ nav {
+    position: relative;
     top: 0;
-    left: 200px;
+  }
+  
+  nav a:after {
+    display: none;
+  }
+  
+  nav li {
+    float: none !important;
+    width: 100% !important;
+    border-bottom: none !important; 
+  }
+    
+  nav li a {
+    margin-bottom: 10px !important;
+    padding: 10px 20px !important; 
+    background: #4a4a4a;
+  }
+    
+  nav ul li:hover {
+    background: none;
+  }
+    
+  nav ul li a:hover {
+    background: #4096ee;
+  }
+    
+  nav ul ul {
+    position: relative !important;
+    width: 100%;
+    left: 0 !important;
+    top: 0 !important;
+    background: none !important;
+    box-shadow: none;
+  }
+    
+  nav ul ul li {
+    padding-left: 20px;
+  }
+  
   }
   
   
