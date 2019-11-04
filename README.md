@@ -14,9 +14,7 @@ With this theme almost all security plugins are unnecessary, because many functi
 
 
 ## Verwendete Libs:
-  - Dropdown menü: https://wp-bootstrap.github.io/wp-bootstrap-navwalker/
-    - wp_bootstrap_navwalker (https://github.com/twittem/wp-bootstrap-navwalker)
-      (Für Menü Navigation)
+  - Dropdown menü: http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/
 
   - normalize.css: https://necolas.github.io/normalize.css/
     (Um die Browser Komptabilität zu gewährleisten)

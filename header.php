@@ -33,4 +33,4 @@
         <!-- <p><?php bloginfo( 'description' ); ?></a></p> -->
     </header>
     <!-- Navigations Bar wird aufgerufen -->
-    <?php get_template_part('template_parts/navibar_main');?>
+    <?php get_template_part('template_parts/navbar_main');?>

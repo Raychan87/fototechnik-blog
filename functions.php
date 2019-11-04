@@ -33,93 +33,18 @@
     <!-- HTML5 Converter -->
     <?php add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));?> 
 
+    <!-- Style des CSS Navigations Menü laden -->
+    <!-- http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/ -->
+    <?php function custom_navbar_styles() {  
+        wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
+      } 
+    add_action('wp_enqueue_scripts','custom_navbar_styles'); ?>
 
-
-
-
-
-
-<!-- http://cssmenumaker.com/blog/wordpress-3-drop-down-menu-tutorial/ -->
-
-
-
-    <?php add_action('wp_enqueue_scripts', 'cssmenumaker_scripts_styles' );
-
-    function cssmenumaker_scripts_styles() {  
-        wp_enqueue_style( 'cssmenu-styles', get_template_directory_uri() . '/assets/css/cssmenu_styles.css');
-    } ?>
-
-<?php
-class CSS_Menu_Maker_Walker extends Walker {
-
-var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-
-function start_lvl( &$output, $depth = 0, $args = array() ) {
-  $indent = str_repeat("\t", $depth);
-  $output .= "\n$indent<ul>\n";
-}
-
-function end_lvl( &$output, $depth = 0, $args = array() ) {
-  $indent = str_repeat("\t", $depth);
-  $output .= "$indent</ul>\n";
-}
-
-function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-
-  global $wp_query;
-  $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-  $class_names = $value = '';        
-  $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-  /* Add active class */
-  if(in_array('current-menu-item', $classes)) {
-    $classes[] = 'active';
-    unset($classes['current-menu-item']);
-  }
-
-  /* Check for children */
-  $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
-  if (!empty($children)) {
-    $classes[] = 'has-sub';
-  }
-
-  $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-  $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
-  $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-  $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-
-  $output .= $indent . '<li' . $id . $value . $class_names .'>';
-
-  $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-  $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-  $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-  $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-
-  $item_output = $args->before;
-  $item_output .= '<a'. $attributes .'><span>';
-  $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-  $item_output .= '</span></a>';
-  $item_output .= $args->after;
-
-  $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-}
-
-function end_el( &$output, $item, $depth = 0, $args = array() ) {
-  $output .= "</li>\n";
-}
-}?>
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Navigations Menü aktivieren -->
+    <?php function fototechnik_blog_register_navbar() {
+      register_nav_menus(array('navbar' => __( 'Hauptmenü' ) ));
+    }
+    add_action('init','fototechnik_blog_register_navbar'); ?>
 
     <!-- Aktivierung der Beitragsformate -->
     <!-- https://wordpress.org/support/article/post-formats/ -->

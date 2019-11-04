@@ -20,7 +20,7 @@
     <p>Veröffentlich von <?php the_author(); ?> am <?php the_time('d. M Y');?>.</p>
     
     <!-- Der Inhalt des Beitrages -->
-    <?php the_content('weiterlesen >>');?> /* Übergabe Text für gekürtze Beiträge */
+    <?php the_content('weiterlesen >>');?> <!-- Übergabe Text für gekürtze Beiträge -->
     
     <!-- Schlagwörter anzeigen -->
     <?php the_tags();?>
