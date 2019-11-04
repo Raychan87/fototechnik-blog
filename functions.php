@@ -53,7 +53,19 @@
 
     <!-- Aktivierung der Beitragsbilder -->
     <?php add_theme_support(' post-thumbnails'); ?>
-    
+
+    <!-- Aktivierung des Headerbildes -->
+    <?php $args = array(
+      'width'         => 2000,
+      'height'        => 450,
+      'default-image' => get_template_directory_uri() . '/assets/images/headerbild.jpg',
+      'uploads'       => true,
+      'random-default'=> true, /* Wechselt zufällig die Headerbilder */
+      'flex-width'    => true,
+      'flex-height'    => true,
+    );
+    add_theme_support( 'custom-header', $args ); ?>
+
     <!-- Widgets Initialisierung -->
     <!-- Widgets in die Seitenleiste einbinden -->
     <?php function fototechnik_blog_widgets_inits() {

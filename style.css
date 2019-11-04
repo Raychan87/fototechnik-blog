@@ -40,11 +40,12 @@ a {
 
 /* Header */
 .container_header {
-  padding:1em; /* Innenabstände 1em */
-  background:rgba(247, 247, 247, 0.73);
-  color: white;
+  padding:0px;
+  margin: 0px;
+  background:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  color: rgb(0, 0, 0);
   text-align: center;
-  text-shadow: 0.2em 0.2em 0.5em #333333ad;
+  /* text-shadow: 0.2em 0.2em 0.5em #333333ad; */
 }
 @media screen and (min-width: 720px) {
   .container_website {
@@ -53,8 +54,7 @@ a {
 }
 
 /* Navigation */
-
-/* custom_navbar.css */
+  /* custom_navbar.css */
 
 /* Main */
 @media screen and (min-width: 720px) {
@@ -86,7 +86,7 @@ article {
   padding: 30px 15px;
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   border: 1px solid #888; /* Rahmenfarbe */
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
 }
 .wp-post-image { /* Beitragsbild */
@@ -146,10 +146,10 @@ aside {
 
 /* Widgets */
 .widget {
-  padding: 30px 15px;
+  padding: 15px 15px;
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   border: 1px solid #888; /* Rahmenfarbe */
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
 }
 

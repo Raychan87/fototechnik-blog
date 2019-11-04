@@ -27,8 +27,10 @@
 <body <?php body_class();?>>
 <div class="container_website"> <!-- der Container "container_website" geht bis footer.php -->
     <header class="container_header">
+        <!-- Headerbild wird eingefügt -->
+        <img src="<?php header_image(); ?>"height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
         <!-- Namen der Webseite aufrufen -->
-        <h1><?php bloginfo( 'name' ); ?></a></h1>
+        <!-- <h1><?php bloginfo( 'name' ); ?></a></h1> -->
         <!-- Untertitel bzw. Beschreibung der Webseite -->
         <!-- <p><?php bloginfo( 'description' ); ?></a></p> -->
     </header>

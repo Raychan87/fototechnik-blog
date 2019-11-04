@@ -15,6 +15,7 @@ label.responsive-nav-label {
   background: rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   color: #333333; /* Schriftfarbe */
   line-height: 1.2; /* Höhe der Leiste */
+  margin-top: 0px;
 
   /* Schattenrand */
   margin-bottom: 20px;
