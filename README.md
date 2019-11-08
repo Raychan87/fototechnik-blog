@@ -10,7 +10,27 @@ The theme was developed for my Wordpress website FotoTour-und-Technik.de. The th
 
 With this theme almost all security plugins are unnecessary, because many functions are covered here. The functions that are missing have to be processed in the .htaccess.
 
+### Funktionen und Features
 
+- Dropdown Menü (auf CSS Basis)
+- HTML 5
+- Headerbild lässt sich anpassen
+- Kommentare (Ohne E-Mail Zwang)
+- Widgets (in Seitbar und Footer)
+
+
+### Sicherheit
+
+- REST API Whitelist
+- Wordpress Version wird ausgeblendet
+- Login Fehlerausgabe ist deaktiviert
+- XML-RPC Schnittstelle ist deaktiviert
+- WP-JSON Schnittstelle ist deaktiviert
+- X-Pingback wurde aus dem Header entfernt
+- DNS Prefatch wurde entfernt
+- RSD Verweis wurde entfernt
+- WLW Manifest wurde entfernt
+- Emoticons wurden deaktiviert
 
 
 ## Verwendete Libs:
