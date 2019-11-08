@@ -12,11 +12,12 @@ With this theme almost all security plugins are unnecessary, because many functi
 
 ### Funktionen und Features
 
-- Dropdown Menü (auf CSS Basis)
 - HTML 5
+- Kompatibel ab Wordpress 5
+- Dropdown Menü (auf CSS Basis)
 - Headerbild lässt sich anpassen
 - Kommentare (Ohne E-Mail Zwang)
-- Widgets (in Seitbar und Footer)
+- Widgets (in Sitebar und Footer)
 
 
 ### Sicherheit
