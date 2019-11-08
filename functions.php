@@ -3,8 +3,8 @@
         add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
         add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
         add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
-        add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */
-        add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */
+    /*  add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */ */
+    /*  add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */ */
         add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
         add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
         remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
@@ -23,6 +23,19 @@
     } 
     add_action('init','fototechnik_blog_safety_function'); ?>
 
+    <!-- Whitelist und Einstellen der REST API Schnittstelle -->
+    <? function fototechnik_blog_rest_api() {
+        $domain = "fototour-und-technik.de";					/* String der Domain */
+        $ip_domain = gethostbyname($domain);					/* IP der Domain abfragen */
+
+        $whitelist = [$ip_domain,'255.255.255.255', "::1" ];    /* IP Whitelist  */
+
+        if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){		/* Wenn nicht auf der Whitelist */
+            die('REST API is disabled.');
+        }
+    }
+    add_action('rest_api_init','fototechnik_blog_rest_api'); ?>
+  
     <!-- Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt -->
     <?php function fototechnik_blog_remove_x_pingback( $headers ){
         unset( $headers['X-Pingback'] );
@@ -34,7 +47,6 @@
     <?php add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));?> 
 
     <!-- Style des CSS Navigations Menü laden -->
-    <!-- http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/ -->
     <?php function custom_navbar_styles() {  
         wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
       } 
@@ -48,7 +60,6 @@
 
     <!-- Aktivierung der Beitragsformate -->
     <!-- https://wordpress.org/support/article/post-formats/ -->
-    <!-- Training Kapitel 6.4 -->
     <?php add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status')); ?>
 
     <!-- Aktivierung der Beitragsbilder -->
