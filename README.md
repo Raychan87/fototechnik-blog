@@ -14,6 +14,7 @@ With this theme almost all security plugins are unnecessary, because many functi
 
 - HTML 5
 - Kompatibel ab Wordpress 5
+- Smartphone und Desktop Version
 - Dropdown Menü (auf CSS Basis)
 - Headerbild lässt sich anpassen
 - Kommentare (Ohne E-Mail Zwang)
