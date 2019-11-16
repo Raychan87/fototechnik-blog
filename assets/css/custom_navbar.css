@@ -88,7 +88,7 @@ label.responsive-nav-label {
     border-bottom: 1px solid rgba(85, 85, 85, 0.05); 
   }
   
-  /* Link des einelnes Fensters des Untermenüs */
+  /* Link des einzelnes Fensters des Untermenüs */
   nav ul ul li a {
     padding: 10px 10px 10px 10px;
     width: max-content; /* Fenster größe richtet sich nach den Inhalt */
@@ -134,82 +134,72 @@ label.responsive-nav-label {
     border-bottom: 5px solid transparent;
   }
 
- 
+  /*-------------------------------------------------------------*/
+  /* Smartphone Navigations Menü */
+  @media screen and (max-width: 680px) {
 
+    /* Erhöhen der Schriftgröße für kleine Geräte */
+    * {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-
-  /* ----------------------------- UNFERTIG ----------------------------- */
-  /* http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/ */
-
-  /* Declarations for the responsive menu */
-
-@media screen and (max-width: 680px) {
-  
-  * {
-    font-size: 18px;
-  }
-    
-  label.responsive-nav-label {
+    /* Menü Label */    
+    label.responsive-nav-label {
       position: relative;
-    display: block;
-    padding: 20px;
-    background: #222;
-    cursor: pointer;
-    color: #fff;
-  }
-    
-  label.responsive-nav-label span {
-    margin-right: 10px;  
-  }
-  
-  nav {
-    position: absolute;
-    top: -9999px;
-    padding: 10px;
-  }
-  
-  input#responsive-nav[type=checkbox]:checked ~ nav {
-    position: relative;
-    top: 0;
-  }
-  
-  nav a:after {
-    display: none;
-  }
-  
-  nav li {
-    float: none !important;
-    width: 100% !important;
-    border-bottom: none !important; 
-  }
-    
-  nav li a {
-    margin-bottom: 10px !important;
-    padding: 10px 20px !important; 
-    background: #4a4a4a;
-  }
-    
-  nav ul li:hover {
-    background: none;
-  }
-    
-  nav ul li a:hover {
-    background: #4096ee;
-  }
-    
-  nav ul ul {
-    position: relative !important;
-    width: 100%;
-    left: 0 !important;
-    top: 0 !important;
-    background: none !important;
-    box-shadow: none;
-  }
-    
-  nav ul ul li {
-    padding-left: 20px;
-  }
-  
-  }
-  
-  
+      display: block;
+      padding: 20px;
+      background: rgba(247, 247, 247, 0.73);;
+      cursor: pointer; /* Mauspfeil wird geändert für das Menü */
+      color: #333333;
+    }
+
+    /* Menü Symbol Container */
+    label.responsive-nav-label span {
+      margin-right: 10px;  
+    }
+
+    /* Das Untermenü wird solange ausgeblendet bis man auf das Symbol klickt */
+    nav {
+      position: absolute;
+      top: -9999px;
+      padding: 10px;
+    }   
+    input#responsive-nav[type=checkbox]:checked ~ nav {
+      position: relative;
+      top: 0;
+    }
+
+    /* Ausblenden der Menü Pfeile */
+    nav a:after {
+      display: none;
+    }
+
+    nav li {
+      float: none !important;
+      width: 100% !important;
+      border-bottom: none !important; 
+    }
+      
+    nav li a {
+      margin-bottom: 10px !important;
+      padding: 10px 20px !important; 
+    }
+
+    nav ul ul {
+      position: relative !important;
+      width: 100%;
+      left: 0 !important;
+      top: 0 !important;
+      background: none !important;
+      box-shadow: none;
+      border-top: none !important;
+      border:none !important;
+    }
+      
+    nav ul ul li {
+      padding-left: 20px;
+    }
+  }  

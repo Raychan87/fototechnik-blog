@@ -7,7 +7,7 @@
             <?php endif; ?>
         </div>
         <!-- gibt das aktuelle Jahr und den Namen der Webseite aus -->
-        <p>Copyright 2018 - <?php echo date('Y'); ?> - <?php bloginfo('name'); ?></p>
+        <p><?php bloginfo('name');?> - Copyright 2018 - <?php echo date('Y'); ?></p>
     </footer>
 </div> <!-- die Classe "container_blog" wird hier wieder geschlossen -->
 
