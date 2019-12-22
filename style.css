@@ -54,7 +54,7 @@ a {
 }
 
 /* Navigation */
-  /* custom_navbar.css */
+  /* assets/css/custom_navbar.css */
 
 /* Main */
 @media screen and (min-width: 720px) {
@@ -154,20 +154,47 @@ aside {
 }
 
 /* Suche */
+.widget_search{ /* Container Widgetsuche */
+  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+}
+.site-search{ /*Container Suchfeld & Button */
+  text-align: left;
+}
 .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-  width: 100%;
-  padding-right: 90px;
- color: black;
+  width: 67%;
+  color: black;
 }
 .site-search input[type=submit] { /* Suchen Button */
-  position: relative; /* ??? */
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  width: 80px;
+  position: absolute;
+  border: 0px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
   color: #fff;
   background-color: #8a6d3b;
 }
+@media screen and (max-width: 1170px) {
+  .site-search input[type=search] { /* Suchfeld zur Texteingabe */
+    width: 60%;
+  }
+@media screen and (max-width: 1000px) {
+  .site-search input[type=submit] { /* Suchen Button */
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .site-search input[type=search] { /* Suchfeld zur Texteingabe */
+    width: 80%;
+  }
+  .site-search input[type=submit] { /* Suchen Button */
+    width: 20%;
+    padding: 1px;
+}
+
+
+
 
 /* Footer */
 footer {
