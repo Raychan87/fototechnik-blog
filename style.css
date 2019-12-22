@@ -178,6 +178,7 @@ aside {
   .site-search input[type=search] { /* Suchfeld zur Texteingabe */
     width: 60%;
   }
+}
 @media screen and (max-width: 1000px) {
   .site-search input[type=submit] { /* Suchen Button */
     padding-left: 4px;
@@ -191,10 +192,8 @@ aside {
   .site-search input[type=submit] { /* Suchen Button */
     width: 20%;
     padding: 1px;
+  }
 }
-
-
-
 
 /* Footer */
 footer {
@@ -246,4 +245,3 @@ footer {
          url('../wp-content/themes/fototechnkik-blog/assets/fonts/roboto-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../wp-content/themes/fototechnkik-blog/assets/fonts/roboto-v20-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
   }
-
