@@ -82,7 +82,17 @@ a {
  font-size: .8em;
  opacity: .7; /* Durchsichtigkeit */
 }
-article {
+article { /* Beitragsseite */
+  padding: 30px 15px;
+  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
+  border: 1px solid #888; /* Rahmenfarbe */
+  margin-bottom: 15px;
+  text-align: center;
+}
+.container_search_h1{ /* Suchergebnis Überschrift */
+  text-align: center;
+}
+section { /* Suchergebnis Seite */
   padding: 30px 15px;
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   border: 1px solid #888; /* Rahmenfarbe */

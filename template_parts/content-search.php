@@ -7,7 +7,7 @@
     <p>Veröffentlich von <?php the_author(); ?> am <?php the_time('d. M Y');?>.</p>
     
     <!-- Der Inhalt des Beitrages -->
-    <?php the_exerpt();?> <!-- Gekürzte Beitrags Ausgabe -->
+    
     <!-- Weiterlesen Befehl -->
     <a href="<?php the_permalink();?>" title="<?php the_title();?>">Weiterlesen >></a>
     

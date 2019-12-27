@@ -5,7 +5,9 @@
 <main class="container_main"> 
     <div class="container_article">
     
-      <h1>Suchergebnisse für Ihre Suche nach: <?php echo $s ;?></h1>
+        <div class="container_search_h1">
+          <h1>Suchergebnisse für: <?php echo $s ;?></h1>
+        </div>
     
         <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
