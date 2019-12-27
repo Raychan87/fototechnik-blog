@@ -12,13 +12,13 @@ Text Domain: fototechnik-blog
 Tags:
 */
 
-/* Globals */
+/* Globale Einstellungen */
 * {
 /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
  box-sizing: border-box; 
 }
-body {
+body { /* alle HTML-Seiten */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
@@ -28,13 +28,12 @@ body {
   margin: 0px;
   padding: 0;
 }
-img { /* Bilder in die passende Größe einstellen */
+img { /* Alle Bilder */
+  /* Bilder in die passende Größe einstellen */
   max-width:100%;
   height:auto;
 }
-
-/* alle Verlinkungen */
-a {
+a { /* alle Verlinkungen */
    color: #333333;
 }
 
@@ -77,7 +76,7 @@ a {
   }
 }
 
-/* Content - Artikel */
+/* Artikel - article */
 .post-meta { /* Kategory und Schlagwörter */
  font-size: .8em;
  opacity: .7; /* Durchsichtigkeit */
@@ -111,6 +110,55 @@ section { /* Suchergebnis Seite */
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+/* Beitrag - Content */
+.content-post { /* Container des Beitrags */
+  
+}
+.content-thumb { /* Beitragsbild */
+
+}
+.content-title { /* Überschrift des Beitrags */
+
+}
+.content-text { /* Inhalt des Beitrags */
+
+}
+.content-date { /* Datum des Beitrags */
+
+}
+.content-author { /* Name des Authors im Beitrag */
+
+}
+.content-footer { /* Container der Kategorie, Schlagwörter und des "Bearbeiten" Button */
+
+}
+.content-categories { /* Kategorie Links */
+
+}
+.content-tages { /* Schlagwörter Links */
+
+}
+.content-list-type { /* Kategorie und Schlagwörter Überschrift */
+
+}
+.content-edit { /* "Bearbeiten"-Button */
+
+}
+
+/* Statische Seite - Page */
+.page-post { /* Container der Seite */
+
+}
+.page-title { /* Überschrift der Seite */
+
+}
+.page-text { /* Inhalt der Seite */
+
+}
+.page-edit { /* "Bearbeiten"-Button */
+
 }
 
 /* Kommentare */
@@ -175,7 +223,7 @@ aside {
   padding: 0 15px;
 }
 
-/* Suche */
+/* Suche - Widget */
 .widget_search{ /* Container Widgetsuche */
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
 }
