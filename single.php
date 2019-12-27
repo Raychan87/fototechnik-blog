@@ -12,8 +12,8 @@
                 <!-- Beitragsbild aufrufen -->
                 <?php the_post_thumbnail('post-thumbnail'); ?>
         
-                <!-- Ruft die Content.php Datei auf um die Beiträge bzw Seite aufzurufen -->
-                <?php get_template_part('template_parts/content');?>
+                <!-- Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen -->
+                <?php get_template_part('template_parts/content','single');?>
             
                 <!-- Kommentare -->
                 <?php comments_template();?>

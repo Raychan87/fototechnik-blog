@@ -39,7 +39,7 @@
     <!-- Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt -->
     <?php function fototechnik_blog_remove_x_pingback( $headers ){
         unset( $headers['X-Pingback'] );
-        return $headers;
+    return $headers;
     }
     add_filter( 'wp_headers', 'fototechnik_blog_remove_x_pingback' ); ?>
                

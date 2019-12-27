@@ -162,6 +162,18 @@ aside {
   margin-bottom: 15px;
   text-align: center;
 }
+.widgettitle {
+  font-size: 18px;
+  position: relative;
+  width: 100%;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+}
 
 /* Suche */
 .widget_search{ /* Container Widgetsuche */
