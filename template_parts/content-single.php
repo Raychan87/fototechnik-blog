@@ -25,7 +25,7 @@
 
         <div class="content-text" >
             <!-- Der Inhalt des Beitrages -->
-            <?php the_content('weiterlesen >>');?> <!-- Übergabe Text für gekürtze Beiträge -->
+            <?php the_content();?> <!-- Übergabe Text für gekürtze Beiträge -->
         </div>
         
         <!-- Hole die Kategorien für den Beitrag -->

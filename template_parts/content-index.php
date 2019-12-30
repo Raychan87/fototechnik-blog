@@ -24,7 +24,7 @@
         
         <div class="content-text" >
             <!-- Der Inhalt des Beitrages -->
-            <?php the_content('weiterlesen >>');?> <!-- Übergabe Text für gekürtze Beiträge -->
+            <?php the_excerpt();?> <!-- Übergabe Text für gekürtze Beiträge -->
         </div>
 
         <div class="content-date">

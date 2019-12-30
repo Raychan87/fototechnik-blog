@@ -121,7 +121,10 @@
         </div>
     <?php }?>
             
-    
-    
-            
-            
+    <!-- 'Weiterlesen...' Button fürs abkürzen der Beiträge -->
+    <?php function fototechnik_blog_excerpt_more() {
+      return '<p class="content-readmore"><a href="'.get_the_permalink().'" rel="nofollow">Weiterlesen...</a></p>';
+    }
+    add_filter( 'excerpt_more', 'fototechnik_blog_excerpt_more' );
+
+  
