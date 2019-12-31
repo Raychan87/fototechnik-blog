@@ -2,8 +2,8 @@
 <?php get_header(); ?> 
 
 <!-- Der Loop wird in ein Container gepackt -->
-<main class="container_main"> 
-    <div class="container_article">
+<main class="container-main"> 
+    <div class="container-article">
    
    <!-- Schlagwort als Überschrift und Beschreibung -->
    <h1><?php single_tag_title();?></h1>

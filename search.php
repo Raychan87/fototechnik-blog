@@ -2,10 +2,10 @@
 <?php get_header(); ?> 
 
 <!-- Der Loop wird in ein Container gepackt -->
-<main class="container_main"> 
-    <div class="container_article">
+<main class="container-main"> 
+    <div class="container-article">
     
-        <div class="container_search_h1">
+        <div class="container-search-h1">
           <h1>Suchergebnisse für: <?php echo $s ;?></h1>
         </div>
     

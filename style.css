@@ -68,7 +68,7 @@ a { /* alle Verlinkungen */
 
 /* Main */
 @media screen and (min-width: 720px) {
-  .container_main {
+  .container-main {
     width: 850px;
     margin-right: auto;
     margin-left: auto;
@@ -77,12 +77,12 @@ a { /* alle Verlinkungen */
   }
 }
 @media screen and (min-width: 1000px) {
-  .container_main {
+  .container-main {
     width: 1000px;
   }
 }
 @media screen and (min-width: 1170px) {
-  .container_main {
+  .container-main {
     width: 1170px;
   }
 }
@@ -99,7 +99,7 @@ article { /* Beitragsseite */
   margin-bottom: 15px;
   text-align: center;
 }
-.container_search_h1{ /* Suchergebnis Überschrift */
+.container-search-h1{ /* Suchergebnis Überschrift */
   text-align: center;
 }
 section { /* Suchergebnis Seite */
@@ -113,7 +113,7 @@ section { /* Suchergebnis Seite */
   float: center;
 }
 @media screen and (min-width: 720px) {
-    .container_article {
+    .container-article {
     float:left;
     width:80%;
     position: relative;
@@ -280,13 +280,19 @@ aside {
 }
 
 /* Footer */
-footer {
+.container_footer { /* Container des Footers */
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: #1e1e1e;
   color:rgba(255, 255, 255, 0.87);
   text-align: center;
   clear: both;
+}
+.footer-widget { /* Widgets im Footer */
+
+}
+.footer-copyright { /* Copyright Text im Footer */
+
 }
 
 /* Fonts */
