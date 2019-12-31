@@ -16,7 +16,7 @@ Tags:
 * {
 /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
- box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 body { /* alle HTML-Seiten */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -34,11 +34,18 @@ img { /* Alle Bilder */
   height:auto;
 }
 a { /* alle Verlinkungen */
-   color: #333333;
+  color: #333333;
+}
+
+/* Webseite (Header,Main,Footer) */
+@media screen and (min-width: 720px) {
+  .container-website {
+    margin:0 auto;
+  }
 }
 
 /* Header */
-.container_header {
+.container-header {
   padding:0px;
   margin: 0px;
   background:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
@@ -46,10 +53,14 @@ a { /* alle Verlinkungen */
   text-align: center;
   /* text-shadow: 0.2em 0.2em 0.5em #333333ad; */
 }
-@media screen and (min-width: 720px) {
-  .container_website {
-    margin:0 auto;
-  }
+.header-picture{ /* Header Hintergrundbild */
+
+}
+.header-title{ /* Webseiten Name */
+
+}
+.header-description{ /* Webseiten Beschreibung */
+
 }
 
 /* Navigation */
