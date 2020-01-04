@@ -13,7 +13,6 @@ label.responsive-nav-label {
   font-weight: 400;
   font-size: 14px; /* Schriftgröße */
   background: rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-  color: #333333; /* Schriftfarbe */
   line-height: 1.2; /* Höhe der Leiste */
   margin-top: 0px;
 
@@ -39,6 +38,8 @@ label.responsive-nav-label {
   /* Links */
   nav a {
     display: block; /* Den Block Klickbar machen */
+    color: #6b6b6b; /* Schriftfarbe */
+    text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
     text-decoration: none; /* Unterstreichen der Links deaktivieren */
   }
   
@@ -91,6 +92,8 @@ label.responsive-nav-label {
   /* Link des einzelnes Fensters des Untermenüs */
   nav ul ul li a {
     padding: 10px 10px 10px 10px;
+    color: #1d1d1d; /* Schriftfarbe für die Untermenüs */
+    text-transform: none; /* Großbuchstaben für Unteremenüs deaktivieren */
     width: max-content; /* Fenster größe richtet sich nach den Inhalt */
   }
     

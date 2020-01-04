@@ -26,14 +26,10 @@
 <!-- ??? -->
 <body <?php body_class();?>>
 <div class="container-website"> <!-- der Container "container_website" geht bis footer.php -->
-    <header class="container-header">
-        <div class="header-picture">
-            <!-- Headerbild wird eingefügt -->
-            <img src="<?php header_image(); ?>"height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-        </div>
+    <header class="container-header" style="background-image: url(<?php esc_url( header_image() ); ?>)">
         <div class="header-title">
             <!-- Namen der Webseite aufrufen -->
-            <h1><?php bloginfo( 'name' ); ?></a></h1> 
+            <h1><!--?php bloginfo( 'name' ); ?></a>--> </h1>
         </div>
         <div class="header-description">
             <!-- Untertitel bzw. Beschreibung der Webseite -->
