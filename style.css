@@ -20,7 +20,7 @@ Tags:
 }
 body { /* alle HTML-Seiten */
   font-family: "Open Sans", Arial;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.42857143;
   /* background-color: #ffffff; */ /* Hintergrundfarbe */
   background-image: url("assets/images/background.png");
@@ -31,10 +31,17 @@ img { /* Alle Bilder */
   /* Bilder in die passende Größe einstellen */
   max-width:100%;
   height:auto;
+  vertical-align: middle;
 }
 a { /* alle Verlinkungen */
   font-family: "PT Sans", Arial;
-  color: #333333; /* Schriftfarbe */
+  color: #3484cad0; /* Schriftfarbe */
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+}
+a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
+  color: #225f94d0;
+  border-color:  #225f94d0; /* Rahmen Farbe */
+  text-decoration: underline; /* Unterstreichen der Links */
 }
 
 /* Webseite (Header,Main,Footer) */
@@ -47,9 +54,6 @@ a { /* alle Verlinkungen */
 /* Header */
 .container-header {
   color: rgb(0, 0, 0);
-  text-align: center;
-  font-family: Roboto;
-  font-style: normal;
   background-position: center center;
   background-size: cover;
   padding: 160px 20px; 
@@ -94,84 +98,8 @@ a { /* alle Verlinkungen */
   }
 }
 
-/* Artikel - article */
-.post-meta { /* Kategory und Schlagwörter */
- font-size: .8em;
- opacity: .7; /* Durchsichtigkeit */
-}
-article { /* Beitragsseite */
-  margin-bottom: 15px; /* Artikel Abstand */
-}
-.container-search-h1{ /* Suchergebnis Überschrift */
-  text-align: center;
-}
-section { /* Suchergebnis Seite */
-  padding: 30px 15px;
-  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-  border: 1px solid #888; /* Rahmenfarbe */
-  margin-bottom: 15px;
-  text-align: center;
-}
-.wp-post-image { /* Beitragsbild */
-  float: center;
-}
-@media screen and (min-width: 720px) {
-    .container-article {
-    float:left;
-    width:80%;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
 /* Beitrag - Content */
-.content-post { /* Container des Beitrags */
-  text-align: center;
-  background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
-  padding: 30px 15px;
-  border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
-}
-.content-thumb { /* Beitragsbild */
-
-}
-.content-title { /* Überschrift des Beitrags */
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1.1;
-}
-.content-title a {
-  color:rgb(255, 0, 0);
-  font-size: 42px;
-}
-.content-text { /* Inhalt des Beitrags */
-
-}
-.content-date { /* Datum des Beitrags */
-
-}
-.content-author { /* Name des Authors im Beitrag */
-
-}
-.content-footer { /* Container der Kategorie, Schlagwörter und des "Bearbeiten" Button */
-
-}
-.content-categories { /* Kategorie Links */
-
-}
-.content-tages { /* Schlagwörter Links */
-
-}
-.content-list-type { /* Kategorie und Schlagwörter Überschrift */
-
-}
-.content-edit { /* "Bearbeiten"-Button */
-
-}
-.content-readmore { /* "Weiterlesen..."-Button */
-
-}
+  /* assets/css/custom_content.css */
 
 /* Statische Seite - Page */
 .page-post { /* Container der Seite */
@@ -191,6 +119,10 @@ section { /* Suchergebnis Seite */
 div.comment-form { /* Container des ganzen Kommentarbereichs */
   margin-top: 1px;
 }
+.container-comment {
+  
+}
+
 .comment-form input[type=text], /* Das Kommentator Eingabefeld */
 .comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
 .comment-form input[type=url], /* Das URL Eingabefeld */
@@ -250,6 +182,9 @@ aside {
 }
 
 /* Suche - Widget */
+.container-search-h1{ /* Suchergebnis Überschrift */
+  text-align: center;
+}
 .widget_search{ /* Container Widgetsuche */
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
 }

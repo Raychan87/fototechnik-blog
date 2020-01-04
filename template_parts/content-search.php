@@ -26,5 +26,12 @@
             <!-- Erzeugt Author und Datum des Beitrags -->
             <p>Von <span class="content-author"><?php the_author(); ?></span> <?php the_time('d. M Y');?>.</p>
         </div>
+
+        <div class="content-readmore" >
+            <!-- Erzeugt den 'Weiterlesen...'-Button -->
+            <a href="<?php the_permalink(); ?>">
+			    <?php esc_html_e( 'Weiterlesen...'); ?>
+            </a>
+        </div>
     </div>
 </article>

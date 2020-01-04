@@ -6,16 +6,14 @@
             <!-- Wenn Kommentare auf mehrere Seiten umgebrochen wird -->
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
-                    <div class="nav-previous"> <?php previous_comments_link( 'Ä̈ltere Kommentare' ); ?> </div>
+                    <div class="nav-previous"> <?php previous_comments_link( 'Ältere Kommentare' ); ?> </div>
                     <div class="nav-next"> <?php next_comments_link( 'Neuere Kommentare' ); ?> </div>
                 </div>
             <?php endif; ?>
-            
             <ul>
                 <!-- eine Liste der Kommentare -->
-                <?php wp_list_comments('type=all&callback=fototechnikblog_comments'); ?>
+                <?php wp_list_comments(['type'=>'all', 'callback'=>'fototechnik_blog_comments']); ?>
             </ul>
-            
             <!-- Wenn die Kommentare geschlossen sind -->
             <?php if ( ! comments_open() ) : ?>
                 <p>Die Kommentare für diesen Beitrag sind geschlossen.</p>
@@ -38,3 +36,5 @@
         )); ?>
     </div>
 </div>
+
+

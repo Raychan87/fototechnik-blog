@@ -2,19 +2,19 @@
 <article <?php post_class();?>>
     <div class="content-post">
 
-        <div class ="content-thumb" >
+        <div class ="content-single-thumb" >
             <!-- Beitragsbild anzeigen -->
             <?php the_post_thumbnail('medium'); ?>
         </div>
 
-        <div class="content-title">
+        <div class="content-single-title">
             <!-- Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird -->
             <?php if (is_archive()) { ?>
                 <!-- Überschrift des Beitrages -->
-                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                <h2><?php the_title();?></h2>
             <?php } else { ?>
                 <!-- Überschrift des Beitrages -->
-                <h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+                <h1><?php the_title();?></h1>
             <?php } ?>
         </div>
 
@@ -23,7 +23,7 @@
             <p><?php the_time('d. M Y');?> von <span class="content-author"><?php the_author(); ?>.</p>
         </div>
 
-        <div class="content-text" >
+        <div class="content-single-text" >
             <!-- Der Inhalt des Beitrages -->
             <?php the_content();?> <!-- Übergabe Text für gekürtze Beiträge -->
         </div>

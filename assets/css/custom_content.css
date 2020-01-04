@@ -1,0 +1,89 @@
+/*! custom_content.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+
+  article { /* Beitragsseite */
+    margin-bottom: 15px; /* Artikel Abstand */
+  }
+  @media screen and (min-width: 720px) {
+      .container-article {
+      float:left;
+      width:80%;
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .content-post { /* Container des Beitrags */
+    text-align: center;
+    background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+  }
+  .content-thumb img { /* Beitragsbild */
+    padding: 1px;
+    border: 1px solid #dddddd;
+  }
+  .content-title { /* Überschrift des Beitrags */
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+  .content-title a {
+    color:rgb(0, 0, 0);
+    font-size: 35px;
+  }
+  .content-title a:hover { /* Kategorie Links */
+    text-decoration: underline; /* Unterstreichen der Links */
+  }
+  .content-single-title h1 { /* Überschrift des Beitrags (Single) */
+    font-size: 35px;
+    margin: 0px;
+  }
+  .content-text { /* Inhalt des Beitrags */
+    font-style: italic;
+  }
+  .content-date { /* Datum des Beitrags */
+    color: #808080cc;
+    font-style: italic;
+  }
+  .content-author { /* Name des Authors im Beitrag */
+    text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
+    font-style: normal;
+    color: black;
+  }
+  .content-footer { /* Container der Kategorie, Schlagwörter und des "Bearbeiten" Button */
+    text-align: left;
+    font-style: italic;
+  }
+  .content-categories a { /* Kategorie Links */
+    padding-left: 10px;
+    font-style: italic;
+  }
+  .content-tages { /* Schlagwörter Links */
+    padding-left: 10px;
+    font-style: italic;
+  }
+  .content-list-type { /* Kategorie und Schlagwörter Überschrift */
+    opacity: 0.5;
+  }
+  .content-edit a { /* "Bearbeiten"-Button */
+    margin-top: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid; /* Rahmen */
+    display: inline-block;
+    text-align: center;
+  }
+  .content-readmore a { /* "Weiterlesen..."-Button */
+    padding: 10px 20px; /* Rahmen Abstand */
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid; /* Rahmen */
+    display: inline-block;
+  }
+ 
+
+

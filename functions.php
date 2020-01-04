@@ -46,9 +46,12 @@
     <!-- HTML5 Converter -->
     <?php add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));?> 
 
-    <!-- Style des CSS Navigations Menü laden -->
+    <!-- CSS Styles importieren -->
     <?php function custom_navbar_styles() {  
+        /* Navigations Menü laden */
         wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
+        /* Betrags Style laden */
+        wp_enqueue_style( 'custom_content', get_template_directory_uri() . '/assets/css/custom_content.css');
       } 
     add_action('wp_enqueue_scripts','custom_navbar_styles'); ?>
 
@@ -109,9 +112,7 @@
     <!-- Die Funktion für einen einzelnen Kommentar -->
     <?php function fototechnik_blog_comments( $comment, $args, $depth ) { 
         $GLOBALS['comment'] = $comment; ?>
-
         <li class="single-comment">
-        <!-- <?php echo get_avatar( $comment, $size='90' ); ?> --> <!-- Benutzerbild wird ausgegeben von 90 Pixel-->
         <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
         <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
         <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
@@ -120,13 +121,7 @@
             <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
         </div>
     <?php }?>
-            
-    <!-- 'Weiterlesen...' Button fürs abkürzen der Beiträge -->
-    <?php function fototechnik_blog_excerpt_more() {
-      return '<p class="content-readmore"><a href="'.get_the_permalink().'" rel="nofollow">Weiterlesen...</a></p>';
-    }
-    add_filter( 'excerpt_more', 'fototechnik_blog_excerpt_more' ); ?>
-
+          
     <!-- Fonts Import -->
     <?php function fototechnik_blog_font() {?>
       <style>
