@@ -1,14 +1,22 @@
 # FotoTechnik-Blog
 
 ### Beschreibung
-Das Theme wurde entwickelt für meine Wordpress Webseite FotoTour-und-Technik.de. Das Theme ist schlank und modern aufgebaut. Es soll auch der DSGVO entsprechen und noch viel mehr. Da die Webseite unabhängig von externen Quellen funktionieren soll. Zudem wird der Sicherheitsstandard auf den höchsten mir möglichen Stand gebracht. 
+Das Wordpress Theme „FotoTechnik-Blog“ wurde für meine Webseite „FotoTour-und-Technik.de“ entwickelt. Das Theme ist dadurch sehr schlank was der Performance und der Sicherheit zugutekommt. Das Theme wird keine externen Quellen benutzen und hat den höchsten Sicherheitsstandard der mit meinem Wissen möglich ist. Dadurch ist das Theme auch DSGVO konform.
 
-Mit diesen Theme sind fast alle Sicherheits-Plugin's unnötig, da viele Funktionen hier abgedeckt werden. Die Funktionen die fehlen müssen in der .htaccess abgearbeitet werden.
+Mit diesen Theme werden alle Sicherheits-Plugin’s unnötig (außer Kommentarspamschutz), da viele Funktionen hier abgedeckt werden. Weitere Funktionen die fehlen müssen in der .htaccess abgedeckt werden.
+Das macht die Webseite komplett unabhängig.
+
+Wenn Ihr Interesse habt, könnt Ihr das Theme gerne weiter verwenden, da ich mich freuen würde wenn viele Webseiten unabhängig von Google, Microsoft und Co sind.
+
 
 ### Description
-The theme was developed for my Wordpress website FotoTour-und-Technik.de. The theme is slim and modern. It should correspond also to the DSGVO and still much more. Because the website should work independently from external sources. In addition, the security standard is brought to the highest level possible for me. 
+The Wordpress Theme "FotoTechnik-Blog" was developed for my website "FotoTour-und-Technik.de". The theme is very slim which is good for performance and security. The theme will not use any external sources and has the highest security standard that is possible with my knowledge. Therefore the theme is also DSGVO compliant.
 
-With this theme almost all security plugins are unnecessary, because many functions are covered here. The functions that are missing have to be processed in the .htaccess.
+With this theme all security plugins are unnecessary (except comment spam protection), because many functions are covered here. Other functions that are missing must be covered in the .htaccess.
+This makes the website completely independent.
+
+If you are interested, you are welcome to use the theme further, because I would be happy if many websites are independent from Google, Microsoft and Co.
+
 
 ### Funktionen und Features
 
@@ -19,10 +27,12 @@ With this theme almost all security plugins are unnecessary, because many functi
 - Headerbild lässt sich anpassen
 - Kommentare (Ohne E-Mail Zwang)
 - Widgets (in Sitebar und Footer)
+- Fonts (PT Sans, Open Sans)
 
 
 ### Sicherheit
 
+- keine Javascripts
 - REST API Whitelist
 - Wordpress Version wird ausgeblendet
 - Login Fehlerausgabe ist deaktiviert
