@@ -7,30 +7,20 @@
 <main class="container-main"> 
     <div class="container-article">
         <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
                 
-                <!-- Beitragsbild aufrufen -->
-                <?php the_post_thumbnail('post-thumbnail'); ?>
-        
-                <!-- Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen -->
-                <?php get_template_part('template_parts/content','single');?>
+            <!-- Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen -->
+            <?php get_template_part('template_parts/content','single');?>
+
+            <div class="content-single-next">
+                <!-- Beitrags Navigations (vor und zurück) -->
+                <?php previous_post_link(  ); ?>
+                <?php next_post_link();?>
+            </div>
             
-                <!-- Kommentare -->
-                <?php comments_template();?>
-        
-                <!-- Beitrag kürzen -->
-                <?php wp_link_pages() ?>
-
-            <?php endwhile; else : ?>
-                
-                <!-- Fehlermeldung, es konnten keine Beiträge gefunden werden -->
-                <?php get_template_part('template_parts/content','error');?>
-
-        <?php endif; ?>
-
-        <!-- Beitrags Navigations (vor und zurück) -->
-        <?php previous_posts_link();?>
-        <?php next_posts_link();?>
+            <!-- Kommentare -->
+            <?php comments_template();?>
+        <?php endwhile; ?>
     </div>
     <!-- sidebar.php aufrufen -->
     <?php get_sidebar() ;?>

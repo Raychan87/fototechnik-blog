@@ -1,4 +1,4 @@
-/*! custom_navbar.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+/*! custom_navbar.css v1.1 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 
 /* Ausblenden der Checkbox und des Labels */
 input#responsive-nav,
@@ -42,6 +42,12 @@ label.responsive-nav-label {
     text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
     text-decoration: none; /* Unterstreichen der Links deaktivieren */
   }
+
+  /* Links mit Mauspfeil */
+  nav a:hover {
+    text-decoration: none; /* Unterstreichen der Links deaktivieren */
+    color: #1d1d1d; /* Schriftfarbe */
+  }
   
   /* Listenelemente der ersten Ebene */
   nav ul li {
@@ -73,28 +79,27 @@ label.responsive-nav-label {
     position: absolute;
     top: -9999px;
     left: -9999px;
-
     background: rgba(247, 247, 247); /* Hintergrundfarbe */ 
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
-    z-index: 1; /* Damit das Untermenü über die Artikel steht */
+    z-index: 1; /* Damit das Untermenü über den Artikel steht */
     border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
     border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
   }
   
   /* Einzelnes Fenster des Untermenüs */
   nav ul ul li {
-    text-align: left;
     float: none;
-    border-bottom: 1px solid rgba(85, 85, 85, 0.05); 
+    border-bottom: 1px solid rgba(85, 85, 85, 0.05);
   }
   
   /* Link des einzelnes Fensters des Untermenüs */
   nav ul ul li a {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 20px;
     color: #1d1d1d; /* Schriftfarbe für die Untermenüs */
     text-transform: none; /* Großbuchstaben für Unteremenüs deaktivieren */
     width: max-content; /* Fenster größe richtet sich nach den Inhalt */
+    margin-right: 30px; /* Das Fenster muss nach rechts größer werden wegen den Pfeilen */
   }
     
   /* Untermenü vom Untermenü */
@@ -105,11 +110,10 @@ label.responsive-nav-label {
 
   /* Pfeil nach unten für Buttons mit Untermenüs */
   nav li > a:after {
-    position: relative;
     float: right;
     content: '';
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 7px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid rgb(138, 138, 138);
@@ -118,10 +122,9 @@ label.responsive-nav-label {
 
    /* Pfeil nach rechts für Untermenüs mit Untermenüs */
    nav ul ul li > a:after {
-    position: relative;
-    float: right;
-    content: '';
-    margin-left: 15px;
+    position: absolute;
+    top: 25%;
+    left: 85%;
     margin-top: 5px;
     border-left: 5px solid rgb(180, 180, 180);
     border-right: 5px solid transparent;

@@ -84,6 +84,8 @@
     border: 1px solid; /* Rahmen */
     display: inline-block;
   }
- 
+  .content-single-next { /* Nächster Beitrag und letzter Beitrag Button */
+
+  }
 
 
