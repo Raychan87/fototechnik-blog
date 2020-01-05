@@ -161,6 +161,15 @@
               url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/pt-sans/pt-sans-v11-latin-italic.woff2) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
               url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/pt-sans/pt-sans-v11-latin-italic.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
         } 
+         /* open-sans-light(300) - latin */
+         @font-face {
+        font-family: 'Open Sans Light';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Open Sans Light'), local('OpenSans-Light'),
+            url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff2) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
       </style>
     <?php } ?>
     <?php add_action('wp_head','fototechnik_blog_font'); ?>

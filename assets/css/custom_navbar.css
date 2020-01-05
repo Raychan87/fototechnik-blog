@@ -12,8 +12,8 @@ label.responsive-nav-label {
   width: 100%; 
   font-weight: 400;
   font-size: 14px; /* Schriftgröße */
-  background: rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-  line-height: 1.2; /* Höhe der Leiste */
+  background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
+  line-height: 1.4; /* Höhe der Leiste */
   margin-top: 0px;
 
   /* Schattenrand */
@@ -37,6 +37,7 @@ label.responsive-nav-label {
   
   /* Links */
   nav a {
+    font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
     display: block; /* Den Block Klickbar machen */
     color: #6b6b6b; /* Schriftfarbe */
     text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
@@ -54,7 +55,7 @@ label.responsive-nav-label {
     position: relative;
     float: left;
     list-style: none;
-    transition: 0.75s; /* Die Zeit der Makierung des Reiters */
+    transition: 0.7s; /* Die Zeit der Makierung des Reiters */
   }
   
   /* die Links der Listenelemente der ersten Ebene */
@@ -64,7 +65,7 @@ label.responsive-nav-label {
 
   /* Die Hintergrundfarbe nach dem markieren */
   nav ul li:hover {
-    background: #dad8d8;
+    background: #e4e3e3;
   }
 
    /* Untermenü */
@@ -79,7 +80,9 @@ label.responsive-nav-label {
     position: absolute;
     top: -9999px;
     left: -9999px;
-    background: rgba(247, 247, 247); /* Hintergrundfarbe */ 
+
+    line-height: 0.8; /* Höhe der Leiste */
+    background: rgb(255, 255, 255); /* Hintergrundfarbe */ 
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
     z-index: 1; /* Damit das Untermenü über den Artikel steht */
@@ -90,16 +93,14 @@ label.responsive-nav-label {
   /* Einzelnes Fenster des Untermenüs */
   nav ul ul li {
     float: none;
-    border-bottom: 1px solid rgba(85, 85, 85, 0.05);
   }
   
   /* Link des einzelnes Fensters des Untermenüs */
   nav ul ul li a {
-    padding: 10px 0px 10px 20px;
+    padding: 10px 30px 10px 20px;
     color: #1d1d1d; /* Schriftfarbe für die Untermenüs */
     text-transform: none; /* Großbuchstaben für Unteremenüs deaktivieren */
     width: max-content; /* Fenster größe richtet sich nach den Inhalt */
-    margin-right: 30px; /* Das Fenster muss nach rechts größer werden wegen den Pfeilen */
   }
     
   /* Untermenü vom Untermenü */
@@ -113,31 +114,30 @@ label.responsive-nav-label {
     float: right;
     content: '';
     margin-left: 10px;
-    margin-top: 7px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid rgb(138, 138, 138);
-    border-bottom: 5px solid transparent;
+    margin-top: 9px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgb(138, 138, 138);
+    border-bottom: 4px solid transparent;
   }
 
    /* Pfeil nach rechts für Untermenüs mit Untermenüs */
    nav ul ul li > a:after {
     position: absolute;
-    top: 25%;
-    left: 85%;
-    margin-top: 5px;
-    border-left: 5px solid rgb(180, 180, 180);
-    border-right: 5px solid transparent;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    top: 10%;
+    right: 10px;
+    border-left: 4px solid rgb(180, 180, 180);
+    border-right: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
   }
 
   /* Ausblenden des Pfeils für Buttons ohne Untermenü */
   nav li > a:only-child:after {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
   }
 
   /*-------------------------------------------------------------*/
