@@ -26,6 +26,18 @@
     padding: 1px;
     border: 1px solid #dddddd;
   }
+  .content-single-thumb {
+    border: 1px;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-color: #b4b4b4;
+  }
   .content-title { /* Überschrift des Beitrags */
     margin-top: 0;
     margin-bottom: 0;
@@ -40,10 +52,15 @@
   }
   .content-single-title h1 { /* Überschrift des Beitrags (Single) */
     font-size: 35px;
-    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   .content-text { /* Inhalt des Beitrags */
     font-style: italic;
+  }
+  .content-single-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .content-date { /* Datum des Beitrags */
     color: #808080cc;
@@ -62,7 +79,10 @@
     padding-left: 10px;
     font-style: italic;
   }
-  .content-tages { /* Schlagwörter Links */
+  .content-tags { /* Schlagwörter Links */
+    margin-top: 8px;
+  }
+  .content-tags a { /* Schlagwörter Links */
     padding-left: 10px;
     font-style: italic;
   }

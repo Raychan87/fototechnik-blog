@@ -2,11 +2,6 @@
 <article <?php post_class();?>>
     <div class="content-post">
 
-        <div class ="content-single-thumb" >
-            <!-- Beitragsbild anzeigen -->
-            <?php the_post_thumbnail('medium'); ?>
-        </div>
-
         <div class="content-single-title">
             <!-- Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird -->
             <?php if (is_archive()) { ?>
@@ -18,16 +13,23 @@
             <?php } ?>
         </div>
 
-        <div class="content-date">
-            <!-- Erzeugt Author und Datum des Beitrags -->
-            <p><?php the_time('d. M Y');?> von <span class="content-author"><?php the_author(); ?>.</p>
-        </div>
+        <?php if (has_post_thumbnail()) { ?>
+            <div class ="content-single-thumb" >
+                <!-- Beitragsbild anzeigen -->
+                <?php the_post_thumbnail('medium_large'); ?>
+            </div>
+        <?php } ?>
 
         <div class="content-single-text" >
             <!-- Der Inhalt des Beitrages -->
             <?php the_content();?> <!-- Übergabe Text für gekürtze Beiträge -->
         </div>
         
+        <div class="content-date">
+            <!-- Erzeugt Author und Datum des Beitrags -->
+            <p><?php the_time('d. M Y');?> von <span class="content-author"><?php the_author(); ?>.</p>
+        </div>
+
         <!-- Hole die Kategorien für den Beitrag -->
 		<?php $categories_list = get_the_category_list( ' ' ); ?>
 
