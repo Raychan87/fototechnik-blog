@@ -17,11 +17,13 @@
             <?php echo '<div class="content-categories">' . wp_kses_data( $categories_list ) . '</div>'; ?>
         <?php } ?>
 
-        <div class ="content-thumb" >
-            <!-- Beitragsbild anzeigen -->
-            <?php the_post_thumbnail('medium'); ?>
-        </div>
-        
+        <?php if (has_post_thumbnail()) { ?>
+            <div class ="content-thumb" >
+                <!-- Beitragsbild anzeigen -->
+                <?php the_post_thumbnail('medium_large'); ?>
+            </div>
+        <?php } ?>
+
         <div class="content-text" >
             <!-- Der Inhalt des Beitrages -->
             <?php the_excerpt();?> <!-- Übergabe Text für gekürtze Beiträge -->

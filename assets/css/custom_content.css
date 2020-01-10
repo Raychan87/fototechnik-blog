@@ -14,7 +14,6 @@
     }
   }
   .content-post { /* Container des Beitrags */
-    text-align: center;
     background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
     padding-top: 30px;
     padding-left: 15px;
@@ -23,8 +22,16 @@
     border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
   }
   .content-thumb img { /* Beitragsbild */
-    padding: 1px;
-    border: 1px solid #dddddd;
+    border: 1px;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-color: #b4b4b4;
   }
   .content-single-thumb {
     border: 1px;
@@ -32,20 +39,20 @@
     border-width: 1px;
     padding-top: 5px;
     padding-right: 5px;
-    padding-bottom: 1px;
+    padding-bottom: 5px;
     padding-left: 5px;
     margin-left: 40px;
     margin-right: 40px;
     border-color: #b4b4b4;
   }
   .content-title { /* Überschrift des Beitrags */
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1.1;
+    margin-bottom: 10px;
+    text-align: center;
   }
   .content-title a {
     color:rgb(0, 0, 0);
     font-size: 35px;
+    font-family: "Open Sans";
   }
   .content-title a:hover { /* Kategorie Links */
     text-decoration: underline; /* Unterstreichen der Links */
@@ -54,9 +61,13 @@
     font-size: 35px;
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: center;
   }
   .content-text { /* Inhalt des Beitrags */
     font-style: italic;
+    text-align: center;
+    padding-left: 35px;
+    padding-right: 35px;
   }
   .content-single-text {
     margin-top: 20px;
@@ -65,6 +76,7 @@
   .content-date { /* Datum des Beitrags */
     color: #808080cc;
     font-style: italic;
+    text-align: center;
   }
   .content-author { /* Name des Authors im Beitrag */
     text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
@@ -75,14 +87,19 @@
     text-align: left;
     font-style: italic;
   }
-  .content-categories a { /* Kategorie Links */
+  .content-categories { /* Kategorie Links */
+    padding-bottom: 10px;
+    font-style: italic;
+    text-align: center;
+  }
+  .content-single-categories a { /* Kategorie Links */
     padding-left: 10px;
     font-style: italic;
   }
-  .content-tags { /* Schlagwörter Links */
+  .content-single-tags { /* Schlagwörter Links */
     margin-top: 8px;
   }
-  .content-tags a { /* Schlagwörter Links */
+  .content-single-tags a { /* Schlagwörter Links */
     padding-left: 10px;
     font-style: italic;
   }
@@ -95,6 +112,9 @@
     padding-right: 4px;
     border: 1px solid; /* Rahmen */
     display: inline-block;
+    text-align: center;
+  }
+  .content-readmore {
     text-align: center;
   }
   .content-readmore a { /* "Weiterlesen..."-Button */

@@ -44,11 +44,11 @@
                     if ( $categories_list || $tags_list ) { 
                         // Ausgabe der Kategorie Liste
                         if ( $categories_list ) {
-                            echo '<div class="content-categories"><span class="content-list-type">Kategorie  </span>' . wp_kses_data( $categories_list ) . '</div>';
+                            echo '<div class="content-single-categories"><span class="content-list-type">Kategorie  </span>' . wp_kses_data( $categories_list ) . '</div>';
                         }
                         // Ausgabe der Stichwörter Liste
                         if ( $tags_list ) {
-                            echo '<div class="content-tags"><span class="content-list-type">Stichwörter  </span>' . wp_kses_data( $tags_list ) . '</div>';
+                            echo '<div class="content-single-tags"><span class="content-list-type">Stichwörter  </span>' . wp_kses_data( $tags_list ) . '</div>';
                         }
                     }
                 }?>
