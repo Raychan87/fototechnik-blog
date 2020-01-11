@@ -22,16 +22,11 @@
     border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
   }
   .content-thumb img { /* Beitragsbild */
-    border: 1px;
     border-style: solid;
-    border-width: 1px;
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
+    border-width: 2px;
     margin-left: 40px;
     margin-right: 40px;
-    border-color: #b4b4b4;
+    border-color: #000;
   }
   .content-single-thumb {
     border: 1px;
