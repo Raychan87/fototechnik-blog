@@ -14,7 +14,7 @@
         </div>
 
         <?php if (has_post_thumbnail()) { ?>
-            <div class ="content-single-thumb" >
+            <div class ="content-thumb" >
                 <!-- Beitragsbild anzeigen -->
                 <?php the_post_thumbnail('medium_large'); ?>
             </div>

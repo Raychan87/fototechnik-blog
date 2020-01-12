@@ -129,12 +129,68 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 }
 
 /* Kommentare */
-div.comment-form { /* Container des ganzen Kommentarbereichs */
-  margin-top: 1px;
-}
-.container-comment {
+.container-comment { /* Container des ganzen Kommentarbereichs */
   
 }
+.comment-list{ /* Container der Kommentarliste */
+  list-style: none; /* Deaktiviert die Listenpunkte */
+  border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+  background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.comment-title{ /* Kommentarbereichs Überschrift */
+  margin-left:  15px;
+  margin-right: 15px;  
+}
+.comment-single { /* Einzelnes Kommentarfeld */
+  border-top: 1px solid rgb(197, 196, 196); /* Rahmenfarbe */
+  padding: 15px 5px 5px 5px;
+  /* top, right, bottom, left */
+  margin: 15px 15px 0px 15px; 
+}
+.children { /* Vor dem Antwortfeld im Kommentarbereich */
+  list-style: none; /* Deaktiviert die Listenpunkte */
+  margin-bottom: 0px;
+}
+.comment-author{ /* Authorsname */
+  margin-top: 0px;
+  font-size: 14px;
+  font-family: 'Open Sans Light Bold';
+}
+.comment-author a { /* Authorname Verlinkung */
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+  pointer-events: none;
+  cursor: default;
+  color: rgb(0, 0, 0);
+  font-family: 'Open Sans Light Bold';
+}
+.comment-date-time{ /* Text vom Datum und Zeit */
+  font-style: italic;
+  font-size: 11px;
+  color: #636363;
+}
+.comment-reply-button a { /* "Antworten"- Button */
+  padding: 10px 20px; /* Rahmen Abstand */
+  margin: 0px;
+  border: 1px solid; /* Rahmen */
+  display: inline-block;
+}
+.comment-reply-button a:hover { /* "Antworten"- Button */
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
+  transition: 0.25s; /* Die Zeit der Makierung des Reiters */
+}
+.comment-form { /* Container des Kommentar Eingabefeldes */
+  list-style: none; /* Deaktiviert die Listenpunkte */
+  border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+  background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
 
 .comment-form input[type=text], /* Das Kommentator Eingabefeld */
 .comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
@@ -149,17 +205,6 @@ div.comment-form { /* Container des ganzen Kommentarbereichs */
 .comment-form input[type=submit]{ /* Kommentar "abschicken" Button */
   background: rgba(255,255,255, 0.33);
   border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
-}
-.commend-list ul { /* Container des Ausgabefeld der Kommentare */
-  padding: 0;
-  margin: 0;
-  list-style:none; /* Listen Punkte entfernen */
-}
-.single-comment { /* Einzelnes Kommentarfeld */
-  padding: 2px;
-}
-.single-comment .childeren { /* Das Antwortfeld im Kommentarfeld */
-  padding: 2px;
 }
 
 /* Seitenleiste - Sidebar */

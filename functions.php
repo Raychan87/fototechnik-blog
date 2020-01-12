@@ -112,11 +112,11 @@
     <!-- Die Funktion für einen einzelnen Kommentar -->
     <?php function fototechnik_blog_comments( $comment, $args, $depth ) { 
         $GLOBALS['comment'] = $comment; ?>
-        <li class="single-comment">
-        <p><?php echo get_comment_author_link(); ?></p> <!-- der Link des Kommentierenden -->
-        <p><?php echo get_comment_date("d.m.Y"); ?>, <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
+        <li class="comment-single">
+        <p class="comment-author"><?php echo get_comment_author_link(); ?> sagte:</p> <!-- der Link des Kommentierenden -->
+        <p class="comment-date-time">am <?php echo get_comment_date("d.M.Y"); ?> um <?php echo get_comment_time(); ?> Uhr</p> <!-- Datum und Zeit -->
         <?php comment_text(); ?> <!-- Kommentar Text und der Name des Kommentierenden wird ausgegeben -->
-        <div class="reply">
+        <div class="comment-reply-button">
             <!-- Button um auf Kommentare zu antworten. -->
             <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
         </div>
@@ -169,6 +169,15 @@
         src: local('Open Sans Light'), local('OpenSans-Light'),
             url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff2) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
             url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* open-sans-semi-Blod(600) - latin */
+      @font-face {
+        font-family: 'Open Sans Light Bold';
+        font-style: normal;
+        font-weight: 600;
+        src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+            url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff2) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url(/wp-content/themes/FotoTechnik-Blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
       }
       </style>
     <?php } ?>

@@ -1,8 +1,19 @@
 <div class="container-comment">
-    <!-- Ausgabe der Kommentare -->
-    <div class="comment-list">
-        <!-- Wird geprüft ob Kommentare vorhanden sind -->
-        <?php if ( have_comments() ) : ?>
+    <!-- Wird geprüft ob Kommentare vorhanden sind -->
+    <?php if ( have_comments() ) : ?>
+        <!-- Ausgabe der Kommentare -->
+        <div class="comment-list">
+            <!-- Überschrift der Kommentare -->
+            <h2 class="comment-title">
+                <?php $comments_number = get_comments_number(); ?>
+                <!-- Wenn es nur ein Kommentar ist -->
+                <?php if ('1' === $comments_number ) {
+                    printf('1 Kommentar'); 
+                /* Oder wenn es mehr als ein Kommentar ist */
+                } else {
+                    printf('%1$s Kommentare',$comments_number);
+                }?>
+            </h2>
             <!-- Wenn Kommentare auf mehrere Seiten umgebrochen wird -->
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
@@ -10,16 +21,16 @@
                     <div class="nav-next"> <?php next_comments_link( 'Neuere Kommentare' ); ?> </div>
                 </div>
             <?php endif; ?>
-            <ul>
-                <!-- eine Liste der Kommentare -->
-                <?php wp_list_comments(['type'=>'all', 'callback'=>'fototechnik_blog_comments']); ?>
-            </ul>
+
+            <!-- eine Liste der Kommentare -->
+            <?php wp_list_comments(['type'=>'all', 'callback'=>'fototechnik_blog_comments']); ?>
+
             <!-- Wenn die Kommentare geschlossen sind -->
             <?php if ( ! comments_open() ) : ?>
                 <p>Die Kommentare für diesen Beitrag sind geschlossen.</p>
             <?php endif; ?>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?> 
 
     <div class="comment-form">
         <!-- Kommentar Formular -->
