@@ -52,6 +52,8 @@
         wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
         /* Betrags Style laden */
         wp_enqueue_style( 'custom_content', get_template_directory_uri() . '/assets/css/custom_content.css');
+        /* Kommentar Style laden */
+        wp_enqueue_style( 'custom_comment', get_template_directory_uri() . '/assets/css/custom_comment.css');
       } 
     add_action('wp_enqueue_scripts','custom_navbar_styles'); ?>
 
