@@ -90,10 +90,10 @@
         array(
             'name' => 'Seitenleiste rechts', //Anzeige Name im Widget Menü
             'id' => 'sidebar_widget', //Die ID für die Widgets
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h5 class="widgettitle">',
-            'after_title'   => '</h5>',
+            'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
+			      'after_widget'	 => '</div>',
+			      'before_title'	 => '<div class="widget-title"><h3>',
+			      'after_title'	   => '</h3></div>',
           )
       );
       // Footer Abschnitt
@@ -101,10 +101,10 @@
         array(
             'name' => 'Footer-Abschnitt', //Anzeige Name im Widget Menü
             'id' => 'footer_widget', //Die ID für die Widgets
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h5 class="widgettitle">',
-            'after_title'   => '</h5>',
+            'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
+			      'after_widget'	 => '</div>',
+			      'before_title'	 => '<div class="widget-title"><h3>',
+			      'after_title'	   => '</h3></div>',
           )
       );
     } 

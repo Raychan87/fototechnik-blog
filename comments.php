@@ -34,9 +34,9 @@
     <div class="container-comment">
         <!-- Kommentar Formular -->
         <?php $fields = array(
-            'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="<em>Dein Name (erforderlich)</em>" name="author" type="text" value="' .
+            'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="Dein Name (erforderlich)" name="author" type="text" value="' .
              esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
-            'email'  =>'<p class="comment-form-email">' . '<input id="email" placeholder="<em>deine-email@beispiel.com (optional)</em>" name="email" type="text" value="' . 
+            'email'  =>'<p class="comment-form-email">' . '<input id="email" placeholder="deine-email@beispiel.de (optional)" name="email" type="text" value="' . 
             esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . ' />'.'</p>',
             'url'    => '<p class="comment-form-url">' .'<input id="url" name="url" placeholder="http://deine-webseite.de (optional)" type="text" value="' . 
             esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .'</p>',
