@@ -34,14 +34,18 @@
     <div class="container-comment">
         <!-- Kommentar Formular -->
         <?php $fields = array(
-            'author' => '<p><label for="author">' . __( 'Dein Name <em>(erforderlich)</em>' ) . '</label><br /><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-            'email' => '<p><label for="email">' . __( 'Deine E-Mail-Adresse <em>(optional)</em>' ) . '</label><br /><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"/></p>',
-            'url' => '<p><label for="url">' . __( 'Deine Website <em>(optional)</em>') . '</label><br /><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+            'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="<em>Dein Name (erforderlich)</em>" name="author" type="text" value="' .
+             esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
+            'email'  =>'<p class="comment-form-email">' . '<input id="email" placeholder="<em>deine-email@beispiel.com (optional)</em>" name="email" type="text" value="' . 
+            esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . ' />'.'</p>',
+            'url'    => '<p class="comment-form-url">' .'<input id="url" name="url" placeholder="http://deine-webseite.de (optional)" type="text" value="' . 
+            esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .'</p>',
+            'cookies'=> '',
         ); /* https://codex.wordpress.org/Function_Reference/comment_form */
         comment_form( array (
             'fields' => apply_filters( 'comment_form_default_fields', $fields ), 
-            'comment_notes_before' => '<p>Bitte verfasse einen Kommentar.</p>', 
-            'comment_notes_after' => '<p>Dein Kommentar wird vor der Freischaltung von einem Admin geprüft.</p>', 
+            'comment_notes_before' => '', 
+            'comment_notes_after' => '<p class="comment-notes-after-text">Dein Kommentar wird vor der Veröffentlichung von mir geprüft.</p>', 
             'title_reply' => __( '<h2>Schreibe einen Kommentar</h2>' ),
             'logged_in_as' => '<p class="logged-in-as">'
                                 . sprintf( __( 'Angemeldet als %1$s. <a href="%2s" title="Abmelden deines Accounts">abmelden?</a>'), 
