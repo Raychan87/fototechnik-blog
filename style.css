@@ -143,14 +143,14 @@ aside {
 }
 
 /* Widgets */
-.widget {
+.widget { /* Container Widget */
   padding: 15px 15px;
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
   margin-bottom: 15px;
   text-align: center;
 }
-.widget-title {
+.widget-title { /* Widget Überschriften Box */
   position: relative;
   width: 100%;
   margin-top: 10px;
@@ -159,7 +159,7 @@ aside {
   display: inline-block;
   text-align: center;
 }
-.widget-title h3 {
+.widget-title h3 { /* Widget Überschrift */
   font-size: 14px;
   font-family: "Open Sans Light";
   font-weight: 400;
@@ -171,7 +171,7 @@ aside {
   z-index: 5;
   border: 1px solid rgb(161, 161, 161);
 }
-.widget-title::after {
+.widget-title::after { /* Widget Überschrift Hintergrundstrich */
   content: '';
   position: absolute;
   right: 0;
