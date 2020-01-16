@@ -2,7 +2,7 @@
 
 .comment-list{ /* Container der Kommentarliste */
     list-style: none; /* Deaktiviert die Listenpunkte */
-    border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+    border:1px solid #a1a1a1; /* Rahmenfarbe */
     background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
     padding: 5px;
     margin-top: 15px;
@@ -13,10 +13,10 @@
     margin-right: 15px;  
   }
   .comment-single { /* Einzelnes Kommentarfeld */
-    border-top: 1px solid rgb(197, 196, 196); /* Rahmenfarbe */
-    padding: 15px 5px 5px 5px;
+    border-top:1px solid #c5c4c4; /* Rahmenfarbe */
+    padding:15px 5px 5px;
     /* top, right, bottom, left */
-    margin: 15px 15px 0px 15px; 
+    margin:15px 15px 0;
   }
   .children { /* Vor dem Antwortfeld im Kommentarbereich */
     list-style: none; /* Deaktiviert die Listenpunkte */
@@ -31,7 +31,7 @@
     text-decoration: none; /* Unterstreichen der Links deaktivieren */
     pointer-events: none;
     cursor: default;
-    color: rgb(0, 0, 0);
+    color:#000;
     font-family: 'Open Sans Light Bold';
   }
   .comment-date-time{ /* Text vom Datum und Zeit */
@@ -41,13 +41,13 @@
   }
   .comment-reply-button a { /* "Antworten"- Button */
     padding: 10px 20px; /* Rahmen Abstand */
-    margin: 0px;
+    margin: 0;
     border: 1px solid; /* Rahmen */
     display: inline-block;
   }
   .comment-reply-button a:hover { /* "Antworten"- Button */
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
-    transition: 0.25s; /* Die Zeit der Makierung des Reiters */
+    transition: .25s; /* Die Zeit der Makierung des Reiters */
   }
   .container-comment { /* Container des Kommentar Eingabefeldes */
     list-style: none; /* Deaktiviert die Listenpunkte */
@@ -80,14 +80,14 @@
   .comment-form input[type=text], /* Das Kommentator Eingabefeld */
   .comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
   .comment-form input[type=url] { /* Das URL Eingabefeld */
-    border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+    border:1px solid #a1a1a1; /* Rahmenfarbe */
     box-shadow: inset 0 1px 3px rgna(0,0,0,25); /* Schatten vom Feld Rand nach innen */
-    margin: .2em 0 1em 0;
+    margin:.2em 0 1em;
     width: 50%; /* die Breite der Elemente */
   }
   .comment-form input[type=submit] { /* Kommentar "abschicken" Button */
     padding: 10px 20px; /* Rahmen Abstand */
-    margin: 0px;
+    margin: 0;
     border: 1px solid; /* Rahmen */
     display: inline-block;
     cursor: pointer;
@@ -99,5 +99,5 @@
     border-color:  #225f94d0; /* Rahmen Farbe */
     text-decoration: underline; /* Unterstreichen der Links */
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
-    transition: 0.25s; /* Die Zeit der Makierung des Reiters */
+    transition: .25s; /* Die Zeit der Makierung des Reiters */
   }
