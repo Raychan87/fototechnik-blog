@@ -55,7 +55,7 @@ label.responsive-nav-label {
     position: relative;
     float: left;
     list-style: none;
-    transition: 0.7s; /* Die Zeit der Makierung des Reiters */
+    transition: .7s; /* Die Zeit der Makierung des Reiters */
   }
   
   /* die Links der Listenelemente der ersten Ebene */
@@ -81,8 +81,8 @@ label.responsive-nav-label {
     top: -9999px;
     left: -9999px;
 
-    line-height: 0.8; /* Höhe der Leiste */
-    background: rgb(255, 255, 255); /* Hintergrundfarbe */ 
+    line-height: .8; /* Höhe der Leiste */
+    background: #fff; /* Hintergrundfarbe */ 
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
     z-index: 1; /* Damit das Untermenü über den Artikel steht */
@@ -159,7 +159,7 @@ label.responsive-nav-label {
       padding: 20px;
       background: rgba(247, 247, 247, 0.73);;
       cursor: pointer; /* Mauspfeil wird geändert für das Menü */
-      color: #333333;
+      color: #333;
     }
 
     /* Menü Symbol Container */
