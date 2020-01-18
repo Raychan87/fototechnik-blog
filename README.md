@@ -28,6 +28,8 @@ If you are interested, you are welcome to use the theme further, because I would
 - Kommentare (Ohne E-Mail Zwang)
 - Widgets (in Sitebar und Footer)
 - Fonts (PT Sans, Open Sans)
+- Custom Widgets
+  - Aktuelle Beiträge mit einen Beitragsbild
 
 
 ### Sicherheit
