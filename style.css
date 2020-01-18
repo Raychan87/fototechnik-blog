@@ -16,7 +16,7 @@ Tags:
 * {
 /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 body { /* alle HTML-Seiten */
   font-family: "Open Sans", Arial;

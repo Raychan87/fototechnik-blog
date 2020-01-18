@@ -83,8 +83,12 @@
     add_theme_support( 'custom-header', $args ); ?>
 
     <!-- Widgets Initialisierung -->
-    <!-- Widgets in die Seitenleiste einbinden -->
     <?php function fototechnik_blog_widgets_inits() {
+
+      // FotoTechnik-Blog custom_recent_posts.php
+      register_widget( 'fototechnik_blog_recent_posts' );
+
+      // Widgets in die Seitenleiste einbinden
       // Seitenleiste Rechts
       register_sidebar( 
         array(
@@ -109,6 +113,7 @@
       );
     } 
     add_action( 'widgets_init','fototechnik_blog_widgets_inits'); ?>
+    <?php require get_template_directory() . '/assets/widgets/custom_recent_posts.php'; ?> 
 
     <!-- Kommentar Funktion -->   
     <!-- Die Funktion für einen einzelnen Kommentar -->
