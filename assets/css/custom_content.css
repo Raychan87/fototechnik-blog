@@ -25,6 +25,12 @@
     margin-left: 40px;
     margin-right: 40px;
   }
+  @media screen and (max-width:1170px ){
+    .content-thumb img { /* Beitragsbild */
+      margin: 0;
+      width: 100%;
+    }
+  }
   .content-title { /* Überschrift des Beitrags */
     margin-bottom: 10px;
     text-align: center;
@@ -119,5 +125,3 @@
   .content-single-next { /* Nächster Beitrag und letzter Beitrag Button */
 
   }
-
-

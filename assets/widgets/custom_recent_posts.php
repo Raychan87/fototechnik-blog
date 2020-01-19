@@ -44,14 +44,23 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                     $recent_posts->the_post(); ?>
                     <!-- Widgeht Inhalt -->
                     <div class="fototechnik_blog_recent_post_post">
-                        <!-- Bilder -->
+                        <a class="fototechnik_blog_recent_post_thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                            <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
+                        </a>
                         <div class="fototechnik_blog_recent_post_text">
                             <h2>
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h2>
-                            <!-- Datum -->
+                            <span class="fototechnik_blog_recent_post_date">
+                                <?php echo get_the_date(); ?>
+                            </span>
+                            <span class="fototechnik_blog_recent_post_comments">
+                                <a href="<?php echo get_comments_link(); ?>" rel="nofollow" title="<?php echo "Kommentar zu ";  the_title_attribute(); ?>">
+					                <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
+				                </a>
+                            </span>
                         </div>
                     </div>
                 <?php endwhile;
@@ -60,7 +69,6 @@ class fototechnik_blog_recent_posts extends WP_Widget {
         ?></div><?php
         echo $args[ 'after_widget' ];
     } 
-
     // Erstellt das Kontroll-Formular im WP-Dashboard -->
     public function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array(

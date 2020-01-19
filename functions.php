@@ -47,15 +47,17 @@
     <?php add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));?> 
 
     <!-- CSS Styles importieren -->
-    <?php function custom_navbar_styles() {  
+    <?php function custom_styles() {  
         /* Navigations Menü laden */
         wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
         /* Betrags Style laden */
         wp_enqueue_style( 'custom_content', get_template_directory_uri() . '/assets/css/custom_content.css');
         /* Kommentar Style laden */
         wp_enqueue_style( 'custom_comment', get_template_directory_uri() . '/assets/css/custom_comment.css');
+        /* Custom Recent Posts Widget Style laden */
+        wp_enqueue_style( 'custom_recent_posts', get_template_directory_uri() . '/assets/css/custom_recent_posts.css');
       } 
-    add_action('wp_enqueue_scripts','custom_navbar_styles'); ?>
+    add_action('wp_enqueue_scripts','custom_styles'); ?>
 
     <!-- Navigations Menü aktivieren -->
     <?php function fototechnik_blog_register_navbar() {
@@ -68,7 +70,10 @@
     <?php add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status')); ?>
 
     <!-- Aktivierung der Beitragsbilder -->
-    <?php add_theme_support(' post-thumbnails'); ?>
+    <?php add_theme_support('post-thumbnails'); ?>
+    
+    <!-- Hinzufügen von Bildergrößen -->
+    <?php add_image_size('fototechnik-blog-thumbnail', 120, 90, true);?>
 
     <!-- Aktivierung des Headerbildes -->
     <?php $args = array(
