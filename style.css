@@ -231,14 +231,17 @@ aside {
 
 }
 .tagcloud a { /* Einzelnes Schlagwort */
-
+  padding: 5px;  
+  margin-bottom: 2px;  
+  border: 1px solid;  
+  display: inline-block;  
+  font-size: 10pt !important;
 }
 .tagcloud a:hover,
 .tagcloud a:focus {
-
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
+  transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
-
-
 
 /* Footer */
 .container_footer { /* Container des Footers */
