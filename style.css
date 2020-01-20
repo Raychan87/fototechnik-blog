@@ -226,6 +226,20 @@ aside {
   }
 }
 
+/* Schlagwörter - Widget */
+.tagcloud { /* Container von Schlagwort Widget */
+
+}
+.tagcloud a { /* Einzelnes Schlagwort */
+
+}
+.tagcloud a:hover,
+.tagcloud a:focus {
+
+}
+
+
+
 /* Footer */
 .container_footer { /* Container des Footers */
   padding-top: 2px;
