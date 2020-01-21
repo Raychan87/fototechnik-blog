@@ -228,14 +228,14 @@ aside {
 
 /* Schlagwörter - Widget */
 .tagcloud { /* Container von Schlagwort Widget */
-
+  text-align: left;
 }
 .tagcloud a { /* Einzelnes Schlagwort */
   padding: 5px;  
   margin-bottom: 2px;  
   border: 1px solid;  
   display: inline-block;  
-  font-size: 10pt !important;
+  font-size: 11pt !important;
 }
 .tagcloud a:hover,
 .tagcloud a:focus {

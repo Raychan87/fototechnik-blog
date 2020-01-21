@@ -4,13 +4,17 @@
 
 }
 .fototechnik_blog_recent_post_post { /* Einzelner Beitrag */
+    text-align: left;
 
 }
-.fototechnik_blog_recent_post_thumb { /* Beitragsbild */
-
+.fototechnik_blog_recent_post_thumb img { /* Beitragsbild */
+    width: 40%;
+    height: 40%;
 }
-.fototechnik_blog_recent_post_text{ /* Beitragstitel */
-
+.fototechnik_blog_recent_post_text a{ /* Beitragstitel */
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
 }
 .fototechnik_blog_recent_post_date{ /* Beitragsdatum */
 
