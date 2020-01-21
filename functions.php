@@ -56,6 +56,8 @@
         wp_enqueue_style( 'custom_comment', get_template_directory_uri() . '/assets/css/custom_comment.css');
         /* Custom Recent Posts Widget Style laden */
         wp_enqueue_style( 'custom_recent_posts', get_template_directory_uri() . '/assets/css/custom_recent_posts.css');
+        /* Custom Gallery Style laden */
+        /* wp_enqueue_style( 'custom_gallery', get_template_directory_uri() . '/assets/css/custom_gallery.css'); */
       } 
     add_action('wp_enqueue_scripts','custom_styles'); ?>
 
@@ -74,6 +76,7 @@
     
     <!-- Hinzufügen von Bildergrößen -->
     <?php add_image_size('fototechnik-blog-thumbnail', 120, 90, true);?>
+    <?php add_image_size('fototechnik-blog-post-photo', 900);?>
 
     <!-- Aktivierung des Headerbildes -->
     <?php $args = array(
@@ -92,6 +95,9 @@
 
       // FotoTechnik-Blog custom_recent_posts.php
       register_widget( 'fototechnik_blog_recent_posts' );
+
+      // FotoTechnik-Blog custom_gallery.php
+      // register_widget( 'fototechnik_blog_gallery' );
 
       // Widgets in die Seitenleiste einbinden
       // Seitenleiste Rechts

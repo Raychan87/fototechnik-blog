@@ -13,8 +13,8 @@ Tags:
 */
 
 /* Globale Einstellungen */
-* {
-/* Die Breite wird anhand von border-box gerechnet
+*, *:before, *:after {
+  /* Die Breite wird anhand von border-box gerechnet
   Damit sind alle Breiten gleich */
   box-sizing: border-box;
 }
@@ -26,6 +26,7 @@ body { /* alle HTML-Seiten */
   background-image: url("assets/images/background.png");
   margin: 0px;
   padding: 0;
+  
 }
 img { /* Alle Bilder */
   /* Bilder in die passende Größe einstellen */
@@ -58,19 +59,10 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   background-size: cover;
   padding: 160px 20px; 
 }
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1300px) {
   .container-header{
     padding: 100px 20px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .container-header{
-    padding: 80px 1px;
-  }
-}
-@media screen and (max-width: 720px) {
-  .container-header{
-    padding: 90px 1px;
+    width: 100%;
   }
 }
 
@@ -78,26 +70,23 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   /* assets/css/custom_navbar.css */
 
 /* Main */
-@media screen and (min-width: 720px) {
+.container-main {
+  width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+}
+@media screen and (max-width: 1300px) {
   .container-main {
-    width: 850px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 100%;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 720px) {
   .container-main {
-    width: 1000px;
+    padding-right: 1px;
+    padding-left: 1px;
   }
 }
-@media screen and (min-width: 1170px) {
-  .container-main {
-    width: 1170px;
-  }
-}
-
 /* Beitrag - Content */
   /* assets/css/custom_content.css */
 
@@ -137,7 +126,7 @@ aside {
 }
 @media screen and (min-width: 720px) {
   aside {
-  width:20%;
+  width:22%;
   float:right;
   }
 }
@@ -148,7 +137,6 @@ aside {
   background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
   border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
   margin-bottom: 15px;
-  text-align: center;
 }
 .widget-title { /* Widget Überschriften Box */
   position: relative;
@@ -185,36 +173,23 @@ aside {
 .container-search-h1{ /* Suchergebnis Überschrift */
   text-align: center;
 }
-.widget_search{ /* Container Widgetsuche */
-  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-}
 .site-search{ /*Container Suchfeld & Button */
   text-align: left;
+  display: flex;
 }
 .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-  width: 67%;
+  width: 68%;
   color: black;
 }
 .site-search input[type=submit] { /* Suchen Button */
-  position: absolute;
   border: 0px;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 6%;
+  padding-right: 6%;
   cursor: pointer;
   color: #fff;
   background-color: #8a6d3b;
-}
-@media screen and (max-width: 1170px) {
-  .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-    width: 60%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .site-search input[type=submit] { /* Suchen Button */
-    padding-left: 4px;
-    padding-right: 4px;
-  }
+  max-width: 40%;
+  font-size: 90%;
 }
 @media screen and (max-width: 720px) {
   .site-search input[type=search] { /* Suchfeld zur Texteingabe */

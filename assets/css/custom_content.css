@@ -6,7 +6,7 @@
   @media screen and (min-width: 720px) {
       .container-article {
       float:left;
-      width:80%;
+      width:78%;
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -18,14 +18,17 @@
     padding:30px 15px 15px;
     border:1px solid #a1a1a1; /* Rahmenfarbe */
   }
+  .content-thumb {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
   .content-thumb img { /* Beitragsbild */
     border-style: solid;
     border-width: 2px;
     border-color: #000;
-    margin-left: 40px;
-    margin-right: 40px;
   }
-  @media screen and (max-width:1170px ){
+  @media screen and (max-width:1300px ){
     .content-thumb img { /* Beitragsbild */
       margin: 0;
       width: 100%;

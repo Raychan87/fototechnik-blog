@@ -43,11 +43,11 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                 while ( $recent_posts->have_posts() ) :
                     $recent_posts->the_post(); ?>
                     <!-- Widgeht Inhalt -->
-                    <div class="fototechnik_blog_recent_post_post">
+                    <span class="fototechnik_blog_recent_post_post">
                         <a class="fototechnik_blog_recent_post_thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                             <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
                         </a>
-                        <div class="fototechnik_blog_recent_post_text">
+                        <span class="fototechnik_blog_recent_post_text">
                             <h2>
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
@@ -61,8 +61,8 @@ class fototechnik_blog_recent_posts extends WP_Widget {
 					                <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
 				                </a>
                             </span>
-                        </div>
-                    </div>
+                        </span>
+                    </span>
                 <?php endwhile;
                 wp_reset_postdata();
             endif; 

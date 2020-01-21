@@ -1,15 +1,13 @@
 /* custom_recent_posts.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 
 .fototechnik_blog_container_recent_posts { /* Widget Container */
-
+    
 }
 .fototechnik_blog_recent_post_post { /* Einzelner Beitrag */
     text-align: left;
-
 }
 .fototechnik_blog_recent_post_thumb img { /* Beitragsbild */
-    width: 40%;
-    height: 40%;
+    max-width: 100%;
 }
 .fototechnik_blog_recent_post_text a{ /* Beitragstitel */
     font-size: 15px;
