@@ -14,9 +14,9 @@
     }
   }
   .content-post { /* Container des Beitrags */
-    background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
+    background-color:var(--background_container); /* Hintergrundfarbe */
     padding:30px 15px 15px;
-    border:1px solid #a1a1a1; /* Rahmenfarbe */
+    border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   }
   .content-thumb {
     text-align: center;
@@ -26,7 +26,7 @@
   .content-thumb img { /* Beitragsbild */
     border-style: solid;
     border-width: 2px;
-    border-color: #000;
+    border-color: var(--bordercolor_images:);
   }
   @media screen and (max-width:1300px ){
     .content-thumb img { /* Beitragsbild */
@@ -43,7 +43,7 @@
     margin-top: 0px;
   }
   .content-title a {
-    color:#000;
+    color:var(--fontcolor_normal);
     font-size: 35px;
     font-family: "Open Sans";
   }
@@ -52,7 +52,7 @@
   }
   .content-single-title h1 { /* Überschrift des Beitrags (Single) */
     font-size: 35px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -67,14 +67,14 @@
     margin-bottom: 20px;
   }
   .content-date { /* Datum des Beitrags */
-    color: #808080cc;
+    color: var(--fontcolor_light);
     font-style: italic;
     text-align: center;
   }
   .content-author { /* Name des Authors im Beitrag */
     text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
     font-style: normal;
-    color:#000;
+    color:var(--fontcolor_normal);
   }
   .content-footer { /* Container der Kategorie, Schlagwörter und des "Bearbeiten" Button */
     text-align: left;

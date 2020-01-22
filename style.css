@@ -12,6 +12,24 @@ Text Domain: fototechnik-blog
 Tags:
 */
 
+/* Globale Variablen */
+:root {
+  /* Schriftfarben : */
+  --fontcolor_link:#3484cad0;      /* für Links */
+  --fontcolor_linkhover:#225f94d0; /* für markierte Links */
+  --fontcolor_normal:#000;         /* für Texte */
+  --fontcolor_light:#808080cc;     /* für Texte dezent */
+  /* Hintergrundfarbe */
+  --background_website:#ffffff;    
+  --background_container:rgb(241, 241, 241);
+  /* Rahmenfarbe */
+  --bordercolor_normal:#a1a1a1;     /* Rahmenfarbe */
+  --bordercolor_light: #c5c4c4;     /* Rahmenfarbe dezent */
+  --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
+  --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
+  --bordercolor_linkhover:#225f94d0;/* Rahmenfarbe für Buttons */
+}
+
 /* Globale Einstellungen */
 *, *:before, *:after {
   /* Die Breite wird anhand von border-box gerechnet
@@ -36,12 +54,12 @@ img { /* Alle Bilder */
 }
 a { /* alle Verlinkungen */
   font-family: "PT Sans", Arial;
-  color: #3484cad0; /* Schriftfarbe */
+  color: var(--fontcolor_link); /* Schriftfarbe */
   text-decoration: none; /* Unterstreichen der Links deaktivieren */
 }
 a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
-  color: #225f94d0;
-  border-color:  #225f94d0; /* Rahmen Farbe */
+  color: var(--fontcolor_linkhover);
+  border-color:  var(--bordercolor_linkhover); /* Rahmen Farbe */
   text-decoration: underline; /* Unterstreichen der Links */
 }
 
@@ -54,7 +72,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 
 /* Header */
 .container-header {
-  color: rgb(0, 0, 0);
+  color: var(--fontcolor_normal);
   background-position: center center;
   background-size: cover;
   padding: 160px 20px; 
@@ -87,12 +105,12 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 
 /* Statische Seite - Page */
 .page-post { /* Container der Seite */
-  background-color:rgba(247, 247, 247, 0.507); /* Hintergrundfarbe */
+  background-color: var(--background_container); /* Hintergrundfarbe */
   padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
-  border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+  border: 1px solid var(--bordercolor_normal); /* Rahmenfarbe */
 }
 .page-title { /* Überschrift der Seite */
   font-size: 25px;
@@ -129,8 +147,8 @@ aside {
 /* Widgets */
 .widget { /* Container Widget */
   padding: 15px 15px;
-  background-color:rgba(247, 247, 247, 0.73); /* Hintergrundfarbe */
-  border: 1px solid rgb(161, 161, 161); /* Rahmenfarbe */
+  background-color: var(--background_container); /* Hintergrundfarbe */
+  border: 1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   margin-bottom: 15px;
 }
 .widget-title { /* Widget Überschriften Box */
@@ -141,6 +159,7 @@ aside {
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
+  padding: 0;
 }
 .widget-title h3 { /* Widget Überschrift */
   font-size: 14px;
@@ -149,10 +168,10 @@ aside {
   padding: 10px;
   margin: 0;
   display: inline-block;
-  background-color:rgba(247, 247, 247);
+  background-color: var(--background_container);
   position: relative;
   z-index: 5;
-  border: 1px solid rgb(161, 161, 161);
+  border: 1px solid var(--bordercolor_normal);
 }
 .widget-title::after { /* Widget Überschrift Hintergrundstrich */
   content: '';
@@ -160,7 +179,7 @@ aside {
   right: 0;
   bottom: 50%;
   height: 1px;
-  background-color: rgb(161, 161, 161);
+  background-color: var(--bordercolor_normal);
   left: 0;
 }
 
@@ -180,7 +199,7 @@ aside {
   grid-template-columns: 66% 34%; /* Spalten größe einstellen */
 }
 .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-  color: black;
+  color: var(--fontcolor_normal);
 }
 .site-search input[type=submit] { /* Suchen Button */
   border: 0px;
@@ -212,8 +231,8 @@ aside {
 }
 
 /* Links Menü - Widget */
-.menu { /* Container Navigations Menü Widget */
-  list-style-type:none /* Listen Punkte entfernen */ 
+.widget_nav_menu div ul { /* Container Navigations Menü Widget */
+  list-style-type:none; /* Listen Punkte entfernen */ 
   text-align: left;
   padding-left: 5px;
   padding-right: 10px;
@@ -221,7 +240,7 @@ aside {
   padding-bottom: 10px;
   margin: 0;
 }
-.menu-item { /* Einzelner Link des Menüs */
+.widget_nav_menu li { /* Einzelner Link des Menüs */
   border-bottom: 1px solid rgb(220, 220, 220);
   padding: 2px 0px;
 }

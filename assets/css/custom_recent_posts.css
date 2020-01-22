@@ -11,7 +11,7 @@
 }
 .fototechnik_blog_recent_post_text a{ /* Beitragstitel */
     font-size: 15px;
-    color: rgb(0, 0, 0);
+    color: var(--fontcolor_normal);
     font-weight: 300;
 }
 .fototechnik_blog_recent_post_date{ /* Beitragsdatum */
