@@ -32,6 +32,7 @@ img { /* Alle Bilder */
   max-width:100%;
   height:auto;
   vertical-align: middle;
+	-webkit-user-select: none; /* Bilder können nicht ausgewählt werden */
 }
 a { /* alle Verlinkungen */
   font-family: "PT Sans", Arial;
