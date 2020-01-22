@@ -5,7 +5,7 @@ Author: Raychan
 Author URI: https://Fototour-und-Technik.de
 Description: Dieses Theme habe ich für meinen Blog "FotoTour-und-Technik.de" entwickelt.
 Requires at least: WordPress 5
-Version: 0.1
+Version: 1.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: fototechnik-blog
@@ -24,9 +24,8 @@ body { /* alle HTML-Seiten */
   line-height: 1.42857143;
   /* background-color: #ffffff; */ /* Hintergrundfarbe */
   background-image: url("assets/images/background.png");
-  margin: 0px;
+  margin: 0;
   padding: 0;
-  
 }
 img { /* Alle Bilder */
   /* Bilder in die passende Größe einstellen */
@@ -59,12 +58,6 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   background-size: cover;
   padding: 160px 20px; 
 }
-@media screen and (max-width: 1300px) {
-  .container-header{
-    padding: 100px 20px;
-    width: 100%;
-  }
-}
 
 /* Navigation */
   /* assets/css/custom_navbar.css */
@@ -76,7 +69,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   margin-left: auto;
   padding-right: 15px;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1320px) {
   .container-main {
     width: 100%;
   }
@@ -87,6 +80,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
     padding-left: 1px;
   }
 }
+
 /* Beitrag - Content */
   /* assets/css/custom_content.css */
 
@@ -169,16 +163,22 @@ aside {
   left: 0;
 }
 
+/* Aktuelle Beiträge - Widget */
+  /* assets/css/custom_recent_posts.css */
+
+/* Gallery - Widget */
+  /* assets/css/custom_gallery.css */
+
 /* Suche - Widget */
 .container-search-h1{ /* Suchergebnis Überschrift */
   text-align: center;
 }
 .site-search{ /*Container Suchfeld & Button */
   text-align: left;
-  display: flex;
+  display: grid; /* Tabelle erzeugen */
+  grid-template-columns: 66% 34%; /* Spalten größe einstellen */
 }
 .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-  width: 68%;
   color: black;
 }
 .site-search input[type=submit] { /* Suchen Button */
@@ -188,22 +188,14 @@ aside {
   cursor: pointer;
   color: #fff;
   background-color: #8a6d3b;
-  max-width: 40%;
-  font-size: 90%;
-}
-@media screen and (max-width: 720px) {
-  .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-    width: 80%;
-  }
-  .site-search input[type=submit] { /* Suchen Button */
-    width: 20%;
-    padding: 1px;
-  }
+  font-size: 9pt;
 }
 
 /* Schlagwörter - Widget */
 .tagcloud { /* Container von Schlagwort Widget */
   text-align: left;
+  padding-top: 10px;
+  padding-left: 5px;
 }
 .tagcloud a { /* Einzelnes Schlagwort */
   padding: 5px;  
@@ -216,6 +208,21 @@ aside {
 .tagcloud a:focus {
   box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
+}
+
+/* Links Menü - Widget */
+.menu { /* Container Navigations Menü Widget */
+  list-style-type:none /* Listen Punkte entfernen */ 
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.menu-item { /* Einzelner Link des Menüs */
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 2px 0px;
 }
 
 /* Footer */
