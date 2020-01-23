@@ -1,5 +1,6 @@
-<!-- custom_recent_posts.php v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog -->
 <?php
+/* custom_recent_posts.php v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+
 class fototechnik_blog_recent_posts extends WP_Widget { 
             
     // Frontend-Design Funktionen 
@@ -41,8 +42,8 @@ class fototechnik_blog_recent_posts extends WP_Widget {
             // Wird geprüft ob ein Betrag gibt
             if ( $recent_posts->have_posts() ) :
                 while ( $recent_posts->have_posts() ) :
-                    $recent_posts->the_post(); ?>
-                    <!-- Widgeht Inhalt -->
+                    $recent_posts->the_post();
+                    /* Widgeht Inhalt */ ?>
                     <span class="fototechnik_blog_recent_post_post">
                         <a class="fototechnik_blog_recent_post_thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                             <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
@@ -74,13 +75,13 @@ class fototechnik_blog_recent_posts extends WP_Widget {
         $instance = wp_parse_args( (array) $instance, array(
             'title'			 => 'Aktuelle Beiträge',
             'post_number'	 => 4,
-        ) ); ?>
+        ) ); 
 
-        <!-- "Titel" - Eingabefeld -->
+        /* "Titel" - Eingabefeld */ ?>
         <p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php 'Titel: '; ?></label></p>
         <p><input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance[ 'title' ] ); ?>" /></p>
             
-        <!-- "Anzahl der Beiträge" - Eingabefeld -->
+        <?php /* "Anzahl der Beiträge" - Eingabefeld */?>
         <p><label for="<?php echo esc_attr( $this->get_field_name( 'post_number' ) ); ?>">
                 <?php 'Anzahl der Beiträge'; ?>
         </label>
