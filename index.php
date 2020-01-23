@@ -1,29 +1,28 @@
-<!-- header.php aufrufen -->
-<?php get_header(); ?> 
+<?php 
+/* Header.php aufrufen */
+get_header();
 
-<!-- Der Loop wird in ein Container gepackt -->
+/* Der Loop wird in ein Container gepackt */?>
 <main class="container-main"> 
     <div class="container-article">
-        <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
+        if ( have_posts() ) : while ( have_posts() ) : the_post();
                 
-                <!-- Ruft die Content-index.php Datei auf um die Beiträge bzw Seite aufzurufen -->
-                <?php get_template_part('template_parts/content','index');?>
-            
-            <?php endwhile; else : ?>
-                
-                <!-- Fehlermeldung, es konnten keine Beiträge gefunden werden -->
-                <?php get_template_part('template_parts/content','error');?>
-
-        <?php endif; ?>
+                /* Ruft die Content-index.php Datei auf um die Beiträge bzw Seite aufzurufen */
+                get_template_part('template_parts/content','index');
+                       
+            endwhile; else :              
+                /* Fehlermeldung, es konnten keine Beiträge gefunden werden */
+                get_template_part('template_parts/content','error');
+        endif;
         
-        <!-- Beitrags Navigations (vor und zurück) -->
-        <?php previous_posts_link();?>
-        <?php next_posts_link();?>
+        /* Beitrags Navigations (vor und zurück) */
+        previous_posts_link();
+        next_posts_link(); ?>
     </div>
-    <!-- sidebar.php aufrufen -->
-    <?php get_sidebar() ;?>
+    <?php /* sidebar.php aufrufen */
+    get_sidebar() ;?>
 </main>
 
-<!-- footer.php aufrufen -->
-<?php get_footer(); ?>
+<?php /* footer.php aufrufen */
+get_footer(); ?>
