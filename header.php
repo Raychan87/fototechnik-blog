@@ -21,7 +21,7 @@
         </div>
         <div class="header-description">
             <?php /* Untertitel bzw. Beschreibung der Webseite */?>
-            <p><?php // bloginfo( 'description' ); ?></a></p> -->
+            <p><?php //bloginfo( 'description' ); ?></a></p> -->
         </div>
     </header>
     <?php /* Navigations Bar wird aufgerufen */

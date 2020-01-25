@@ -24,6 +24,5 @@ get_header();
     get_sidebar();
 ?></main><?php
 
-/* footer.php aufrufen */
-get_footer(); 
-?>
+/* footer.php aufrufen */?>
+<?php get_footer(); ?>

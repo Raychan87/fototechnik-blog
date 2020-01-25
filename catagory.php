@@ -6,7 +6,7 @@ get_header();
 <main class="container-main"> 
     <div class="container-article">
     
-    <?php/* Kategorie als Titel und Beschreibung */?>
+    <?php /* Kategorie als Titel und Beschreibung */?>
     <h1><?php single_cat_title();?></h1>
     <?php echo category_description();
     

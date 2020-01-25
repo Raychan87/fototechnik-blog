@@ -3,7 +3,7 @@
     if ( have_comments() ) :
         /* Ausgabe der Kommentare */?>
         <div class="comment-list">
-            <?php/* Überschrift der Kommentare */?>
+            <?php /* Überschrift der Kommentare */?>
             <h2 class="comment-title">
                 <?php $comments_number = get_comments_number();
                 /* Wenn es nur ein Kommentar ist */
