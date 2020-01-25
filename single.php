@@ -1,30 +1,32 @@
-<!-- Wird zur Ausgabe von einzelnen Beiträgen geladen. -->
+<?php
+/* Wird zur Ausgabe von einzelnen Beiträgen geladen. */
 
-<!-- Header aufrufen -->
-<?php get_header(); ?> 
+/* Header aufrufen */
+get_header();
 
-<!-- Der Loop wird in ein Container gepackt -->
+/* Der Loop wird in ein Container gepackt */?>
 <main class="container-main"> 
     <div class="container-article">
-        <!-- Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen -->
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
+        while ( have_posts() ) : the_post();
                 
-            <!-- Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen -->
-            <?php get_template_part('template_parts/content','single');?>
+            /* Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen */
+            get_template_part('template_parts/content','single');
 
-            <div class="content-single-next">
-                <!-- Beitrags Navigations (vor und zurück) -->
-                <?php previous_post_link(  ); ?>
-                <?php next_post_link();?>
-            </div>
+            ?><div class="content-single-next"><?php
+                /* Beitrags Navigations (vor und zurück) */
+                previous_post_link();
+                next_post_link();
+            ?></div><?php
             
-            <!-- Kommentare -->
-            <?php comments_template();?>
-        <?php endwhile; ?>
-    </div>
-    <!-- sidebar.php aufrufen -->
-    <?php get_sidebar() ;?>
-</main>
+            /* Kommentare */
+            comments_template();
+        endwhile;
+    ?></div><?php
+    /* sidebar.php aufrufen */
+    get_sidebar();
+?></main><?php
 
-<!-- Footer aufrufen -->
-<?php get_footer(); ?>
+/* Footer aufrufen */
+get_footer();
+?>

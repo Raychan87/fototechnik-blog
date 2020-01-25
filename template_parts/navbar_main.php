@@ -1,4 +1,4 @@
-<div class="container_navbar">
+<div class="container-navbar">
   <?php /* Fügt eine Checkbox und ein Navigations Button für den Smartphone Modus */ ?>
   <input type="checkbox" id="responsive-nav"> 
   <label for="responsive-nav" class="responsive-nav-label"><span>&#9776;</span></label>
@@ -7,6 +7,6 @@
     <?php wp_nav_menu( array( 
       'theme_location' => 'navbar',
       'container-id' => ''
-    ) ); ?>
+    ) );?>
   </nav>
 </div>

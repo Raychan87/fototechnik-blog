@@ -7,7 +7,7 @@ label.responsive-nav-label {
 }
 
 /* Der Hauptcontainer der Navigationsleiste */
-.container_navbar {
+.container-navbar {
   float: left;
   width: 100%; 
   font-weight: 400;

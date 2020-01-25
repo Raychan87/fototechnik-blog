@@ -1,39 +1,40 @@
-    <!-- Wird geprüft ob Kommentare vorhanden sind -->
-    <?php if ( have_comments() ) : ?>
-        <!-- Ausgabe der Kommentare -->
+    <?php 
+    /* Wird geprüft ob Kommentare vorhanden sind */
+    if ( have_comments() ) :
+        /* Ausgabe der Kommentare */?>
         <div class="comment-list">
-            <!-- Überschrift der Kommentare -->
+            <?php/* Überschrift der Kommentare */?>
             <h2 class="comment-title">
-                <?php $comments_number = get_comments_number(); ?>
-                <!-- Wenn es nur ein Kommentar ist -->
-                <?php if ('1' === $comments_number ) {
+                <?php $comments_number = get_comments_number();
+                /* Wenn es nur ein Kommentar ist */
+                if ('1' === $comments_number ) {
                     printf('1 Kommentar'); 
                 /* Oder wenn es mehr als ein Kommentar ist */
-                } else {
+                }else{
                     printf('%1$s Kommentare',$comments_number);
                 }?>
             </h2>
-            <!-- Wenn Kommentare auf mehrere Seiten umgebrochen wird -->
-            <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+            <?php /* Wenn Kommentare auf mehrere Seiten umgebrochen wird */
+            if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <div class="navigation">
-                    <div class="nav-previous"> <?php previous_comments_link( 'Ältere Kommentare' ); ?> </div>
-                    <div class="nav-next"> <?php next_comments_link( 'Neuere Kommentare' ); ?> </div>
+                    <div class="nav-previous"><?php previous_comments_link('Ältere Kommentare');?></div>
+                    <div class="nav-next"><?php next_comments_link('Neuere Kommentare');?></div>
                 </div>
-            <?php endif; ?>
+            <?php endif;
 
-            <!-- eine Liste der Kommentare -->
-            <?php wp_list_comments(['type'=>'all', 'callback'=>'fototechnik_blog_comments']); ?>
+            /* eine Liste der Kommentare */
+            wp_list_comments(['type'=>'all','callback'=>'fototechnik_blog_comments']);
 
-            <!-- Wenn die Kommentare geschlossen sind -->
-            <?php if ( ! comments_open() ) : ?>
+            /* Wenn die Kommentare geschlossen sind */
+            if ( !comments_open() ) :?>
                 <p>Die Kommentare für diesen Beitrag sind geschlossen.</p>
             <?php endif; ?>
         </div>
-    <?php endif; ?> 
+    <?php endif; ?>
 
     <div class="container-comment">
-        <!-- Kommentar Formular -->
-        <?php $fields = array(
+        <?php /* Kommentar Formular */
+        $fields = array(
             'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="Dein Name (erforderlich)" name="author" type="text" value="' .
              esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
             'email'  =>'<p class="comment-form-email">' . '<input id="email" placeholder="deine-email@beispiel.de (optional)" name="email" type="text" value="' . 
@@ -50,9 +51,9 @@
             'logged_in_as' => '<p class="logged-in-as">'
                                 . sprintf( __( 'Angemeldet als %1$s. <a href="%2s" title="Abmelden deines Accounts">abmelden?</a>'), 
                                 $user_identity),
-                                wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) . '</p>',
+                                wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) . '</p>',
             'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
-        )); ?>
+        ));?>
 </div>
 
 

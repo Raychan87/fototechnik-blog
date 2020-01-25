@@ -18,11 +18,12 @@ get_header();
         
         /* Beitrags Navigations (vor und zurück) */
         previous_posts_link();
-        next_posts_link(); ?>
-    </div>
-    <?php /* sidebar.php aufrufen */
-    get_sidebar() ;?>
-</main>
+        next_posts_link();
+    ?></div><?php
+    /* sidebar.php aufrufen */
+    get_sidebar();
+?></main><?php
 
-<?php /* footer.php aufrufen */
-get_footer(); ?>
+/* footer.php aufrufen */
+get_footer(); 
+?>
