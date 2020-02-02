@@ -24,7 +24,7 @@ class fototechnik_blog_recent_posts extends WP_Widget {
         echo $args[ 'before_widget' ]; 
 
         /* Container des Widgets */
-        ?><div class="fototechnik_blog_container_recent_posts"><?php
+        ?><div class="fototechnik-blog-container-recent-posts"><?php
 
             /* Ausgabe des Titels */
             if ( !empty( $title ) ) {
@@ -44,20 +44,20 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                 while ( $recent_posts->have_posts() ) :
                     $recent_posts->the_post();
                     /* Widgeht Inhalt */ ?>
-                    <span class="fototechnik_blog_recent_post_post">
-                        <a class="fototechnik_blog_recent_post_thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                    <span class="fototechnik-blog-recent-post-post">
+                        <a class="fototechnik-blog-recent-post-thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                             <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
                         </a>
-                        <span class="fototechnik_blog_recent_post_text">
+                        <span class="fototechnik-blog-recent-post-text">
                             <h2>
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h2>
-                            <span class="fototechnik_blog_recent_post_date">
+                            <span class="fototechnik-blog-recent-post-date">
                                 <?php echo get_the_date(); ?>
                             </span>
-                            <span class="fototechnik_blog_recent_post_comments">
+                            <span class="fototechnik-blog-recent-post-comments">
                                 <a href="<?php echo get_comments_link(); ?>" rel="nofollow" title="<?php echo "Kommentar zu ";  the_title_attribute(); ?>">
 					                <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
 				                </a>
