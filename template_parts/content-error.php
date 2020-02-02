@@ -1,6 +1,6 @@
-
-<!-- Wenn man von der Suchfunktion kommt -->
-<?php if(is_search()) { ?>
+<?php
+/* Wenn man von der Suchfunktion kommt */
+if(is_search()) { ?>
 
     <section <?php post_class();?>>
         <p>Leider wurde nichts gefunden.</p>
