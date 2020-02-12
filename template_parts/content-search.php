@@ -15,7 +15,7 @@
 
         <div class ="content-thumb" >
             <?php /* Beitragsbild anzeigen */
-            the_post_thumbnail('medium'); ?>
+            the_post_thumbnail('fototechnik-blog-post-photo'); ?>
         </div>
 
         <div class="content-text" >

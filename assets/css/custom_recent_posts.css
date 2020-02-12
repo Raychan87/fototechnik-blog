@@ -1,22 +1,31 @@
 /* custom_recent_posts.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
-
-.fototechnik-blog-container-recent-posts { /* Widget Container */
-    
+.fototechnik-blog-recent-post-text { /* Container des Beitragstitel */
+    padding-bottom: 5px;
+    margin: 0;
 }
-.fototechnik-blog-recent-post-post { /* Einzelner Beitrag */
-    text-align: left;
+.fototechnik-blog-recent-post-text a { /* Beitragstitel */
+    color: var(--fontcolor_normal);
+    font-size: 15px;
+    font-weight: 300;
+}
+.fototechnik-blog-recent-post-container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding-bottom: 8px;
 }
 .fototechnik-blog-recent-post-thumb img { /* Beitragsbild */
     max-width: 100%;
 }
-.fototechnik-blog-recent-post-text a{ /* Beitragstitel */
-    font-size: 15px;
-    color: var(--fontcolor_normal);
-    font-weight: 300;
+.fototechnik-blog-recent-post-date-comments { /* Beitragsdatum */
+    font-style: italic;
+    font-style: 12px;
+    color: var(--fontcolor_light);
 }
-.fototechnik-blog-recent-post-date{ /* Beitragsdatum */
-
-}
-.fototechnik-blog-recent-post-comments{ /* Beitragskommentare */
-
+.fototechnik-blog-recent-post-date-comments a { /* Beitragsdatum */
+    font-style: italic;
+    font-style: 12px;
+    color: var(--fontcolor_light);
 }

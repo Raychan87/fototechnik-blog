@@ -1,4 +1,49 @@
 <?php        
+    /* Sicherheits Funktion */
+    function fototechnik_blog_safety_function(){
+        add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
+        add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
+        add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
+    /*  add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */ 
+    /*  add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */ 
+        add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
+        add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
+        remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
+        /* Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. */
+        remove_action('wp_head', 'rsd_link'); /* RSD Verweis entfernen */
+        /* Das WLW Manifest dient als Beschreibung für externe Editoren, um auf den WordPress Blog zugreifen zu können. */
+        remove_action('wp_head', 'wlwmanifest_link' ); /* WLW Manifest entfernen */
+        remove_action('wp_head', 'print_emoji_detection_script', 7 ); /* Emoticons deaktivieren */
+        remove_action('admin_print_scripts', 'print_emoji_detection_script' ); /* Emoticons deaktivieren */
+        remove_action('wp_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_action('admin_print_styles', 'print_emoji_styles' ); /* Emoticons deaktivieren */
+        remove_filter('the_content_feed', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('comment_text_rss', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
+        remove_filter('wp_mail', 'wp_staticize_emoji_for_email' ); /* Emoticons deaktivieren */
+        add_filter('tiny_mce_plugins', 'disable_emojis_tinymce' ); /* Emoticons deaktivieren */ 
+    } 
+    add_action('init','fototechnik_blog_safety_function');
+
+    /* Whitelist und Einstellen der REST API Schnittstelle */
+    function fototechnik_blog_rest_api() {
+        $domain = "fototour-und-technik.de";					/* String der Domain */
+        $ip_domain = gethostbyname($domain);					/* IP der Domain abfragen */
+
+        $whitelist = [$ip_domain,'255.255.255.255', "::1" ];    /* IP Whitelist  */
+
+        if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){		/* Wenn nicht auf der Whitelist */
+            die('REST API is disabled.');
+        }
+    }
+    add_action('rest_api_init','fototechnik_blog_rest_api');
+  
+    /* Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt */
+    function fototechnik_blog_remove_x_pingback( $headers ){
+        unset( $headers['X-Pingback'] );
+    return $headers;
+    }
+    add_filter( 'wp_headers', 'fototechnik_blog_remove_x_pingback' );  
+    
     /* HTML5 Converter */
     add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));
 

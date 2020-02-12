@@ -45,24 +45,22 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                     $recent_posts->the_post();
                     /* Widgeht Inhalt */ ?>
                     <span class="fototechnik-blog-recent-post-post">
-                        <a class="fototechnik-blog-recent-post-thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                            <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
-                        </a>
-                        <span class="fototechnik-blog-recent-post-text">
-                            <h2>
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h2>
-                            <span class="fototechnik-blog-recent-post-date">
-                                <?php echo get_the_date(); ?>
-                            </span>
-                            <span class="fototechnik-blog-recent-post-comments">
+                        <h2 class="fototechnik-blog-recent-post-text">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h2>
+                        <div class="fototechnik-blog-recent-post-container">
+                            <a class="fototechnik-blog-recent-post-thumb" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                <?php the_post_thumbnail( 'fototechnik-blog-thumbnail' ); ?>
+                            </a>
+                            <span class="fototechnik-blog-recent-post-date-comments">
+                                <?php echo get_the_date('j M Y');?></br>
                                 <a href="<?php echo get_comments_link(); ?>" rel="nofollow" title="<?php echo "Kommentar zu ";  the_title_attribute(); ?>">
-					                <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
-				                </a>
+                                    <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
+                                </a>
                             </span>
-                        </span>
+                        </div>
                     </span>
                 <?php endwhile;
                 wp_reset_postdata();
