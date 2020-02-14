@@ -90,7 +90,8 @@
     
     /* Hinzufügen von Bildergrößen */
     add_image_size('fototechnik-blog-thumbnail', 120, 90, true);
-    add_image_size('fototechnik-blog-post-photo', 900);
+    add_image_size('fototechnik-blog-post-900', 900);
+    add_image_size('fototechnik-blog-photo-768', 768);
 
     /* Aktivierung des Headerbildes */
     $args = array(
