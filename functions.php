@@ -24,6 +24,15 @@
     } 
     add_action('init','fototechnik_blog_safety_function');
 
+    /* Tinymce Plugin herrausfiltern */
+    function disable_emojis_tinymce( $plugins ) {
+      if ( is_array( $plugins ) ) {
+        return array_diff( $plugins, array( 'wpemoji' ) );
+      } else {
+        return array();
+      }
+    }
+
     /* Whitelist und Einstellen der REST API Schnittstelle */
     function fototechnik_blog_rest_api() {
         $domain = "fototour-und-technik.de";					/* String der Domain */
