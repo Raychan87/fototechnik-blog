@@ -11,9 +11,9 @@ label.responsive-nav-label {
   float: left;
   width: 100%; 
   font-weight: 400;
-  font-size: 14px; /* Schriftgröße */
+  font-size: 14px; /* Schriftgroeße */
   background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
-  line-height: 1.4; /* Höhe der Leiste */
+  line-height: 1.4; /* Hoehe der Leiste */
   margin-top: 0px;
 
   /* Schattenrand */
@@ -22,14 +22,14 @@ label.responsive-nav-label {
   box-shadow: 0px 7px 19px -1px rgba(0,0,0,0.1);
 }
 
-/* Der eigentliche Menü Container */
+/* Der eigentliche Menue Container */
   nav {
     width: 850px;
     margin-right: auto;
     margin-left: auto;
   }
   
-  /* Aufzählungslisten */
+  /* Aufzaehlungslisten */
   nav ul {
     margin: 0;
     padding: 0;
@@ -68,48 +68,48 @@ label.responsive-nav-label {
     background: #e4e3e3;
   }
 
-   /* Untermenü */
+   /* Untermenue */
    nav ul li:hover > ul {
     top: 100%;
     left: 0;
   }
 
-  /* Untermenü */
+  /* Untermenue */
   nav ul ul {
-    /* Wird für die dropdown Funktion gebraucht */
+    /* Wird fuer die dropdown Funktion gebraucht */
     position: absolute;
     top: -9999px;
     left: -9999px;
 
-    line-height: .8; /* Höhe der Leiste */
+    line-height: .8; /* Hoehe der Leiste */
     background: #fff; /* Hintergrundfarbe */ 
     /* offset-x | offset-y | blur-radius | color */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
-    z-index: 1; /* Damit das Untermenü über den Artikel steht */
+    z-index: 1; /* Damit das Untermenue ueber den Artikel steht */
     border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
     border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
   }
   
-  /* Einzelnes Fenster des Untermenüs */
+  /* Einzelnes Fenster des Untermenues */
   nav ul ul li {
     float: none;
   }
   
-  /* Link des einzelnes Fensters des Untermenüs */
+  /* Link des einzelnes Fensters des Untermenues */
   nav ul ul li a {
     padding: 10px 30px 10px 20px;
-    color: #1d1d1d; /* Schriftfarbe für die Untermenüs */
-    text-transform: none; /* Großbuchstaben für Unteremenüs deaktivieren */
-    width: max-content; /* Fenster größe richtet sich nach den Inhalt */
+    color: #1d1d1d; /* Schriftfarbe fuer die Untermenues */
+    text-transform: none; /* Großbuchstaben fuer Unteremenues deaktivieren */
+    width: max-content; /* Fenster groeße richtet sich nach den Inhalt */
   }
     
-  /* Untermenü vom Untermenü */
+  /* Untermenue vom Untermenue */
   nav ul ul li:hover > ul {
     top: 5%;
     left: 100%;
   }
 
-  /* Pfeil nach unten für Buttons mit Untermenüs */
+  /* Pfeil nach unten fuer Buttons mit Untermenues */
   nav li > a:after {
     float: right;
     content: '';
@@ -121,7 +121,7 @@ label.responsive-nav-label {
     border-bottom: 4px solid transparent;
   }
 
-   /* Pfeil nach rechts für Untermenüs mit Untermenüs */
+   /* Pfeil nach rechts fuer Untermenues mit Untermenues */
    nav ul ul li > a:after {
     position: absolute;
     top: 10%;
@@ -132,7 +132,7 @@ label.responsive-nav-label {
     border-bottom: 4px solid transparent;
   }
 
-  /* Ausblenden des Pfeils für Buttons ohne Untermenü */
+  /* Ausblenden des Pfeils fuer Buttons ohne Untermenue */
   nav li > a:only-child:after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
@@ -141,10 +141,10 @@ label.responsive-nav-label {
   }
 
   /*-------------------------------------------------------------*/
-  /* Smartphone Navigations Menü */
+  /* Smartphone Navigations Menue */
   @media screen and (max-width: 720px) {
 
-    /* Erhöhen der Schriftgröße für kleine Geräte */
+    /* Erhoehen der Schriftgroeße fuer kleine Geraete */
     * {
       font-size: 18px;
       margin: 0;
@@ -152,22 +152,22 @@ label.responsive-nav-label {
       box-sizing: border-box;
     }
 
-    /* Menü Label */    
+    /* Menue Label */    
     label.responsive-nav-label {
       position: relative;
       display: block;
       padding: 20px;
       background: rgba(247, 247, 247, 0.73);;
-      cursor: pointer; /* Mauspfeil wird geändert für das Menü */
+      cursor: pointer; /* Mauspfeil wird geaendert fuer das Menue */
       color: #333;
     }
 
-    /* Menü Symbol Container */
+    /* Menue Symbol Container */
     label.responsive-nav-label span {
       margin-right: 10px;  
     }
 
-    /* Das Untermenü wird solange ausgeblendet bis man auf das Symbol klickt */
+    /* Das Untermenue wird solange ausgeblendet bis man auf das Symbol klickt */
     nav {
       position: absolute;
       top: -9999px;
@@ -178,7 +178,7 @@ label.responsive-nav-label {
       top: 0;
     }
 
-    /* Ausblenden der Menü Pfeile */
+    /* Ausblenden der Menue Pfeile */
     nav a:after {
       display: none;
     }

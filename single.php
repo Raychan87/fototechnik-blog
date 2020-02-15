@@ -11,13 +11,10 @@ get_header();
         while ( have_posts() ) : the_post();
                 
             /* Ruft die Content-single.php Datei auf um die Beiträge bzw Seite aufzurufen */
-            get_template_part('template_parts/content','single');
+            get_template_part('template_parts/content','single'); 
 
-            ?><div class="content-single-next"><?php
-                /* Beitrags Navigations (vor und zurück) */
-                previous_post_link();
-                next_post_link();
-            ?></div><?php
+            /* Beitrags Navigations (siehe functions.php) */ 
+            fototechnik_blog_post_next_prev();
             
             /* Kommentare */
             comments_template();

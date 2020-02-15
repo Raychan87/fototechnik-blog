@@ -18,7 +18,7 @@
     padding:30px 15px 15px;
     border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   }
-  .content-thumb {
+  .content-thumb { /* Container des Beitragsbild */
     text-align: center;
     margin-left: 30px;
     margin-right: 30px;
@@ -26,15 +26,15 @@
   .content-thumb img { /* Beitragsbild */
     border-style: solid;
     border-width: 2px;
-    border-color: var(--bordercolor_images:);
+    border-color: var(--bordercolor_images);
   }
   .content-title { /* Überschrift des Beitrags */
     margin-bottom: 10px;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .content-title h1 { /* Überschrift des Beitrags */
-    margin-top: 0px;
+    margin-top: 0;
   }
   .content-title a {
     color:var(--fontcolor_normal);
@@ -53,8 +53,7 @@
   .content-text { /* Inhalt des Beitrags */
     font-style: italic;
     text-align: center;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding: 0 35px;
   }
   .content-single-text {
     margin: 20px 5px;
@@ -69,7 +68,7 @@
     font-style: normal;
     color:var(--fontcolor_normal);
   }
-  .content-footer { /* Container der Kategorie, Schlagwörter und des "Bearbeiten" Button */
+  .content-footer { /* Container der Kategorie, Schlagwoerter und des "Bearbeiten" Button */
     text-align: left;
     font-style: italic;
   }
@@ -82,20 +81,19 @@
     padding-left: 10px;
     font-style: italic;
   }
-  .content-single-tags { /* Schlagwörter Links */
+  .content-single-tags { /* Schlagwoerter Links */
     margin-top: 8px;
   }
-  .content-single-tags a { /* Schlagwörter Links */
+  .content-single-tags a { /* Schlagwoerter Links */
     padding-left: 10px;
     font-style: italic;
   }
-  .content-list-type { /* Kategorie und Schlagwörter Überschrift */
+  .content-list-type { /* Kategorie und Schlagwoerter Überschrift */
     opacity: .5;
   }
   .content-edit a { /* "Bearbeiten"-Button */
     margin-top: 8px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0px 4px;
     border: 1px solid; /* Rahmen */
     display: inline-block;
     text-align: center;
@@ -118,6 +116,41 @@
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
     transition: .25s; /* Die Zeit der Makierung des Reiters */
   }
-  .content-single-next { /* Nächster Beitrag und letzter Beitrag Button */
-
+  .fototechnik-blog-post-other-posts { /* Container der Beitrags Navigation */
+    display: grid; /* Gitter(Tabellen) aktivieren */
+    gap: 15px; /* Abstand zwischen den Zellen */
+    grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+    text-align: center;
+  }
+  .fototechnik-blog-post-next-post, /* Naechster Beitrag */
+  .fototechnik-blog-post-prev-post { /* Vorheriger Beitrag */
+    background-color:var(--background_container); /* Hintergrundfarbe */
+    border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+    display: grid; /* Gitter(Tabellen) aktivieren */
+    gap: 5px; /* Abstand zwischen den Zellen */
+    grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+    padding: 15px;
+  }
+  .fototechnik-blog-post-next-picture, /* Beitragsbild */
+  .fototechnik-blog-post-prev-picture { 
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--bordercolor_images);
+  }
+  .fototechnik-blog-post-next-title, /* Beitragstyp */
+  .fototechnik-blog-post-prev-title {
+    color: var(--fontcolor_light) !important;
+    font-style: italic;
+  }
+  .fototechnik-blog-post-next-text, /* Beitragstitel und Datum */
+  .fototechnik-blog-post-prev-text {
+    display: flex; 
+    flex-direction: column; /* Texte Untereinander setzen */
+    justify-content: center; /* Content Vertical mitteln */
+  }
+  .fototechnik-blog-post-next-text a, /* Beitragstitel und Datum */
+  .fototechnik-blog-post-prev-text a {
+    color: var(--fontcolor_normal);
+    padding: 5px 0px;
+    text-decoration: none; /* Unterstreichen der Links deaktivieren */
   }

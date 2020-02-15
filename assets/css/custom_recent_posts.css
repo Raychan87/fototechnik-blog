@@ -9,10 +9,10 @@
     font-weight: 300;
 }
 .fototechnik-blog-recent-post-container {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    display: grid; /* Gitter(Tabellen) aktivieren */
+    gap: 5px; /* Abstand zwischen den Zellen */
+    grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+    align-items: center; 
     border-bottom: 1px solid rgb(220, 220, 220);
     padding-bottom: 8px;
 }
