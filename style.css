@@ -21,7 +21,7 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   --fontcolor_light:#808080cc;     /* für Texte dezent */
   /* Hintergrundfarbe */
   --background_website:#ffffff;    
-  --background_container:rgb(241, 241, 241);
+  --background_container:#f1f1f1;
   /* Rahmenfarbe */
   --bordercolor_normal:#a1a1a1;     /* Rahmenfarbe */
   --bordercolor_light: #c5c4c4;     /* Rahmenfarbe dezent */
@@ -37,9 +37,7 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   box-sizing: border-box;
 }
 body { /* alle HTML-Seiten */
-  font-family: "Open Sans", Arial;
-  font-size: 14px;
-  line-height: 1.42857143;
+  font:14px/1.42857143 "Open Sans",Arial;
   /* background-color: #ffffff; */ /* Hintergrundfarbe */
   background-image: url("assets/images/background.png");
   margin: 0;
@@ -106,10 +104,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 /* Statische Seite - Page */
 .page-post { /* Container der Seite */
   background-color: var(--background_container); /* Hintergrundfarbe */
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  padding:10px 15px 15px;
   border: 1px solid var(--bordercolor_normal); /* Rahmenfarbe */
 }
 .page-title { /* Überschrift der Seite */
@@ -146,7 +141,7 @@ aside {
 
 /* Widgets */
 .widget { /* Container Widget */
-  padding: 15px 15px;
+  padding: 15px;
   background-color: var(--background_container); /* Hintergrundfarbe */
   border: 1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   margin-bottom: 15px;
@@ -162,9 +157,7 @@ aside {
   padding: 0;
 }
 .widget-title h3 { /* Widget Überschrift */
-  font-size: 14px;
-  font-family: "Open Sans Light";
-  font-weight: 400;
+  font: 400 14px "Open Sans Light";
   padding: 10px;
   margin: 0;
   display: inline-block;
@@ -202,7 +195,7 @@ aside {
   color: var(--fontcolor_normal);
 }
 .site-search input[type=submit] { /* Suchen Button */
-  border: 0px;
+  border: 0;
   padding-left: 6%;
   padding-right: 6%;
   cursor: pointer;
@@ -234,15 +227,12 @@ aside {
 .widget_nav_menu div ul { /* Container Navigations Menü Widget */
   list-style-type:none; /* Listen Punkte entfernen */ 
   text-align: left;
-  padding-left: 5px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  padding:5px 10px 10px 5px;
   margin: 0;
 }
 .widget_nav_menu li { /* Einzelner Link des Menüs */
-  border-bottom: 1px solid rgb(220, 220, 220);
-  padding: 2px 0px;
+  border-bottom: 1px solid #dcdcdc;
+  padding:2px 0;
 }
 
 /* Footer */
@@ -253,9 +243,6 @@ aside {
   color:rgba(255, 255, 255, 0.87);
   text-align: center;
   clear: both;
-}
-.footer-widget { /* Widgets im Footer */
-
 }
 .footer-copyright { /* Copyright Text im Footer */
   font-style: italic;

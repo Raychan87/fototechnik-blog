@@ -38,8 +38,7 @@
   }
   .content-title a {
     color:var(--fontcolor_normal);
-    font-size: 35px;
-    font-family: "Open Sans";
+    font:35px "Open Sans",Arial;
   }
   .content-title a:hover { /* Kategorie Links */
     text-decoration: underline; /* Unterstreichen der Links */
@@ -93,7 +92,7 @@
   }
   .content-edit a { /* "Bearbeiten"-Button */
     margin-top: 8px;
-    padding: 0px 4px;
+    padding: 0 4px;
     border: 1px solid; /* Rahmen */
     display: inline-block;
     text-align: center;
@@ -151,6 +150,6 @@
   .fototechnik-blog-post-next-text a, /* Beitragstitel und Datum */
   .fototechnik-blog-post-prev-text a {
     color: var(--fontcolor_normal);
-    padding: 5px 0px;
+    padding: 5px 0;
     text-decoration: none; /* Unterstreichen der Links deaktivieren */
   }

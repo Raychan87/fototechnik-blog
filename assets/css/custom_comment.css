@@ -20,10 +20,10 @@
   }
   .children { /* Vor dem Antwortfeld im Kommentarbereich */
     list-style: none; /* Deaktiviert die Listenpunkte */
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
   .comment-author{ /* Authorsname */
-    margin-top: 0px;
+    margin-top: 0;
     font-size: 14px;
     font-family: 'Open Sans Light Bold';
   }
