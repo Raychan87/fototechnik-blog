@@ -16,7 +16,6 @@ get_header();
                 
                 /* Fehlermeldung, es konnten keine Beiträge gefunden werden */
                 get_template_part('template_parts/content','error');
-
         endif;
     ?></div><?php
     /* sidebar.php aufrufen */

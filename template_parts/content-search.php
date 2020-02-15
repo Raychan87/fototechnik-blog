@@ -31,7 +31,7 @@
         <div class="content-readmore" >
             <?php /* Erzeugt den 'Weiterlesen...'-Button */ ?>
             <a href="<?php the_permalink(); ?>">
-			    <?php esc_html_e( 'Weiterlesen...'); ?>
+			    Weiterlesen...
             </a>
         </div>
     </div>

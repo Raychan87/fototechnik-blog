@@ -1,9 +1,9 @@
     <?php 
-    /* Wird geprüft ob Kommentare vorhanden sind */
+    /* Wird geprueft ob Kommentare vorhanden sind */
     if ( have_comments() ) :
         /* Ausgabe der Kommentare */?>
         <div class="comment-list">
-            <?php /* Überschrift der Kommentare */?>
+            <?php /* ueberschrift der Kommentare */?>
             <h2 class="comment-title">
                 <?php $comments_number = get_comments_number();
                 /* Wenn es nur ein Kommentar ist */
@@ -47,9 +47,9 @@
             'fields' => apply_filters( 'comment_form_default_fields', $fields ), 
             'comment_notes_before' => '', 
             'comment_notes_after' => '<p class="comment-notes-after-text">Dein Kommentar wird vor der Veröffentlichung von mir geprüft.</p>', 
-            'title_reply' => __( '<h2>Schreibe einen Kommentar</h2>' ),
+            'title_reply' => ( '<h2>Schreibe einen Kommentar</h2>' ),
             'logged_in_as' => '<p class="logged-in-as">'
-                                . sprintf( __( 'Angemeldet als %1$s. <a href="%2s" title="Abmelden deines Accounts">abmelden?</a>'), 
+                                . sprintf( ( 'Angemeldet als %1$s. <a href="%2s" title="Abmelden deines Accounts">abmelden?</a>'), 
                                 $user_identity),
                                 wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) . '</p>',
             'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'

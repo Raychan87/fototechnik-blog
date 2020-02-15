@@ -5,10 +5,10 @@
         <div class="content-single-title">
             <?php /* Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird */
             if ( is_archive() ) {
-                /* Überschrift des Beitrages */
+                /* ueberschrift des Beitrages */
                 ?><h2><?php the_title();?></h2><?php
             } else {
-                /* Überschrift des Beitrages */
+                /* ueberschrift des Beitrages */
                 ?><h1><?php the_title();?></h1><?php
             } 
         ?></div><?php
@@ -22,21 +22,24 @@
 
         ?><div class="content-single-text" ><?php
             /* Der Inhalt des Beitrages */
-            the_content(); /* Übergabe Text für gekürtze Beiträge */
-        ?></div>
+            the_content(); /* uebergabe Text fuer gekuertze Beitraege */
+        ?></div><?php
+        
+        /* Seitenzahl Anzeige wenn der Beitrag zulang ist */
+        wp_link_pages();
 
-        <div class="content-date">
+        ?><div class="content-date">
             <?php /* Erzeugt Author und Datum des Beitrags */ ?>
             <p><?php the_time('d. M Y');?> von <span class="content-author"><?php the_author(); ?>.</p>
         </div>
         
-        <?php /* Hole die Kategorien für den Beitrag */
+        <?php /* Hole die Kategorien fuer den Beitrag */
 		$categories_list = get_the_category_list( ' ' );
 
-		/* Hole die Schlagwörter für den Beitrag */
+		/* Hole die Schlagwoerter fuer den Beitrag */
 		$tags_list = get_the_tag_list( '', ' ' );
 
-		/* Nur wenn Kategorie oder Stichwörter oder der Beitrag bearbeitet werden kann */
+		/* Nur wenn Kategorie oder Stichwoerter oder der Beitrag bearbeitet werden kann */
 		if ( $categories_list || $tags_list || get_edit_post_link() ) {
             ?><div class="content-footer"><?php
                 /* Nur wenn es ein Betrag ist */
@@ -46,14 +49,14 @@
                         if ( $categories_list ) {
                             echo '<div class="content-single-categories"><span class="content-list-type">Kategorie  </span>' . wp_kses_data( $categories_list ) . '</div>';
                         }
-                        // Ausgabe der Stichwörter Liste
+                        // Ausgabe der Stichwoerter Liste
                         if ( $tags_list ) {
                             echo '<div class="content-single-tags"><span class="content-list-type">Stichwörter  </span>' . wp_kses_data( $tags_list ) . '</div>';
                         }
                     }
                 }
                 ?><div class="content-edit"><?php
-                    /* Bearbeitungs Button für den Admin */
+                    /* Bearbeitungs Button fuer den Admin */
                     edit_post_link();?>
                 </div>
 			</div>

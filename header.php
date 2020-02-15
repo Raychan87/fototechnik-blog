@@ -3,12 +3,10 @@
  *  The header for our theme
  */
 ?><!DOCTYPE html>
-<html lang="<?php bloginfo('language');?>">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <?php /* Browser Titel Namen */ ?>
-    <title><?php wp_title('->');?> <?php bloginfo( 'name' ); ?></title> 
     <?php /* Lädt Wordpress eigene Scripte, CSS Code für Emoji, Metainformationen und Adminbar (wp_footer() wird benötigt) */?>
     <?php wp_head(); ?>
 </head>

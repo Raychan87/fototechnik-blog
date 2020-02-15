@@ -10,6 +10,9 @@
             <?php /* Inhalt der Seite */
             the_content();
         ?></div><?php
+        /* Seitenzahl Anzeige wenn der Beitrag zulang ist */
+        wp_link_pages();
+        
         if ( get_edit_post_link() ) {?>
             <div class="page-edit">
                 <?php /* Bearbeitungs Button für den Admin */

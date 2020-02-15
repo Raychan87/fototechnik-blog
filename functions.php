@@ -11,7 +11,7 @@
         remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
         /* Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. */
         remove_action('wp_head', 'rsd_link'); /* RSD Verweis entfernen */
-        /* Das WLW Manifest dient als Beschreibung für externe Editoren, um auf den WordPress Blog zugreifen zu können. */
+        /* Das WLW Manifest dient als Beschreibung fuer externe Editoren, um auf den WordPress Blog zugreifen zu koennen. */
         remove_action('wp_head', 'wlwmanifest_link' ); /* WLW Manifest entfernen */
         remove_action('wp_head', 'print_emoji_detection_script', 7 ); /* Emoticons deaktivieren */
         remove_action('admin_print_scripts', 'print_emoji_detection_script' ); /* Emoticons deaktivieren */
@@ -47,13 +47,30 @@
     /* HTML5 Converter */
     add_theme_support ('html5', array('search-from','comment-form','comment-list','gallery','caption'));
 
+    /* Zeigt den Titel im Browser Tab an */
+    add_theme_support( 'title-tag' );
+
+    /* Content Width gibt die Maximale des Inhaltsbereich ohne Rahmen an */
+    function fototechnik_blog_content_width() {
+      $GLOBALS['content_width'] = apply_filters( 'fototechnik_blog_content_width', 1320 );
+    }
+    add_action( 'after_setup_theme', 'fototechnik_blog_content_width', 0 );
+
+    /* Feed Links aktivieren */
+    add_theme_support( 'automatic-feed-links' );
+
+    /* Aktivierung der Beitragsformate */
+     add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status'));
+
     /* CSS Styles importieren */
     function styles_imports() {  
       /* Style.css laden */
       wp_enqueue_style( 'style', get_stylesheet_uri() );
       /* normalize.css laden */
       wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.css');
-      /* Navigations Menü laden */
+      /* Wordpress Core laden */
+      wp_enqueue_style( 'wordpress_core', get_template_directory_uri() . '/assets/css/wordpress_core.css');
+      /* Navigations Menue laden */
       wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
       /* Betrags Style laden */
       wp_enqueue_style( 'custom_content', get_template_directory_uri() . '/assets/css/custom_content.css');
@@ -76,23 +93,19 @@
     }
     add_action('wp_enqueue_scripts','scripts_import');
 
-    /* Navigations Menü aktivieren */
+    /* Navigations Menue aktivieren */
     function fototechnik_blog_register_navbar() {
-      register_nav_menus(array('navbar' => __( 'Hauptmenü' ) ));
+      register_nav_menus(array('navbar' => ( 'Hauptmenü' ) ));
     }
     add_action('init','fototechnik_blog_register_navbar');
-
-    /* Aktivierung der Beitragsformate */
-    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status'));
 
     /* Aktivierung der Beitragsbilder */
     add_theme_support('post-thumbnails');
     
-    /* Hinzufügen von Bildergrößen */
+    /* Hinzufuegen von Bildergroessen */
     add_image_size('fototechnik-blog-thumbnail', 120, 90, true);
     add_image_size('fototechnik-blog-post-nav', 250);
     add_image_size('fototechnik-blog-post-900', 900);
-    
 
     /* Aktivierung des Headerbildes */
     $args = array(
@@ -100,9 +113,9 @@
       'height'        => 450,
       'default-image' => get_template_directory_uri() . '/assets/images/headerbild.jpg',
       'uploads'       => true,
-      'random-default'=> true, /* Wechselt zufällig die Headerbilder */
+      'random-default'=> true, /* Wechselt zufaellig die Headerbilder */
       'flex-width'    => true,
-      'flex-height'    => true,
+      'flex-height'   => true,
     );
     add_theme_support( 'custom-header', $args );
 
@@ -119,8 +132,8 @@
       /* Seitenleiste Rechts */
       register_sidebar( 
         array(
-            'name' => 'Seitenleiste rechts', //Anzeige Name im Widget Menü
-            'id' => 'sidebar_widget', //Die ID für die Widgets
+            'name' => 'Seitenleiste rechts', //Anzeige Name im Widget Menue
+            'id' => 'sidebar_widget', //Die ID fuer die Widgets
             'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
 			      'after_widget'	 => '</div>',
 			      'before_title'	 => '<div class="widget-title"><h3>',
@@ -130,8 +143,8 @@
       /* Footer Abschnitt */
       register_sidebar( 
         array(
-            'name' => 'Footer-Abschnitt', //Anzeige Name im Widget Menü
-            'id' => 'footer_widget', //Die ID für die Widgets
+            'name' => 'Footer-Abschnitt', //Anzeige Name im Widget Menue
+            'id' => 'footer_widget', //Die ID fuer die Widgets
             'before_widget'	 => '<div id="%1$s" class="widget %2$s">',
 			      'after_widget'	 => '</div>',
 			      'before_title'	 => '<div class="widget-title"><h3>',
@@ -142,26 +155,26 @@
     add_action( 'widgets_init','fototechnik_blog_widgets_inits');
     require get_template_directory() . '/assets/widgets/custom_recent_posts.php';
 
-    /* Nächster und Vorheriger Beitrag */
+    /* Naechster und Vorheriger Beitrag */
     function fototechnik_blog_post_next_prev(){
 
-      /* Setzt die Flag ob ein Vorheriger oder Nächster Beitrag vorhanden ist */
+      /* Setzt die Flag ob ein Vorheriger oder Naechster Beitrag vorhanden ist */
       $previousPostFlag = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
       $nextPostFlag     = get_adjacent_post( false, '', false );
 
-      /* Wenn es keine neuen Beiträge und älterne Beiträge gibt, wird die Funktion abgebrochen */
+      /* Wenn es keine neuen Beitraege und aelterne Beitraege gibt, wird die Funktion abgebrochen */
       if ( ! $nextPostFlag && ! $previousPostFlag ) {
         return;
       }
 
-      /* Variablen für das Beitragsbild */
+      /* Variablen fuer das Beitragsbild */
       $nextPost          = get_next_post();
       $nextThumbnail     = get_the_post_thumbnail( $nextPost->ID, $size = 'fototechnik-blog-post-nav' );
       $previousPost      = get_previous_post();
       $previousThumbnail = get_the_post_thumbnail( $previousPost->ID, $size = 'fototechnik-blog-post-nav' );
       
       ?><div class="fototechnik-blog-post-other-posts"><?php
-        /* Nächster Beitrag */
+        /* Naechster Beitrag */
         if ( $nextPostFlag ) { 
           ?><div class="fototechnik-blog-post-next-post"><?php
             ?><div class="fototechnik-blog-post-next-picture"><?php
@@ -203,7 +216,7 @@
     }
     
     /* Kommentar Funktion */  
-    /* Die Funktion für einen einzelnen Kommentar */
+    /* Die Funktion fuer einen einzelnen Kommentar */
     function fototechnik_blog_comments( $comment, $args, $depth ) { 
         $GLOBALS['comment'] = $comment; ?>
         <li class="comment-single">

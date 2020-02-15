@@ -3,13 +3,13 @@ Theme Name: FotoTechnik Blog
 Theme URI: https://github.com/Raychan87/FotoTechnik-Blog
 Author: Raychan
 Author URI: https://Fototour-und-Technik.de
-Description: Dieses Theme habe ich für meinen Blog "FotoTour-und-Technik.de" entwickelt.
+Description: Das Wordpress Theme „FotoTechnik-Blog“ wurde für meine Webseite „FotoTour-und-Technik.de“ entwickelt. Das Theme ist dadurch sehr schlank was der Performance zugutekommt. Das Theme wird keine externen Quellen benutzen und hat den höchsten Sicherheitsstandard der mit meinem Wissen möglich ist. Dadurch ist das Theme auch DSGVO konform.
 Requires at least: WordPress 5
 Version: 1.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: fototechnik-blog
-Tags:
+Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, custom-header, custom-menu, featured-images,featured-image-header, threaded-comments, blog, photography, news
 */
 
 /* Globale Variablen */
@@ -258,6 +258,10 @@ aside {
 
 }
 .footer-copyright { /* Copyright Text im Footer */
-
+  font-style: italic;
 }
+
+
+
+
 

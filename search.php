@@ -9,18 +9,18 @@ get_header();
           <h1>Suchergebnisse für: <?php echo $s ;?></h1>
         </div>
     
-        <?php /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
+        <?php /* Der Loop laeuft nur die Anzahl der angegeben Beitraege in den Einstellungen */
         if ( have_posts() ) : while ( have_posts() ) : the_post();
                 
-                /* Ruft die Content-search.php Datei auf um die Beiträge bzw Seite aufzurufen */
+                /* Ruft die Content-search.php Datei auf um die Beitraege bzw Seite aufzurufen */
                 get_template_part('template_parts/content','search');
             endwhile; else :
                 
-                /* Fehlermeldung, es konnten keine Beiträge gefunden werden */
+                /* Fehlermeldung, es konnten keine Beitraege gefunden werden */
                 get_template_part('template_parts/content','error');
         endif;
         
-        /* Beitrags Navigations (vor und zurück) */
+        /* Beitrags Navigations (vor und zurueck) */
         previous_posts_link();
         next_posts_link();
     ?></div><?php
