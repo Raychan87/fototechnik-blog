@@ -21,166 +21,166 @@ label.responsive-nav-label {
   box-shadow: 0px 7px 19px -1px rgba(0,0,0,0.1);
 }
 /* Der eigentliche Menue Container */
-  nav {
-    width: 850px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  /* Aufzaehlungslisten */
-  nav ul {
+nav {
+  width: 850px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Aufzaehlungslisten */
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+/* Links */
+nav a {
+  font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
+  display: block; /* Den Block Klickbar machen */
+  color: #6b6b6b; /* Schriftfarbe */
+  text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+}
+/* Links mit Mauspfeil */
+nav a:hover {
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+  color: #1d1d1d; /* Schriftfarbe */
+}
+/* Listenelemente der ersten Ebene */
+nav ul li {
+  position: relative;
+  float: left;
+  list-style: none;
+  transition: .7s; /* Die Zeit der Makierung des Reiters */
+}
+/* die Links der Listenelemente der ersten Ebene */
+nav ul li a {
+  padding: 15px 10px 15px 15px;
+}
+/* Die Hintergrundfarbe nach dem markieren */
+nav ul li:hover {
+  background: #e4e3e3;
+}
+  /* Untermenue */
+  nav ul li:hover > ul {
+  top: 100%;
+  left: 0;
+}
+/* Untermenue */
+nav ul ul {
+  /* Wird fuer die dropdown Funktion gebraucht */
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+
+  line-height: .8; /* Hoehe der Leiste */
+  background: #fff; /* Hintergrundfarbe */ 
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
+  z-index: 1; /* Damit das Untermenue ueber den Artikel steht */
+  border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
+  border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
+}
+/* Einzelnes Fenster des Untermenues */
+nav ul ul li {
+  float: none;
+}
+/* Link des einzelnes Fensters des Untermenues */
+nav ul ul li a {
+  padding: 10px 30px 10px 20px;
+  color: #1d1d1d; /* Schriftfarbe fuer die Untermenues */
+  text-transform: none; /* Großbuchstaben fuer Unteremenues deaktivieren */
+  width: max-content; /* Fenster groeße richtet sich nach den Inhalt */
+}
+/* Untermenue vom Untermenue */
+nav ul ul li:hover > ul {
+  top: 5%;
+  left: 100%;
+}
+/* Pfeil nach unten fuer Buttons mit Untermenues */
+nav li > a:after {
+  float: right;
+  content: '';
+  margin-left: 10px;
+  margin-top: 9px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgb(138, 138, 138);
+  border-bottom: 4px solid transparent;
+}
+  /* Pfeil nach rechts fuer Untermenues mit Untermenues */
+  nav ul ul li > a:after {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  border-left: 4px solid rgb(180, 180, 180);
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+/* Ausblenden des Pfeils fuer Buttons ohne Untermenue */
+nav li > a:only-child:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+/*-------------------------------------------------------------*/
+/* Smartphone Navigations Menue */
+@media screen and (max-width: 720px) {
+
+  /* Erhoehen der Schriftgroeße fuer kleine Geraete */
+  * {
+    font-size: 18px;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  /* Links */
-  nav a {
-    font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
-    display: block; /* Den Block Klickbar machen */
-    color: #6b6b6b; /* Schriftfarbe */
-    text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
-    text-decoration: none; /* Unterstreichen der Links deaktivieren */
-  }
-  /* Links mit Mauspfeil */
-  nav a:hover {
-    text-decoration: none; /* Unterstreichen der Links deaktivieren */
-    color: #1d1d1d; /* Schriftfarbe */
-  }
-  /* Listenelemente der ersten Ebene */
-  nav ul li {
+  /* Menue Label */    
+  label.responsive-nav-label {
     position: relative;
-    float: left;
-    list-style: none;
-    transition: .7s; /* Die Zeit der Makierung des Reiters */
+    display: block;
+    padding: 20px;
+    background: rgba(247, 247, 247, 0.73);;
+    cursor: pointer; /* Mauspfeil wird geaendert fuer das Menue */
+    color: #333;
   }
-  /* die Links der Listenelemente der ersten Ebene */
-  nav ul li a {
-    padding: 15px 10px 15px 15px;
+  /* Menue Symbol Container */
+  label.responsive-nav-label span {
+    margin-right: 10px;  
   }
-  /* Die Hintergrundfarbe nach dem markieren */
-  nav ul li:hover {
-    background: #e4e3e3;
-  }
-   /* Untermenue */
-   nav ul li:hover > ul {
-    top: 100%;
-    left: 0;
-  }
-  /* Untermenue */
-  nav ul ul {
-    /* Wird fuer die dropdown Funktion gebraucht */
+  /* Das Untermenue wird solange ausgeblendet bis man auf das Symbol klickt */
+  nav {
     position: absolute;
     top: -9999px;
-    left: -9999px;
-
-    line-height: .8; /* Hoehe der Leiste */
-    background: #fff; /* Hintergrundfarbe */ 
-    /* offset-x | offset-y | blur-radius | color */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
-    z-index: 1; /* Damit das Untermenue ueber den Artikel steht */
-    border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
-    border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
+    padding: 10px;
+  }   
+  input#responsive-nav[type=checkbox]:checked ~ nav {
+    position: relative;
+    top: 0;
   }
-  /* Einzelnes Fenster des Untermenues */
+  /* Ausblenden der Menue Pfeile */
+  nav a:after {
+    display: none;
+  }
+  nav li {
+    float: none !important;
+    width: 100% !important;
+    border-bottom: none !important; 
+  }
+  nav li a {
+    margin-bottom: 10px !important;
+    padding: 10px 20px !important; 
+  }
+  nav ul ul {
+    position: relative !important;
+    width: 100%;
+    left: 0 !important;
+    top: 0 !important;
+    background: none !important;
+    box-shadow: none;
+    border-top: none !important;
+    border:none !important;
+  }
   nav ul ul li {
-    float: none;
+    padding-left: 20px;
   }
-  /* Link des einzelnes Fensters des Untermenues */
-  nav ul ul li a {
-    padding: 10px 30px 10px 20px;
-    color: #1d1d1d; /* Schriftfarbe fuer die Untermenues */
-    text-transform: none; /* Großbuchstaben fuer Unteremenues deaktivieren */
-    width: max-content; /* Fenster groeße richtet sich nach den Inhalt */
-  }
-  /* Untermenue vom Untermenue */
-  nav ul ul li:hover > ul {
-    top: 5%;
-    left: 100%;
-  }
-  /* Pfeil nach unten fuer Buttons mit Untermenues */
-  nav li > a:after {
-    float: right;
-    content: '';
-    margin-left: 10px;
-    margin-top: 9px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid rgb(138, 138, 138);
-    border-bottom: 4px solid transparent;
-  }
-   /* Pfeil nach rechts fuer Untermenues mit Untermenues */
-   nav ul ul li > a:after {
-    position: absolute;
-    top: 10%;
-    right: 10px;
-    border-left: 4px solid rgb(180, 180, 180);
-    border-right: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  }
-  /* Ausblenden des Pfeils fuer Buttons ohne Untermenue */
-  nav li > a:only-child:after {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  }
-  /*-------------------------------------------------------------*/
-  /* Smartphone Navigations Menue */
-  @media screen and (max-width: 720px) {
-
-    /* Erhoehen der Schriftgroeße fuer kleine Geraete */
-    * {
-      font-size: 18px;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* Menue Label */    
-    label.responsive-nav-label {
-      position: relative;
-      display: block;
-      padding: 20px;
-      background: rgba(247, 247, 247, 0.73);;
-      cursor: pointer; /* Mauspfeil wird geaendert fuer das Menue */
-      color: #333;
-    }
-    /* Menue Symbol Container */
-    label.responsive-nav-label span {
-      margin-right: 10px;  
-    }
-    /* Das Untermenue wird solange ausgeblendet bis man auf das Symbol klickt */
-    nav {
-      position: absolute;
-      top: -9999px;
-      padding: 10px;
-    }   
-    input#responsive-nav[type=checkbox]:checked ~ nav {
-      position: relative;
-      top: 0;
-    }
-    /* Ausblenden der Menue Pfeile */
-    nav a:after {
-      display: none;
-    }
-    nav li {
-      float: none !important;
-      width: 100% !important;
-      border-bottom: none !important; 
-    }
-    nav li a {
-      margin-bottom: 10px !important;
-      padding: 10px 20px !important; 
-    }
-    nav ul ul {
-      position: relative !important;
-      width: 100%;
-      left: 0 !important;
-      top: 0 !important;
-      background: none !important;
-      box-shadow: none;
-      border-top: none !important;
-      border:none !important;
-    }
-    nav ul ul li {
-      padding-left: 20px;
-    }
-  }  
+}  
