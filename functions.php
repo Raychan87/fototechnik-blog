@@ -21,6 +21,7 @@
         remove_filter('comment_text_rss', 'wp_staticize_emoji' ); /* Emoticons deaktivieren */
         remove_filter('wp_mail', 'wp_staticize_emoji_for_email' ); /* Emoticons deaktivieren */
         add_filter('tiny_mce_plugins', 'disable_emojis_tinymce' ); /* Emoticons deaktivieren */ 
+        wp_deregister_script('wp-embed'); /* Deaktivieren von Embed https://fastwp.de/magazin/wordpress-embeds-und-responsive-images-deaktivieren/ */
     } 
     add_action('init','fototechnik_blog_safety_function');
 
@@ -32,6 +33,13 @@
         return array();
       }
     }
+
+    /* Der Heartbeat ist für den Autosafe im Beitrageditor usw.widget
+    https://fastwp.de/magazin/wordpress-heartbeat-api-deaktivieren/ */
+    function stop_heartbeat() {
+	    wp_deregister_script('heartbeat');
+    }
+    add_action('init', 'stop_heartbeat', 1);
 
     /* Whitelist und Einstellen der REST API Schnittstelle */
     function fototechnik_blog_rest_api() {
@@ -65,8 +73,15 @@
     }
     add_action( 'after_setup_theme', 'fototechnik_blog_content_width', 0 );
 
-    /* Feed Links aktivieren */
-    add_theme_support( 'automatic-feed-links' );
+    /* Deaktivieren der Feed Funktionen */
+    function fototechnik_blog_disable_feed() {
+      wp_die(__('<p>Feed nicht verfügbar. Schau mal hier: <a href="'.get_bloginfo('url').'">Homepage</a>!</p>'));
+     }
+     add_action('do_feed', 'fototechnik_blog_disable_feed', 1);
+     add_action('do_feed_rdf', 'fototechnik_blog_disable_feed', 1);
+     add_action('do_feed_rss', 'fototechnik_blog_disable_feed', 1);
+     add_action('do_feed_rss2', 'fototechnik_blog_disable_feed', 1);
+     add_action('do_feed_atom', 'fototechnik_blog_disable_feed', 1);
 
     /* Aktivierung der Beitragsformate */
      add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status'));
@@ -297,6 +312,65 @@
       }
       </style>
     <?php }
-    add_action('wp_head','fototechnik_blog_font'); ?>
+    add_action('wp_head','fototechnik_blog_font');
 
+    /* SEO funktion */
+    /* https://fastwp.de/magazin/automatische-seo-meta-tags/ */
+    function FastWP_seo() {
+    global $page, $paged, $post;
+    $default_keywords = 'asien,tokyo,tokio,osaka,kyoto,japan,kamera,camera,natur,landschaft,fotografie,foto,photo,synology,diskstation,wordpress,raspberry,pi,deutschland,deutsch,html,css,php,webseite,website,';
+    $output = '';
 
+    $description = get_bloginfo('description', 'display');
+    $pagedata = get_post($post->ID);
+    if (is_singular()) {
+    if (!empty($pagedata)) {
+        $content = apply_filters('the_content', $pagedata->post_content);
+        $content = substr(trim(strip_tags($content)), 0, 145) . '...';
+        $content = preg_replace('#\n#', ' ', $content);
+        $content = preg_replace('#\s{2,}#', ' ', $content);
+      } 
+    } else {
+      $content = $description;	
+    }
+    $output .= '' . "\n";
+
+    $cats = get_the_category();
+      if (!empty($cats)) foreach($cats as $cat) $keys .= $cat->name . ', ';
+      $keys .= $default_keywords;
+    $output .= "\t\t" . '' . "\n";
+
+    if (is_category()) {
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      if ($paged > 1) {
+        $output .=  "\t\t" . '' . "\n";
+      } else {
+        $output .=  "\t\t" . '' . "\n";
+      }
+    } else if (is_home() || is_singular()) {
+      $output .=  "\t\t" . '' . "\n";
+    } else {
+      $output .= "\t\t" . '' . "\n";
+    }
+
+    $url = ltrim(esc_url($_SERVER['REQUEST_URI']), '/');
+    $name = get_bloginfo('name', 'display');
+    $title = trim(wp_title('', false));
+    $cat = single_cat_title('', false);
+    $search = get_search_query();
+
+    if ($paged >= 2 || $page >= 2) $page_number = ' | ' . sprintf('Seite %s', max($paged, $page));
+    else $page_number = '';
+
+    if (is_home() || is_front_page()) $seo_title = $name . ' | ' . $description;
+    elseif (is_singular())            $seo_title = $title . ' | ' . $name;
+    elseif (is_category())            $seo_title = '' . $cat . ' | ' . $name;
+    elseif (is_archive())             $seo_title = ' ' . $title . ' | ' . $name;
+    elseif (is_search())              $seo_title = '' . $search . ' | ' . $name;
+    elseif (is_404())                 $seo_title = '' . $url . ' | ' . $name;
+    else                              $seo_title = $name . ' | ' . $description;
+
+    $output .= "\t\t" . '' . "\n";
+
+    return $output;
+  }
