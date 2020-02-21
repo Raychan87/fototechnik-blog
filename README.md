@@ -52,15 +52,3 @@ If you are interested, you are welcome to use the theme further, because I would
 
   - normalize.css: https://necolas.github.io/normalize.css/
     (Um die Browser Komptabilität zu gewährleisten)
-
-
-    
-
-
-
-
-
-
-
-
-Translated with www.DeepL.com/Translator
