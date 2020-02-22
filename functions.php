@@ -105,22 +105,22 @@ function fototechnik_blog_content_width() {
 add_action( 'after_setup_theme', 'fototechnik_blog_content_width', 0 );
 
 /* Aktivierung der Beitragsformate */
-  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'status'));
+  add_theme_support( 'post-formats', array( 'aside', 'gallery'));
 
-/* Portfolio aktivieren */
-function create_post_type() {
-  register_post_type( 'portfolio',
+/* Gallerie Bereich aktivieren */
+function fototechnik_blog_create_post_type() {
+  register_post_type( 'Gallerie',
+  /* https://codex.wordpress.org/Function_Reference/register_post_type */
     array(
-      'labels' => array(
-        'name' => __( 'Portfolios' ),
-        'singular_name' => __( 'Portfolio' )
-      ),
-    'public' => true,
-    'has_archive' => true,
+      'label' => 'Gallerie', /* Angezeigter Name */
+      'description' => 'Dies ist die Fotogallerie',
+      'public' => true, /* Post Typ ist oeffentlich */
+      'has_archive' => true, /* Post Typ ist ein Archiv */
+      'exclude_from_search' => true, /* Wird nicht in die Suche mit einbezogen */
     )
   );
 }
-add_action( 'init', 'create_post_type' );
+add_action( 'init', 'fototechnik_blog_create_post_type' );
 
 /* WP/LR-Sync */
 update_option( 'wplr_plugins', array( 'post_types.php' ) );

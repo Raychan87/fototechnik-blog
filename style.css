@@ -205,6 +205,10 @@ aside {
 }
 
 /* Schlagwörter - Widget */
+.content-tag-title { /* Schlagwort Ueberschrift */
+  text-align: center;
+}
+
 .tagcloud { /* Container von Schlagwort Widget */
   text-align: left;
   padding-top: 10px;

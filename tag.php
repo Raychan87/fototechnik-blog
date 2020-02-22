@@ -7,14 +7,14 @@ get_header();
     <div class="container-article">
    
    <?php /* Schlagwort als Überschrift und Beschreibung */?>
-   <h1><?php single_tag_title();?></h1>
+   <h1 class="content-tag-title">Schlagwort: <?php single_tag_title();?></h1>
    <?php echo tag_description();
    
         /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
         if ( have_posts() ) : while ( have_posts() ) : the_post();
 
                 /* Ruft die Content.php Datei auf um die Beiträge bzw Seite aufzurufen */
-                get_template_part('template_parts/content');
+                get_template_part('template_parts/content','index');
 
             endwhile; else :
 
