@@ -1,11 +1,3 @@
-<footer class="container_footer">
-        <div class="footer-widget">
-            <?php /* Wenn der Footer kein Widget hat, wird dieses Feld ausgeblendet */
-            if( is_active_sidebar('footer_widget') ):
-                /* Bindet die Widgets in den Footer ein */
-                dynamic_sidebar('footer_widget');
-            endif;
-        ?></div>
         <div class="footer-copyright">
             <?php /* gibt das aktuelle Jahr und den Namen der Webseite aus */?>
             <p><?php bloginfo('name');?> - Copyright 2018 - <?php echo date('Y'); ?></p>

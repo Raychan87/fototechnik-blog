@@ -24,6 +24,6 @@ get_header();
     get_sidebar();
 ?></main><?php
 
-/* Footer aufrufen */
-get_footer();
-?>
+/* Footer aufrufen */?>
+<footer class="container_footer">
+<?php get_footer(); ?>

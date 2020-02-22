@@ -109,18 +109,74 @@ add_action( 'after_setup_theme', 'fototechnik_blog_content_width', 0 );
 
 /* Gallerie Bereich aktivieren */
 function fototechnik_blog_create_post_type() {
-  register_post_type( 'Gallerie',
   /* https://codex.wordpress.org/Function_Reference/register_post_type */
-    array(
-      'label' => 'Gallerie', /* Angezeigter Name */
-      'description' => 'Dies ist die Fotogallerie',
-      'public' => true, /* Post Typ ist oeffentlich */
-      'has_archive' => true, /* Post Typ ist ein Archiv */
-      'exclude_from_search' => true, /* Wird nicht in die Suche mit einbezogen */
-    )
+  $labels = array(
+    'name'               => _x( 'Galerien', 'post type general name' ),
+    'singular_name'      => _x( 'Galerie', 'post type singular name' ),
+    'add_new'            => __( 'Neue Galerie anlegen'),
+    'add_new_item'       => __( 'Neue Galerie anlegen' ),
+    'edit_item'          => __( 'Galerie bearbeiten' ),
+    'new_item'           => __( 'Neue Galerie' ),
+    'all_items'          => __( 'Alle Galerien' ),
+    'view_item'          => __( 'Galerie ansehen' ),
+    'search_items'       => __( 'Galerien durchsuchen' ),
+    'not_found'          => __( 'Keine Galerie gefunden' ),
+    'not_found_in_trash' => __( 'Keine Galerie im Papierkorb gefunden' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Galerie'
   );
+  // Werte des neuen Custom Post Types werden zugewiesen
+  $args = array(
+      'labels'              => $labels,
+      'description'         => 'Hier sind meine Fotos in Galerie zu finden.',
+      'hierarchical'        => true,
+      'public'              => true,
+      'show_ui'             => true,
+      'show_in_menu'        => true,
+      'show_in_nav_menus'   => true,
+      'show_in_admin_bar'   => true,
+      'publicly_queryable'  => true,
+      'exclude_from_search' => true, /* Wird von der Suche ausgeschlossen */
+      'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+      'has_archive'         => true,
+      'can_export'          => false,
+      'menu_position'       => 5,
+      'capability_type'     => 'post',
+      'rewrite'             => array('slug' => 'galerie' )
+  );
+  register_post_type( 'galerie', $args );
 }
 add_action( 'init', 'fototechnik_blog_create_post_type' );
+
+/* Custom Taxonomies aktivieren */
+function fototechnik_blog_custom_taxonomies() {
+  
+  /* Hierarchische Taxonomie für die Gallerie */
+  $labels = array(
+    'name'              => __( 'Stichwörter'),
+    'singular_name'     => __( 'Stichwort'),
+    'search_items'      => __( 'Stichwörter durchsuchen' ),
+    'all_items'         => __( 'Alle Stichwörter' ),
+    'parent_item'       => __( 'Übergeordnetes Stichwort' ),
+    'parent_item_colon' => __( 'Übergeordnetes Stichwort:' ),
+    'edit_item'         => __( 'Stichwort bearbeiten' ),
+    'update_item'       => __( 'Stichwort aktualisieren' ),
+    'add_new_item'      => __( 'Neue Stichwort erstellen' ),
+    'new_item_name'     => __( 'Neue Stichwort' ),
+    'menu_name'         => __( 'Stichwort' ),
+  );
+
+  $args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'stichwort' ),
+  );
+  register_taxonomy( 'stichwort', array( 'galerie' ), $args );
+}
+add_action( 'init', 'fototechnik_blog_custom_taxonomies', 0 );
 
 /* WP/LR-Sync */
 update_option( 'wplr_plugins', array( 'post_types.php' ) );

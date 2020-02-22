@@ -243,13 +243,32 @@ aside {
 .container_footer { /* Container des Footers */
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #1e1e1e;
+  background-color: #1e1e1e !important;
   color:rgba(255, 255, 255, 0.87);
   text-align: center;
   clear: both;
 }
 .footer-copyright { /* Copyright Text im Footer */
   font-style: italic;
+}
+.footer-widget .widget_nav_menu{
+  background-color: #1e1e1e !important;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.footer-widget ul {
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  gap: 15px; /* Abstand zwischen den Zellen */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Groeße der Zellen */
+}
+.footer-widget .widget_nav_menu li{
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+  text-align: center;
+  border: 0;
+}
+.footer-widget .widget_nav_menu a{
+  Color: var(--background_website);
 }
 
 
