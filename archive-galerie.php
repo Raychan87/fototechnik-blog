@@ -7,8 +7,8 @@
 get_header();
 
 /* Der Loop wird in ein Container gepackt */?>
-<main class="container-main"> 
-    <div class="container-article"><?php
+<main class="container-gallery-main"> 
+    <div class="container-gallery-article"><?php
 
         /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
         if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -18,23 +18,11 @@ get_header();
                        
         endwhile;  endif;        
 
-        /* Beitrags Navigations (vor und zurück) */
-        previous_posts_link();
-        next_posts_link();
     ?></div><?php
-    /* sidebar.php aufrufen */
-   /* get_sidebar(); */
 ?></main><?php
 
-/* footer.php aufrufen */?>
-<footer class="container_footer">
-        <div class="footer-widget">
-            <?php /* Wenn der Footer kein Widget hat, wird dieses Feld ausgeblendet */
-            if( is_active_sidebar('footer_widget') ):
-                /* Bindet die Widgets in den Footer ein */
-                dynamic_sidebar('footer_widget');
-            endif;
-        ?></div>
-<?php get_footer(); ?>
+/* footer.php aufrufen */
+get_footer(); ?>
+
 
 

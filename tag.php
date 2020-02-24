@@ -30,6 +30,5 @@ get_header();
     get_sidebar();
 ?></main><?php
 
-/* footer.php aufrufen */?>
-<footer class="container_footer">
-<?php get_footer(); ?>
+/* footer.php aufrufen */
+get_footer(); ?>
