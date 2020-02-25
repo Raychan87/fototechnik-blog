@@ -174,17 +174,17 @@ require get_template_directory() . '/assets/widgets/custom_recent_posts.php';
 function fototechnik_blog_create_post_type() {
   /* https://codex.wordpress.org/Function_Reference/register_post_type */
   $labels = array(
-    'name'               => _x( 'Galerien', 'post type general name' ),
-    'singular_name'      => _x( 'Galerie', 'post type singular name' ),
-    'add_new'            => __( 'Neue Galerie anlegen'),
-    'add_new_item'       => __( 'Neue Galerie anlegen' ),
-    'edit_item'          => __( 'Galerie bearbeiten' ),
-    'new_item'           => __( 'Neue Galerie' ),
-    'all_items'          => __( 'Alle Galerien' ),
-    'view_item'          => __( 'Galerie ansehen' ),
-    'search_items'       => __( 'Galerien durchsuchen' ),
-    'not_found'          => __( 'Keine Galerie gefunden' ),
-    'not_found_in_trash' => __( 'Keine Galerie im Papierkorb gefunden' ),
+    'name'               => 'Galerien', 'post type general name',
+    'singular_name'      => 'Galerie', 'post type singular name',
+    'add_new'            => 'Neue Galerie anlegen',
+    'add_new_item'       => 'Neue Galerie anlegen',
+    'edit_item'          => 'Galerie bearbeiten',
+    'new_item'           => 'Neue Galerie',
+    'all_items'          => 'Alle Galerien',
+    'view_item'          => 'Galerie ansehen',
+    'search_items'       => 'Galerien durchsuchen',
+    'not_found'          => 'Keine Galerie gefunden',
+    'not_found_in_trash' => 'Keine Galerie im Papierkorb gefunden',
     'parent_item_colon'  => '',
     'menu_name'          => 'Galerie'
   );
@@ -220,17 +220,17 @@ function fototechnik_blog_custom_taxonomies() {
   
   /* Hierarchische Taxonomie für die Gallerie */
   $labels = array(
-    'name'              => __( 'Stichwörter'),
-    'singular_name'     => __( 'Stichwort'),
-    'search_items'      => __( 'Stichwörter durchsuchen' ),
-    'all_items'         => __( 'Alle Stichwörter' ),
-    'parent_item'       => __( 'Übergeordnetes Stichwort' ),
-    'parent_item_colon' => __( 'Übergeordnetes Stichwort:' ),
-    'edit_item'         => __( 'Stichwort bearbeiten' ),
-    'update_item'       => __( 'Stichwort aktualisieren' ),
-    'add_new_item'      => __( 'Neue Stichwort erstellen' ),
-    'new_item_name'     => __( 'Neue Stichwort' ),
-    'menu_name'         => __( 'Stichwort' ),
+    'name'              =>  'Stichwörter',
+    'singular_name'     =>  'Stichwort',
+    'search_items'      =>  'Stichwörter durchsuchen',
+    'all_items'         =>  'Alle Stichwörter',
+    'parent_item'       =>  'Übergeordnetes Stichwort',
+    'parent_item_colon' =>  'Übergeordnetes Stichwort:',
+    'edit_item'         =>  'Stichwort bearbeiten',
+    'update_item'       =>  'Stichwort aktualisieren',
+    'add_new_item'      =>  'Neue Stichwort erstellen',
+    'new_item_name'     =>  'Neue Stichwort',
+    'menu_name'         =>  'Stichwort',
   );
 
   $args = array(
