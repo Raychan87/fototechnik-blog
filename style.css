@@ -19,6 +19,7 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   --fontcolor_linkhover:#225f94d0; /* für markierte Links */
   --fontcolor_normal:#000;         /* für Texte */
   --fontcolor_light:#808080cc;     /* für Texte dezent */
+  --fontcolor_inv_normal:#fff;     /* für Texte mit dunklen Hintergrund */
   /* Hintergrundfarbe */
   --background_website:#ffffff;    
   --background_container:#f1f1f1;
@@ -280,11 +281,17 @@ aside {
 }
 
 /* Numerische Seitenangabe */
+.fototechnik-blog-numeric-posts-nav {
+  background-color:var(--background_container); /* Hintergrundfarbe */
+  border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
 .fototechnik-blog-numeric-posts-nav li a,
 .fototechnik-blog-numeric-posts-nav li a:hover,
 .fototechnik-blog-numeric-posts-nav li.active a,
 .fototechnik-blog-numeric-posts-nav li.disabled {
-    color: #fff;
     text-decoration:none;
 }
 .fototechnik-blog-numeric-posts-nav li {
@@ -294,7 +301,6 @@ aside {
 .fototechnik-blog-numeric-posts-nav li a:hover,
 .fototechnik-blog-numeric-posts-nav li.active a,
 .fototechnik-blog-numeric-posts-nav li.disabled {
-    background-color: #6FB7E9;
     border-radius: 3px;
     cursor: pointer;
     padding: 12px;
@@ -302,7 +308,7 @@ aside {
 }
 .fototechnik-blog-numeric-posts-nav li a:hover,
 .fototechnik-blog-numeric-posts-nav li.active a {
-    background-color: #3C8DC5;
+    border:1px solid var(--bordercolor_link); /* Rahmenfarbe */
 }
 
 /* Footer */
@@ -310,7 +316,7 @@ aside {
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: #1e1e1e !important;
-  color:rgba(255, 255, 255, 0.87);
+  color: var(--fontcolor_inv_normal);
   text-align: center;
   clear: both;
 }

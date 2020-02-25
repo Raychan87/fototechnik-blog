@@ -13,68 +13,65 @@
  * Theme Setup
  * 
  */
-if ( ! function_exists (fototechnik_blog_setup()) ){
-  function fototechnik_blog_setup() {
-    /* Theme Lang.
-    /* load_theme_textdomain( 'head-blog', get_template_directory() . '/languages' ); */
+function fototechnik_blog_setup() {
+  /* Theme Lang.
+  /* load_theme_textdomain( 'head-blog', get_template_directory() . '/languages' ); */
 
-    /* Fügt die RSS Feed Links für Beitraege und Kommentare ein */
-		/* add_theme_support( 'automatic-feed-links' ); */
+  /* Fügt die RSS Feed Links für Beitraege und Kommentare ein */
+  /* add_theme_support( 'automatic-feed-links' ); */
 
-    /* Zeigt den Titel im Browser Tab an */
-    add_theme_support( 'title-tag' );
+  /* Zeigt den Titel im Browser Tab an */
+  add_theme_support( 'title-tag' );
 
-    /* HTML5 Converter */
-    add_theme_support(
-      'html5',
-      array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'script',
-        'style',
-      )
-    );
+  /* HTML5 Converter */
+  add_theme_support(
+    'html5',
+    array(
+      'search-form',
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption',
+      'script',
+      'style',
+    )
+  );
 
-    /* Navigations Menue aktivieren */
-    register_nav_menus(
-      array(
-        'navbar' => ( 'Hauptmenü' ) 
-      )
-    );
+  /* Navigations Menue aktivieren */
+  register_nav_menus(
+    array(
+      'navbar' => ( 'Hauptmenü' ) 
+    )
+  );
 
-    /* Content Width gibt die Maximale des Inhaltsbereich ohne Rahmen an */
-    global $content_width;
-	  if ( ! isset( $content_width ) ) {
-		  $content_width = 1320;
-    }
-    
-    /* Aktivierung der Beitragsbilder */
-    add_theme_support('post-thumbnails');
+  /* Content Width gibt die Maximale des Inhaltsbereich ohne Rahmen an */
+  global $content_width;
+  if ( ! isset( $content_width ) ) {
+    $content_width = 1320;
+  }
 
-    /* Hinzufuegen von Bildergroessen */
-    add_image_size('fototechnik-blog-thumbnail', 120, 90, true);
-    add_image_size('fototechnik-blog-post-nav', 250);
-    add_image_size('fototechnik-blog-post-900', 900);
+  /* Aktivierung der Beitragsbilder */
+  add_theme_support('post-thumbnails');
 
-    /* Aktivierung des Headerbildes */
-    $args = array(
-      'width'         => 2000,
-      'height'        => 450,
-      'default-image' => get_template_directory_uri() . '/assets/images/headerbild.jpg',
-      'uploads'       => true,
-      'random-default'=> true, /* Wechselt zufaellig die Headerbilder */
-      'flex-width'    => true,
-      'flex-height'   => true,
-    );
-    add_theme_support( 'custom-header', $args );
+  /* Hinzufuegen von Bildergroessen */
+  add_image_size('fototechnik-blog-thumbnail', 120, 90, true);
+  add_image_size('fototechnik-blog-post-nav', 250);
+  add_image_size('fototechnik-blog-post-900', 900);
 
-    /* Aktivierung der Beitragsformate */
-    add_theme_support( 'post-formats', array( 'aside', 'gallery'));
+  /* Aktivierung des Headerbildes */
+  $args = array(
+    'width'         => 2000,
+    'height'        => 450,
+    'default-image' => get_template_directory_uri() . '/assets/images/headerbild.jpg',
+    'uploads'       => true,
+    'random-default'=> true, /* Wechselt zufaellig die Headerbilder */
+    'flex-width'    => true,
+    'flex-height'   => true,
+  );
+  add_theme_support( 'custom-header', $args );
 
-    }
+  /* Aktivierung der Beitragsformate */
+  add_theme_support( 'post-formats', array( 'aside', 'gallery'));
 }
 add_action( 'after_setup_theme', 'fototechnik_blog_setup' );
 

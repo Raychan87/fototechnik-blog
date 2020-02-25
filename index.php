@@ -17,8 +17,7 @@ get_header();
         endif;
         
         /* Beitrags Navigations (vor und zurück) */
-        previous_posts_link();
-        next_posts_link();
+        fototechnik_blog_numeric_posts_nav();
     ?></div><?php
     /* sidebar.php aufrufen */
     get_sidebar();
