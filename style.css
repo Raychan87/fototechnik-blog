@@ -239,6 +239,72 @@ aside {
   padding:2px 0;
 }
 
+/* Naechster und Vorheriger Beitrag */
+.fototechnik-blog-post-other-posts { /* Container der Beitrags Navigation */
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  gap: 15px; /* Abstand zwischen den Zellen */
+  grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+  text-align: center;
+}
+.fototechnik-blog-post-next-post, /* Naechster Beitrag */
+.fototechnik-blog-post-prev-post { /* Vorheriger Beitrag */
+  background-color:var(--background_container); /* Hintergrundfarbe */
+  border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  gap: 5px; /* Abstand zwischen den Zellen */
+  grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+  padding: 15px;
+}
+.fototechnik-blog-post-next-picture, /* Beitragsbild */
+.fototechnik-blog-post-prev-picture { 
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--bordercolor_images);
+}
+.fototechnik-blog-post-next-title, /* Beitragstyp */
+.fototechnik-blog-post-prev-title {
+  color: var(--fontcolor_light) !important;
+  font-style: italic;
+}
+.fototechnik-blog-post-next-text, /* Beitragstitel und Datum */
+.fototechnik-blog-post-prev-text {
+  display: flex; 
+  flex-direction: column; /* Texte Untereinander setzen */
+  justify-content: center; /* Content Vertical mitteln */
+}
+.fototechnik-blog-post-next-text a, /* Beitragstitel und Datum */
+.fototechnik-blog-post-prev-text a {
+  color: var(--fontcolor_normal);
+  padding: 5px 0;
+  text-decoration: none; /* Unterstreichen der Links deaktivieren */
+}
+
+/* Numerische Seitenangabe */
+.fototechnik-blog-numeric-posts-nav li a,
+.fototechnik-blog-numeric-posts-nav li a:hover,
+.fototechnik-blog-numeric-posts-nav li.active a,
+.fototechnik-blog-numeric-posts-nav li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+.fototechnik-blog-numeric-posts-nav li {
+    display: inline;
+}
+.fototechnik-blog-numeric-posts-nav li a,
+.fototechnik-blog-numeric-posts-nav li a:hover,
+.fototechnik-blog-numeric-posts-nav li.active a,
+.fototechnik-blog-numeric-posts-nav li.disabled {
+    background-color: #6FB7E9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+.fototechnik-blog-numeric-posts-nav li a:hover,
+.fototechnik-blog-numeric-posts-nav li.active a {
+    background-color: #3C8DC5;
+}
+
 /* Footer */
 .container_footer { /* Container des Footers */
   padding-top: 2px;
