@@ -125,7 +125,6 @@ add_action('wp_enqueue_scripts','scripts_import');
 
 /**
  * 
- * 
  * Widgets Initialisierung
  * 
  */
@@ -149,7 +148,7 @@ function fototechnik_blog_widgets_inits() {
         'after_title'	   => '</h3></div>',
       )
   );
-  /* Footer Abschnitt nur für Galerie */
+  /* Footer Abschnitt nur für Posttype Galerie */
   register_sidebar( 
     array(
         'name' => 'Footer-Abschnitt', //Anzeige Name im Widget Menue

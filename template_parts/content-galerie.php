@@ -1,8 +1,8 @@
 <?php
-/* Inhalt eines ...*/?>
+/* Inhalt eines Posttype Galerie */?>
 <article <?php post_class();?>>
-    <div class="content-post">
-        <div class="content-title"><?php 
+    <div class="content-post-galerie">
+        <div class="content-title-galerie"><?php 
 
             /* Überschrift des Beitrages */
             ?><h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1><?php

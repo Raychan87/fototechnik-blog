@@ -1,6 +1,6 @@
 <footer class="container_footer">
-    <?php /* Wenn die archive-***.php geladen wird dann */
-    if (is_post_type_archive()) : ?>
+    <?php /* Wenn der PostType 'galerie' geladen wird, dann... */
+    if (get_post_type() == 'galerie') : ?>
         <div class="footer-widget">
             <?php /* Wenn der Footer kein Widget hat, wird dieses Feld ausgeblendet */
             if( is_active_sidebar('footer_widget') ):

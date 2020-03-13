@@ -1,7 +1,4 @@
 /*! custom_content.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
-article { /* Beitragsseite */
-  margin-bottom: 15px; /* Artikel Abstand */
-}
 @media screen and (min-width: 720px) {
     .container-article {
     float:left;
@@ -12,10 +9,27 @@ article { /* Beitragsseite */
     padding-right: 15px;
   }
 }
+.container-article-galerie { /* Artikel Posttype Galerie */
+  float:left;
+  width:100%;
+  background-color:var(--background_container); /* Hintergrundfarbe */
+  padding:30px 15px 15px;
+  margin-bottom: 15px;
+  border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+}
+.container-posts-galerie { /* Container der Beiträge Posttyp Galerie */
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  gap: 15px; /* Abstand zwischen den Zellen */
+  grid-template-columns: 1fr 1fr 1fr; /* Groeße der Zellen */
+}
 .content-post { /* Container des Beitrags */
   background-color:var(--background_container); /* Hintergrundfarbe */
   padding:30px 15px 15px;
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+  margin-bottom: 15px; /* Artikel Abstand */
+}
+.content-post-galerie { /* Beitrag Posttype Galerie */
+  border:1px solid var(--bordercolor_images); /* Rahmenfarbe */
 }
 .content-thumb { /* Container des Beitragsbild */
   text-align: center;
@@ -39,7 +53,25 @@ article { /* Beitragsseite */
   color:var(--fontcolor_normal);
   font:35px "Open Sans",Arial;
 }
-.content-title a:hover { /* Kategorie Links */
+.content-title a:hover { 
+  text-decoration: underline; /* Unterstreichen der Links */
+}
+.content-title-galerie { /*Überschrift Posttyps Galerie */
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color:var(--fontcolor_normal);
+  font:35px "Open Sans",Arial;
+}
+.content-title-galerie h1 { /* Überschrift des Beitrags Posttyps Galerie */
+  margin-top: 0;
+}
+.content-title-galerie a { /* Posttyps Galerie */
+  color:var(--fontcolor_light);
+  font:20px "Open Sans",Arial;
+  font-weight: 300;
+}
+.content-title-galerie a:hover { /* Posttyps Galerie */
   text-decoration: underline; /* Unterstreichen der Links */
 }
 .content-single-title h1 { /* Überschrift des Beitrags (Single) */
