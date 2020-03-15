@@ -29,7 +29,7 @@
   margin-bottom: 15px; /* Artikel Abstand */
 }
 .content-post-galerie { /* Beitrag Posttype Galerie */
-  border:1px solid var(--bordercolor_images); /* Rahmenfarbe */
+
 }
 .content-thumb { /* Container des Beitragsbild */
   text-align: center;
@@ -57,8 +57,6 @@
   text-decoration: underline; /* Unterstreichen der Links */
 }
 .content-title-galerie { /*Überschrift Posttyps Galerie */
-  margin-top: 0;
-  margin-bottom: 15px;
   text-align: center;
   color:var(--fontcolor_normal);
   font:35px "Open Sans",Arial;

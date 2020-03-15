@@ -169,29 +169,29 @@ require get_template_directory() . '/assets/widgets/custom_recent_posts.php';
  * Custom Post Types
  * 
  */
-/* Galerie Bereich aktivieren */
+/* Fotogalerie Bereich aktivieren */
 function fototechnik_blog_create_post_type() {
   /* https://codex.wordpress.org/Function_Reference/register_post_type */
   $labels = array(
-    'name'               => 'Galerien', 'post type general name',
-    'singular_name'      => 'Galerie', 'post type singular name',
-    'add_new'            => 'Neue Galerie anlegen',
-    'add_new_item'       => 'Neue Galerie anlegen',
-    'edit_item'          => 'Galerie bearbeiten',
-    'new_item'           => 'Neue Galerie',
-    'all_items'          => 'Alle Galerien',
-    'view_item'          => 'Galerie ansehen',
-    'search_items'       => 'Galerien durchsuchen',
-    'not_found'          => 'Keine Galerie gefunden',
-    'not_found_in_trash' => 'Keine Galerie im Papierkorb gefunden',
+    'name'               => 'Fotogalerien', 'post type general name',
+    'singular_name'      => 'Fotogalerie', 'post type singular name',
+    'add_new'            => 'Neue Fotogalerie anlegen',
+    'add_new_item'       => 'Neue Fotogalerie anlegen',
+    'edit_item'          => 'Fotogalerie bearbeiten',
+    'new_item'           => 'Neue Fotogalerie',
+    'all_items'          => 'Alle Fotogalerien',
+    'view_item'          => 'Fotogalerie ansehen',
+    'search_items'       => 'Fotogalerien durchsuchen',
+    'not_found'          => 'Keine Fotogalerie gefunden',
+    'not_found_in_trash' => 'Keine Fotogalerie im Papierkorb gefunden',
     'parent_item_colon'  => '',
-    'menu_name'          => 'Galerie'
+    'menu_name'          => 'Fotogalerie'
   );
   // Werte des neuen Custom Post Types werden zugewiesen
   $args = array(
       'labels'              => $labels,
-      'description'         => 'Hier sind meine Fotos in Galerie zu finden.',
-      'hierarchical'        => true,
+      'description'         => 'Hier können Fotogalerien angelegt werden.',
+      'hierarchical'        => false,
       'public'              => true,
       'show_ui'             => true,
       'show_in_menu'        => true,
@@ -199,9 +199,9 @@ function fototechnik_blog_create_post_type() {
       'show_in_admin_bar'   => true,
       'publicly_queryable'  => true,
       'exclude_from_search' => true, /* Wird von der Suche ausgeschlossen */
-      'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+      'supports'            => array( 'title','editor','thumbnail','revisions'),
       'has_archive'         => true,
-      'can_export'          => false,
+      'can_export'          => true,
       'menu_position'       => 5,
       'capability_type'     => 'post',
       'rewrite'             => array('slug' => 'galerie' )
@@ -209,40 +209,6 @@ function fototechnik_blog_create_post_type() {
   register_post_type( 'galerie', $args );
 }
 add_action( 'init', 'fototechnik_blog_create_post_type' );
-
-/**
- * 
- * Custom Taxonomies
- * 
- */
-function fototechnik_blog_custom_taxonomies() {
-  
-  /* Hierarchische Taxonomie für die Gallerie */
-  $labels = array(
-    'name'              =>  'Stichwörter',
-    'singular_name'     =>  'Stichwort',
-    'search_items'      =>  'Stichwörter durchsuchen',
-    'all_items'         =>  'Alle Stichwörter',
-    'parent_item'       =>  'Übergeordnetes Stichwort',
-    'parent_item_colon' =>  'Übergeordnetes Stichwort:',
-    'edit_item'         =>  'Stichwort bearbeiten',
-    'update_item'       =>  'Stichwort aktualisieren',
-    'add_new_item'      =>  'Neue Stichwort erstellen',
-    'new_item_name'     =>  'Neue Stichwort',
-    'menu_name'         =>  'Stichwort',
-  );
-
-  $args = array(
-    'hierarchical'      => true,
-    'labels'            => $labels,
-    'show_ui'           => true,
-    'show_admin_column' => true,
-    'query_var'         => true,
-    'rewrite'           => array( 'slug' => 'stichwort' ),
-  );
-  register_taxonomy( 'stichwort', array( 'galerie' ), $args );
-}
-add_action( 'init', 'fototechnik_blog_custom_taxonomies', 0 );
 
 /**
  * 
