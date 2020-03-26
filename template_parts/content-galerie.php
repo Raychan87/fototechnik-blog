@@ -11,7 +11,7 @@
         if (has_post_thumbnail()) {
             ?><div class ="content-thumb"><?php
                 /* Beitragsbild anzeigen */
-                the_post_thumbnail('fototechnik-blog-post-900');
+                ?><a href="<?php the_permalink();?>"><?php the_post_thumbnail('fototechnik-blog-post-900');?></a><?php
             ?></div><?php
         }?>
     </div>

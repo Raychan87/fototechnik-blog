@@ -13,7 +13,7 @@
   float:left;
   width:100%;
   background-color:var(--background_container); /* Hintergrundfarbe */
-  padding:30px 15px 15px;
+  padding:30px;
   margin-bottom: 15px;
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
 }
@@ -27,9 +27,6 @@
   padding:30px 15px 15px;
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   margin-bottom: 15px; /* Artikel Abstand */
-}
-.content-post-galerie { /* Beitrag Posttype Galerie */
-
 }
 .content-thumb { /* Container des Beitragsbild */
   text-align: center;
@@ -62,7 +59,8 @@
   font:35px "Open Sans",Arial;
 }
 .content-title-galerie h1 { /* Überschrift des Beitrags Posttyps Galerie */
-  margin-top: 0;
+  margin: 0;
+  font-size: 35px;
 }
 .content-title-galerie a { /* Posttyps Galerie */
   color:var(--fontcolor_light);
@@ -71,6 +69,12 @@
 }
 .content-title-galerie a:hover { /* Posttyps Galerie */
   text-decoration: underline; /* Unterstreichen der Links */
+}
+.content-title-galerie-subtext {
+  margin-top: 5px;
+  font-size: 13px;
+  color:var(--fontcolor_light);
+  margin-bottom: 30px;
 }
 .content-single-title h1 { /* Überschrift des Beitrags (Single) */
   font-size: 35px;

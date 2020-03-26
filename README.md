@@ -26,10 +26,12 @@ If you are interested, you are welcome to use the theme further, because I would
 - Dropdown Menü (auf CSS Basis)
 - Headerbild lässt sich anpassen
 - Kommentare (Ohne E-Mail Zwang)
-- Widgets (in Sitebar und Footer)
+- Widgets (in Sitebar)
 - Fonts (PT Sans, Open Sans)
 - Custom Widgets
   - Aktuelle Beiträge mit einen Beitragsbild
+- Custom Fotogalerie
+  - Mit eigenen Post/Beiträgen
 
 
 ### Sicherheit

@@ -11,6 +11,9 @@ get_header();
     <div class="container-article-galerie">
         <div class="content-title-galerie">
             Fotogalerie
+            <div class="content-title-galerie-subtext">
+                Hier sind meine besten Fotos in einer Galerie sortiert zusammengefasst.
+            </div>
         </div>
         <div class="container-posts-galerie">
             <?php /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
