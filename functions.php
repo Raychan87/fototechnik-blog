@@ -210,6 +210,14 @@ function fototechnik_blog_create_post_type() {
 }
 add_action( 'init', 'fototechnik_blog_create_post_type' );
 
+// Ändert die Anzahl an Beiträge für die Fotogalerie
+function fototechnik_blog_fotogalerie_query( $query ) {
+  if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+          $query->set( 'posts_per_page', 100 );
+      }
+  }
+  add_action( 'pre_get_posts', 'fototechnik_blog_fotogalerie_query' );
+
 /**
  * 
  * WP/LR-Sync Support

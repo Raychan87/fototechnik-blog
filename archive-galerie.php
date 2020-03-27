@@ -16,8 +16,9 @@ get_header();
             </div>
         </div>
         <div class="container-posts-galerie">
+        
             <?php /* Der Loop läuft nur die Anzahl der angegeben Beiträge in den Einstellungen */
-            if ( have_posts() ) : while ( have_posts() ) : the_post();
+            if (  have_posts() ) : while (have_posts() ) : the_post();
                     
                     /* Ruft die Content-index.php Datei auf um die Beiträge bzw Seite aufzurufen */
                     get_template_part('template_parts/content','galerie');
