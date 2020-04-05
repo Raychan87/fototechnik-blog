@@ -39,8 +39,6 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
 }
 body { /* alle HTML-Seiten */
   font:14px/1.42857143 "Open Sans",Arial;
-  /* background-color: #ffffff; */ /* Hintergrundfarbe */
-  background-image: url("assets/images/background.png");
   margin: 0;
   padding: 0;
 }

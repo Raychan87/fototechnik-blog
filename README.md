@@ -24,13 +24,15 @@ If you are interested, you are welcome to use the theme further, because I would
 - Kompatibel ab Wordpress 5
 - Smartphone und Desktop Version
 - Dropdown Menü (auf CSS Basis)
-- Headerbild lässt sich anpassen
 - Kommentare (Ohne E-Mail Zwang)
 - Widgets (in Sitebar)
 - Fonts (PT Sans, Open Sans)
-- Custom Widgets
+- Customizer:
+  - Headerbild lässt sich anpassen
+  - Hintergrundbild oder Hintergrundfarbe lässt sich anpassen
+- Eigene Widgets
   - Aktuelle Beiträge mit einen Beitragsbild
-- Custom Fotogalerie
+- Eigene Fotogalerie
   - Mit eigenen Post/Beiträgen
 
 

@@ -37,6 +37,18 @@ function fototechnik_blog_setup() {
     )
   );
 
+  /* Hintergrund Bild oder Farbe */
+  $args_background = array(
+    'default-image' => get_template_directory_uri() . '/assets/images/background.png',
+    'default-repeat'         => 'repeat',
+	  'default-position-x'     => 'left',
+    'default-position-y'     => 'top',
+    'default-size'           => 'auto',
+	  'default-attachment'     => 'scroll',
+	  'wp-head-callback'       => '_custom_background_cb',
+  );
+  add_theme_support( 'custom-background', $args_background );
+
   /* Navigations Menue aktivieren */
   register_nav_menus(
     array(
