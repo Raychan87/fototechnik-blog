@@ -232,34 +232,6 @@ function fototechnik_blog_fotogalerie_query( $query ) {
 
 /**
  * 
- * WP/LR-Sync Support
- * 
- */
-/* WP/LR-Sync */
-update_option( 'wplr_plugins', array( 'post_types.php' ) );
-update_option( 'wplr_posttype', 'galleries' );
-update_option( 'wplr_posttype_hierarchical', 0 );
-update_option( 'wplr_posttype_reuse', 1 );
-update_option( 'wplr_taxonomy', 'gallerycat' );
-update_option( 'wplr_taxonomy_reuse', 1 );
-update_option( 'wplr_taxonomy_tags', null );
-update_option( 'wplr_taxonomy_tags_reuse', null );
-
-// Set the mode
-// "WP Gallery": manage a WP gallery in the post (default)
-// "Array in Post Meta": manage a custom meta
-update_option( 'wplr_posttype_mode', "Array in Post Meta" );
-
-// If using custom meta, this is how to set it:
-update_option( 'wplr_posttype_meta', "wpsimplegallery_gallery" );
-
-// Hide the Extensions menu from WP/LR Sync
-// update_option( 'wplr_hide_extensions', 1 );
-// Hide the Post Types menu from WP/LR Sync
-// update_option( 'wplr_hide_posttypes', 1 );
-
-/**
- * 
  * Kommentar Funktion
  * 
  */  
