@@ -299,16 +299,25 @@ function fototechnik_blog_font() {?>
     src: local('Open Sans Light'), local('OpenSans-Light'),
         url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff2) format('woff2'), 
         url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-300.woff) format('woff'); 
-  }
-  /* open-sans-semi-Blod(600) - latin */
-  @font-face {
-    font-family: 'Open Sans Light Bold';
+    }
+    /* open-sans-semi-Blod(600) - latin */
+    @font-face {
+      font-family: 'Open Sans Light Bold';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+          url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff2) format('woff2'), 
+          url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff) format('woff'); 
+    }
+    /* nothing-you-could-do-regular - latin */
+    @font-face {
+    font-family: 'Nothing You Could Do';
     font-style: normal;
-    font-weight: 600;
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-        url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff2) format('woff2'), 
-        url(/wp-content/themes/fototechnik-blog/assets/fonts/open-sans/open-sans-v17-latin-600.woff) format('woff'); 
-  }
+    font-weight: 400;
+    src: local('Nothing You Could Do'), local('NothingYouCouldDo'),
+        url(/wp-content/themes/fototechnik-blog/assets/fonts/nothingyoucoulddo/nothing-you-could-do-v9-latin-regular.woff2) format('woff2'), /* Super Modern Browsers */
+        url(/wp-content/themes/fototechnik-blog/assets/fonts/nothingyoucoulddo/nothing-you-could-do-v9-latin-regular.woff) format('woff'); /* Modern Browsers */
+    }
   </style>
 <?php }
 add_action('wp_head','fototechnik_blog_font');

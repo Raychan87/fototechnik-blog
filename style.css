@@ -72,7 +72,27 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   color: var(--fontcolor_normal);
   background-position: center center;
   background-size: cover;
-  padding: 160px 20px; 
+  padding: 133px 20px; 
+}
+.header-title { /* Container des Webseiten Titel */
+  color: var(--fontcolor_inv_normal);
+  position: relative;
+  top: 135px; /* Container Höhe */
+}
+.header-title h1 { /* Webseiten Überschrift */
+  text-align: center;
+  font-family: 'Nothing You Could Do', "PT Sans", Arial;
+  font-weight:400;
+  font-size: 60px;
+  text-shadow: black 0.1em 0.1em 0.2em /* Text Schatten */
+}
+@media screen and (max-width: 720px){
+  .header-title { /* Container des Webseiten Titel */
+    top: 40px; /* Container Höhe */
+  }
+  .header-title h1 { /* Webseiten Überschrift */
+    font-size: 8vw; /* vw = Passt die größe auf den Bildschirm an */
+  }
 }
 
 /* Navigation */

@@ -15,11 +15,11 @@
     <header class="container-header" style="background-image: url(<?php esc_url( header_image() ); ?>)">
         <div class="header-title">
             <?php /* Namen der Webseite aufrufen */?>
-            <h1><?php //bloginfo( 'name' ); ?></a></h1>
+            <h1><?php bloginfo( 'name' ); ?></a></h1>
         </div>
         <div class="header-description">
             <?php /* Untertitel bzw. Beschreibung der Webseite */?>
-            <p><?php //bloginfo( 'description' ); ?></a></p> -->
+            <p><?php //bloginfo( 'description' ); ?></a></p>
         </div>
     </header>
     <?php /* Navigations Bar wird aufgerufen */
