@@ -148,6 +148,9 @@ function fototechnik_blog_widgets_inits() {
   /* FotoTechnik-Blog custom_gallery.php */
   /* register_widget( 'fototechnik_blog_gallery' ); */
 
+  /* FotoTechnik-Blog custom_random_posts.php */
+  register_widget( 'fototechnik_blog_random_posts' );
+
   /* Widgets in die Seitenleiste einbinden */
   /* Seitenleiste Rechts */
   register_sidebar( 
@@ -175,7 +178,7 @@ function fototechnik_blog_widgets_inits() {
 add_action( 'widgets_init','fototechnik_blog_widgets_inits');
 /* Widget Plugin */
 require get_template_directory() . '/assets/widgets/custom_recent_posts.php';
-
+require get_template_directory() . '/assets/widgets/custom_random_posts.php';
 /**
  * 
  * Custom Post Types

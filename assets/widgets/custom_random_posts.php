@@ -1,15 +1,16 @@
 <?php
-/* custom_recent_posts.php v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+/* custom_random_posts.php v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
+/* Erfordert: custom_recent_posts.css */
 
-class fototechnik_blog_recent_posts extends WP_Widget { 
+class fototechnik_blog_random_posts extends WP_Widget { 
             
     /* Frontend-Design Funktionen */
     public function __construct(){
         $opts = array(
-            'classname'		 => 'custom_recent_posts', 
-            'description'	 => 'Zeigt Ihre letzten Beiträge mit Miniaturansicht und Datum an.',
+            'classname'		 => 'custom_random_posts', 
+            'description'	 => 'Zeigt Zufällige Beiträge mit Miniaturansicht und Datum an.',
         );
-        parent::__construct( 'fototechnik_blog_custom_recent_posts','FotoTechnik-Blog: Aktuelle Beiträge', $opts );
+        parent::__construct( 'fototechnik_blog_custom_random_posts','FotoTechnik-Blog: Zufällige Beiträge', $opts );
     }
 
     /* Funktionen fuer die Ausgabe des Codes auf der Website */
@@ -33,6 +34,7 @@ class fototechnik_blog_recent_posts extends WP_Widget {
             /* WP_Query Parameter */
             $recent_args = array(
                 'posts_per_page'		 => absint( $post_number ), /* Anzahl der Beitraege */
+                'orderby'                => 'rand', /* Beitraege werden in zufaelliger reihenfolge angezeigt. */
                 'no_found_rows'			 => true, /* Gibt an, ob die Anzahl der insgesamt gefundenen Zeilen uebersprungen werden soll. Das Aktivieren kann die Leistung verbessern. Voreinstellung ist false. */
                 'post__not_in'			 => get_option( 'sticky_posts' ), /* Ein Array von Post-IDs, die nicht abgerufen werden sollen. Hinweis: Eine Reihe von durch Kommas getrennten IDs funktioniert NICHT. */
                 'ignore_sticky_posts'	 => true, /* Wenn "true" dann wird Sticky Posts uebersprungen */
@@ -71,7 +73,7 @@ class fototechnik_blog_recent_posts extends WP_Widget {
     /* Erstellt das Kontroll-Formular im WP-Dashboard */
     public function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array(
-            'title'			 => 'Aktuelle Beiträge',
+            'title'			 => 'Zufällige Beiträge',
             'post_number'	 => 4,
         ) ); 
 

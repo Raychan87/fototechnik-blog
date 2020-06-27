@@ -32,6 +32,7 @@ If you are interested, you are welcome to use the theme further, because I would
   - Hintergrundbild oder Hintergrundfarbe lässt sich anpassen
 - Eigene Widgets
   - Aktuelle Beiträge mit einen Beitragsbild
+  - Zufällige Beiträge mit einen Beitragsbild
 - Eigene Fotogalerie
   - Mit eigenen Post/Beiträgen
 
