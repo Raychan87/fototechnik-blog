@@ -97,3 +97,14 @@ function fototechnik_blog_disable_feed() {
   }
   add_filter( 'wp_headers', 'fototechnik_blog_remove_x_pingback' );  
   
+  /* Aktuelle Version von jquery laden */
+  /*
+  function fototechnik_blog_replace_core_jquery_version( ) {
+    wp_deregister_script( 'jquery' );
+    wp_register_script(
+        'jquery',
+        "/wp-content/themes/fototechnik-blog/assets/js/jquery-3.5.1.min.js"
+    );
+  }
+  add_action( 'wp_enqueue_scripts', 'fototechnik_blog_replace_core_jquery_version' );
+  */
