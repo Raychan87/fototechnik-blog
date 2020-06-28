@@ -1,9 +1,4 @@
 /* WordPress Core https://codex.wordpress.org/CSS#WordPress_Generated_Classes */
-.bypostauthor,  
-.sticky {
-position:sticky;
-top: 0
-}
 .gallery-caption {
 font-weight: bold;
 }

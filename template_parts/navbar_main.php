@@ -1,4 +1,4 @@
-<div class="container-navbar">
+<div class="container-navbar" id="fototechnik-blog-navbar">
   <?php /* Fügt eine Checkbox und ein Navigations Button für den Smartphone Modus */ ?>
   <input type="checkbox" id="responsive-nav"> 
   <label for="responsive-nav" class="responsive-nav-label"><span>&#9776;</span></label>

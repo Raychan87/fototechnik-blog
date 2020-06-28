@@ -128,6 +128,8 @@ add_action('wp_enqueue_scripts','styles_imports');
 /* Skripts importieren */
 function scripts_import() {
 
+  /* Navigations Menue Javascript laden */
+  wp_enqueue_script( 'custom_navbar', get_template_directory_uri() . '/assets/js/custom_navbar.js', array('jquery'), '1.0', true );
   /* Um auf Kommentare zu antworten */
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
