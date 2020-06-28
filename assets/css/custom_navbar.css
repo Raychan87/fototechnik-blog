@@ -14,6 +14,7 @@ label.responsive-nav-label {
   background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
   line-height: 1.4; /* Hoehe der Leiste */
   margin-top: 0px;
+  z-index: 99; /* Damit bleibt die Navigationselemente in den Vordergrund */
 
   /* Schattenrand */
   margin-bottom: 20px;
@@ -75,7 +76,7 @@ nav ul ul {
   background: #fff; /* Hintergrundfarbe */ 
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
-  z-index: 1; /* Damit das Untermenue ueber den Artikel steht */
+  z-index: 98; /* Damit das Untermenue ueber den Artikel steht */
   border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
   border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
 }
