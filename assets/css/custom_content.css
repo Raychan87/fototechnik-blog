@@ -1,6 +1,6 @@
 /*! custom_content.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 @media screen and (min-width: 720px) {
-    .container-article {
+  .container-article {
     float:left;
     width:78%;
     position: relative;
@@ -21,6 +21,12 @@
   display: grid; /* Gitter(Tabellen) aktivieren */
   gap: 15px; /* Abstand zwischen den Zellen */
   grid-template-columns: 1fr 1fr 1fr; /* Groeße der Zellen */
+}
+@media screen and (max-width: 720px) {
+  .container-posts-galerie { /* Container der Beiträge Posttyp Galerie */
+    gap: 10px !important; /* Abstand zwischen den Zellen */
+    grid-template-columns: 1fr 1fr !important; /* Groeße der Zellen */
+  }
 }
 .content-post { /* Container des Beitrags */
   background-color:var(--background_container); /* Hintergrundfarbe */

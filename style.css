@@ -360,7 +360,11 @@ aside {
 .footer-widget .widget_nav_menu a{
   Color: var(--background_website);
 }
-
+@media screen and (max-width: 720px) { /* Smartphone Modus */
+  .footer-widget ul { /* Das Footermenü wird jetzt untereinander angezeigt */
+    display: block; 
+  }
+}
 
 
 

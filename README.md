@@ -39,7 +39,6 @@ If you are interested, you are welcome to use the theme further, because I would
 
 ### Sicherheit
 
-- keine Javascripts
 - REST API Whitelist
 - Wordpress Version wird ausgeblendet
 - Login Fehlerausgabe ist deaktiviert
@@ -50,7 +49,7 @@ If you are interested, you are welcome to use the theme further, because I would
 - RSD Verweis wurde entfernt
 - WLW Manifest wurde entfernt
 - Emoticons wurden deaktiviert
-
+  
 
 ## Verwendete Libs:
   - Dropdown menü: http://www.olivergast.de/blog/2015/05/22/css-ein-horizontales-dropdown-menue-responsive-gestalten/
