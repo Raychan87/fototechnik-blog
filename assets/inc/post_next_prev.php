@@ -13,15 +13,14 @@ function fototechnik_blog_post_next_prev(){
     return;
   }
 
-  /* Variablen fuer das Beitragsbild */
-  $nextPost          = get_next_post();
-  $nextThumbnail     = get_the_post_thumbnail( $nextPost->ID, $size = 'fototechnik-blog-post-nav' );
-  $previousPost      = get_previous_post();
-  $previousThumbnail = get_the_post_thumbnail( $previousPost->ID, $size = 'fototechnik-blog-post-nav' );
-  
   ?><div class="fototechnik-blog-post-other-posts"><?php
     /* Naechster Beitrag */
     if ( $nextPostFlag ) { 
+
+      /* Variablen fuer das Beitragsbild */
+      $nextPost          = get_next_post();
+      $nextThumbnail     = get_the_post_thumbnail( $nextPost->ID, $size = 'fototechnik-blog-post-nav' );
+
       ?><div class="fototechnik-blog-post-next-post"><?php
         ?><div class="fototechnik-blog-post-next-picture"><?php
           /* Beitragsbild */
@@ -41,11 +40,16 @@ function fototechnik_blog_post_next_prev(){
     }
     /* Vorheriger Beitrag */
     if ( $previousPostFlag) {
+
+      /* Variablen fuer das Beitragsbild */
+      $previousPost      = get_previous_post();
+      $previousThumbnail = get_the_post_thumbnail( $previousPost->ID, $size = 'fototechnik-blog-post-nav' );
+
       ?><div class="fototechnik-blog-post-prev-post"><?php  
         ?><div class="fototechnik-blog-post-prev-text"><?php
           /* Text */
           ?><a class="fototechnik-blog-post-prev-title"
-            href="<?php echo get_page_link($nextPost->ID); ?>">Vorheriger Beitrag</a><?php
+            href="<?php echo get_page_link($previousPost->ID); ?>">Vorheriger Beitrag</a><?php
           /* Beitragstitel */
           previous_post_link( '%link' );
           /* Datum */

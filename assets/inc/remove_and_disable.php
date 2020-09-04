@@ -5,8 +5,8 @@
 
 function fototechnik_blog_init(){
     /* Sicherheits Funktionen */
-    add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
-    add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
+    /* add_filter('the_generator', create_function( '$x', 'return;'));  /* Wordpress Version ausblenden */
+    /* add_filter('login_errors', create_function('$a',"return null;")); /* Login Fehler deaktivieren */
     add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
     /*  add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */ 
     /*  add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */ 
