@@ -1,5 +1,19 @@
 /*! custom_navbar.js v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 
+/*
+jQuery(document).ready(function() {
+  jQuery('.toggle').on('click', function(e) {
+    e.preventDefault();
+    var submenu = jQuery(this).children('.sub-menu');
+    if (jQuery(submenu).is(':hidden')) {
+      jQuery(submenu).slideDown(200);
+    } else {
+      jQuery(submenu).slideUp(200);
+    }
+  });
+});*/
+
+
 // Wenn der Benutzer die Seite Scrollt, wird die Funktion ausgeführt
 window.onscroll = function() {fototechnik_blog_navbar_scroll()};
 

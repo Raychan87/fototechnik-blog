@@ -360,9 +360,22 @@ aside {
 .footer-widget .widget_nav_menu a{
   Color: var(--background_website);
 }
+/*----------------- Mobile -----------------------------*/
 @media screen and (max-width: 720px) { /* Smartphone Modus */
   .footer-widget ul { /* Das Footermenü wird jetzt untereinander angezeigt */
     display: block; 
+  }
+  .fototechnik-blog-post-next-title, /* Beitragstyp */
+  .fototechnik-blog-post-prev-title {
+    display: none;
+  }
+  .fototechnik-blog-post-next-text, /* Beitragstitel und Datum */
+  .fototechnik-blog-post-prev-text {
+    display: none
+  }
+  .fototechnik-blog-post-next-post, /* Naechster Beitrag */
+  .fototechnik-blog-post-prev-post { /* Vorheriger Beitrag */
+    grid-template-columns: none; /* Groeße der Zellen */
   }
 }
 
