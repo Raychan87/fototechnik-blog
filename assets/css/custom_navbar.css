@@ -146,6 +146,9 @@ nav li > a:only-child:after {
     padding: 0;
     box-sizing: border-box;
   }
+  .sticky {
+    display: none;
+  }
   /* Menue Label */    
   label.responsive-nav-label {
     position: relative;
@@ -162,6 +165,7 @@ nav li > a:only-child:after {
   /* Das Untermenue wird solange ausgeblendet bis man auf das Symbol klickt */
   nav {
     position: absolute;
+    width: 100% !important;
     top: -9999px;
     padding: 10px;
   }   
@@ -181,6 +185,7 @@ nav li > a:only-child:after {
   nav li a {
     margin-bottom: 10px !important;
     padding: 10px 20px !important; 
+    width: 100%;
   }
   nav ul ul {
     position: relative !important;
