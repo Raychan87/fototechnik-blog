@@ -184,11 +184,10 @@ require get_template_directory() . '/assets/widgets/custom_random_posts.php';
 /**
  * 
  * Custom Post Types
- * 
+ * https://developer.wordpress.org/reference/functions/register_post_type
  */
-/* Fotogalerie Bereich aktivieren */
-function fototechnik_blog_create_post_type() {
-  /* https://codex.wordpress.org/Function_Reference/register_post_type */
+/* Fotogalerie aktivieren */
+function fototechnik_blog_create_post_type_galerie() {
   $labels = array(
     'name'               => 'Fotogalerien', 'post type general name',
     'singular_name'      => 'Fotogalerie', 'post type singular name',
@@ -225,7 +224,7 @@ function fototechnik_blog_create_post_type() {
   );
   register_post_type( 'galerie', $args );
 }
-add_action( 'init', 'fototechnik_blog_create_post_type' );
+add_action( 'init', 'fototechnik_blog_create_post_type_galerie' );
 
 // Ändert die Anzahl an Beiträge für die Fotogalerie
 function fototechnik_blog_fotogalerie_query( $query ) {
@@ -234,6 +233,125 @@ function fototechnik_blog_fotogalerie_query( $query ) {
       }
   }
   add_action( 'pre_get_posts', 'fototechnik_blog_fotogalerie_query' );
+
+/* Fotokatalog Bereich aktivieren */
+function fototechnik_blog_create_post_type_sammlungen() {
+  $labels = array(
+    'name'               => 'Sammlungen', 'post type general name',
+    'singular_name'      => 'Sammlung', 'post type singular name',
+    'add_new'            => 'Neue Sammlung anlegen',
+    'add_new_item'       => 'Neue Sammlung anlegen',
+    'edit_item'          => 'Sammlung bearbeiten',
+    'new_item'           => 'Neue Sammlung',
+    'all_items'          => 'Alle Sammlungen',
+    'view_item'          => 'Sammlung ansehen',
+    'search_items'       => 'Sammlungen durchsuchen',
+    'not_found'          => 'Keine Sammlung gefunden',
+    'not_found_in_trash' => 'Keine Sammlung im Papierkorb gefunden',
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Foto Sammlungen'
+  );
+  // Werte des neuen Custom Post Types werden zugewiesen
+  $args = array(
+      'labels'              => $labels,
+      'description'         => 'Hier können Sammlungen angelegt werden.',
+      'hierarchical'        => false,
+      'public'              => true,
+      'publicly_queryable'  => true,
+      'show_ui'             => true,
+      'show_in_menu'        => true,
+      'show_in_nav_menus'   => true,
+      'show_in_admin_bar'   => true,
+      //'menu_icon'          => 'icons-images-alt',
+      'query_var'          => true,
+      'publicly_queryable'  => true,
+      //'exclude_from_search' => true, /* Wird von der Suche ausgeschlossen */
+      'supports'            => array( 'title','editor','thumbnail','revisions'),
+      'has_archive'         => true,
+      'can_export'          => true,
+      'menu_position'       => 5,
+      'capability_type'     => 'post',
+      'rewrite'             => array('slug' => 'sammlung' )
+      'taxonomies'				  => array( 'fototechnik_blog_ordner' )
+  );
+  $args = apply_filters( 'fototechnik_blog_sammlung_post_type', $args );
+  register_post_type( 'fototechnik_blog_sammlung', $args );
+}
+add_action( 'init', 'fototechnik_blog_create_post_type_sammlungen' );
+
+/**
+ * 
+ * Taxonomy 
+ * https://developer.wordpress.org/reference/functions/register_taxonomy/
+ */  
+/* Foto Ordner hinzufügen */
+function fototechnik_blog_taxonomy_photo() {
+  $labels = array(
+    'name'              => _x( 'Ordner', 'taxonomy general name', 'textdomain' ),
+    'singular_name'     => _x( 'Ordner', 'taxonomy singular name', 'textdomain' ),
+    'search_items'      => __( 'Ordner suchen', 'textdomain' ),
+    'all_items'         => __( 'Alle Ordner', 'textdomain' ),
+    'view_item'         => __( 'Ordner ansehen', 'textdomain' ),
+    'parent_item'       => __( 'Ober Ordner', 'textdomain' ),
+    'parent_item_colon' => __( 'Ober Ordner:', 'textdomain' ),
+    'edit_item'         => __( 'Ordner bearbeiten', 'textdomain' ),
+    'update_item'       => __( 'Update Ordner', 'textdomain' ),
+    'add_new_item'      => __( 'neuen Ordner hinzufügen', 'textdomain' ),
+    'new_item_name'     => __( 'neuer Ordner Name', 'textdomain' ),
+    'not_found'         => __( 'kein Ordner gefunden', 'textdomain' ),
+    'back_to_items'     => __( 'zum Ordner zurückkehren', 'textdomain' ),
+    'menu_name'         => __( 'FotoOrdner', 'textdomain' ),
+  );
+  $args = array(
+    'labels'            => $labels,
+    'hierarchical'      => true,
+    'public'            => true,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'ordner' ),
+    'show_in_rest'      => true,
+    'update_count_callback' => '_update_generic_term_count',
+  );
+  $args = apply_filters( 'fototechnik_blog_ordner_taxonomy', $args );
+  register_taxonomy( 'fototechnik_blog_ordner', 'fototechnik_blog_sammlung', $args );
+
+  /* löschen der Variablen */
+  unset( $args );
+  unset( $labels );
+
+  /* Stichwörter hinzufügen */
+  $labels = array(
+    'name'              => _x( 'Stichwörter', 'taxonomy general name', 'textdomain' ),
+    'singular_name'     => _x( 'Stichwort', 'taxonomy singular name', 'textdomain' ),
+    'search_items'      => __( 'Stichwort suchen', 'textdomain' ),
+    'all_items'         => __( 'Alle Stichwörter', 'textdomain' ),
+    'view_item'         => __( 'Stichwort ansehen', 'textdomain' ),
+    'parent_item'       => __( 'Obere Stichwörter', 'textdomain' ),
+    'parent_item_colon' => __( 'Obere Stichwörter:', 'textdomain' ),
+    'edit_item'         => __( 'Stichwort bearbeiten', 'textdomain' ),
+    'update_item'       => __( 'Update Stichwort', 'textdomain' ),
+    'add_new_item'      => __( 'neuen Stichwort hinzufügen', 'textdomain' ),
+    'new_item_name'     => __( 'neuer Stichwort Name', 'textdomain' ),
+    'not_found'         => __( 'kein Stichwort gefunden', 'textdomain' ),
+    'back_to_items'     => __( 'zum Stichwort zurückkehren', 'textdomain' ),
+    'menu_name'         => __( 'Stichwort', 'textdomain' ),
+  );
+  $args = array(
+    'labels'            => $labels,
+    'hierarchical'      => true,
+    'public'            => true,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'stichwort' ),
+    'show_in_rest'      => true,
+    'update_count_callback' => '_update_generic_term_count',
+  );
+  $args = apply_filters( 'attachment_stichwort_taxonomy', $args );
+  register_taxonomy( 'attachment_stichwort', array( 'attachment', $args );
+}
+add_action( 'init', 'fototechnik_blog_taxonomy_photo', 0 );
 
 /**
  * 
