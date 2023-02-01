@@ -10,8 +10,8 @@ function fototechnik_blog_init(){
     add_filter('xmlrpc_enabled', '__return_false' ); /* XML-RPC Schnittstelle deaktivieren */
     /*  add_filter('rest_enabled', '__return_false');   /* REST API Schnittstelle deaktivieren */ 
     /*  add_filter('rest_jsonp_enabled', '__return_false'); /* REST API Schnittstelle deaktivieren */ 
-    add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
-    add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
+    //add_filter('json_enabled', '__return_false');   /* WP-JSON Schnittstelle deaktivieren */
+    //add_filter('json_jsonp_enabled', '__return_false'); /* WP-JSON Schnittstelle deaktivieren */
     remove_action('wp_head', 'wp_resource_hints', 2); /* DNS Prefatch entfernen */
     /* Mit dem RSD Verweis wird eine XML-Datei mit allen Services des WordPress Blogs bereitgestellt. */
     remove_action('wp_head', 'rsd_link'); /* RSD Verweis entfernen */
@@ -79,16 +79,16 @@ function fototechnik_blog_disable_feed() {
   
   /* Whitelist und Einstellen der REST API Schnittstelle */
   function fototechnik_blog_rest_api() {
-      $domain = "fototour-und-technik.de";					/* String der Domain */
-      $ip_domain = gethostbyname($domain);					/* IP der Domain abfragen */
+    $domain = "fototour-und-technik.de";					/* String der Domain */
+    $ip_domain = gethostbyname($domain);					/* IP der Domain abfragen */
   
-      $whitelist = [$ip_domain,'255.255.255.255', "::1" ];    /* IP Whitelist  */
+    $whitelist = [$ip_domain,'255.255.255.255', "::1" ];    /* IP Whitelist  */
   
-      if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){		/* Wenn nicht auf der Whitelist */
-          die('REST API is disabled.');
-      }
+	if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){		/* Wenn nicht auf der Whitelist */
+        die('REST API is disabled.');
+    }
   }
-  add_action('rest_api_init','fototechnik_blog_rest_api');
+  //add_action('rest_api_init','fototechnik_blog_rest_api');
   
   /* Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt */
   function fototechnik_blog_remove_x_pingback( $headers ){

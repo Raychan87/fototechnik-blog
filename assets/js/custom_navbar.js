@@ -19,7 +19,6 @@ smallDevice.addListener(handleDeviceChange);
 
 function handleDeviceChange(e) {
   if (e.matches){
-    
     // Wenn der Benutzer die Seite Scrollt, wird die Funktion ausgeführt
     window.onscroll = function() {fototechnik_blog_navbar_scroll()};
 
@@ -39,3 +38,16 @@ function handleDeviceChange(e) {
     }
   } 
 }
+
+
+
+/*const outputElement = document.getElementById("info");
+
+
+
+
+function handleDeviceChange(e) {
+  if (e.matches) outputElement.textContent = "Bigger Than Mobile";
+  else outputElement.textContent = "Mobile";
+}
+*/
