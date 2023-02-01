@@ -20,15 +20,66 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   --fontcolor_normal:#000;         /* für Texte */
   --fontcolor_light:#808080cc;     /* für Texte dezent */
   --fontcolor_inv_normal:#fff;     /* für Texte mit dunklen Hintergrund */
+  --fontcolor_footer: #fff;        /* für Texte im Footer */
+  --fontcolor_shadow:#000;         /* für Schatten für Texte */
   /* Hintergrundfarbe */
   --background_website:#ffffff;    
   --background_container:#f1f1f1;
+  --background_footer: #1e1e1e;      
   /* Rahmenfarbe */
   --bordercolor_normal:#a1a1a1;     /* Rahmenfarbe */
   --bordercolor_light: #c5c4c4;     /* Rahmenfarbe dezent */
   --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
   --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
   --bordercolor_linkhover:#225f94d0;/* Rahmenfarbe für Buttons */
+  --bordercolor_shadow: rgba(0, 0, 0, 0.253); /*Rahmenschatten */
+  /* Suchbutton */
+  --fontcolor_search: #fff;         /* Textfarbe */
+  --background_search: #8a6d3b;     /* Buttonfarbe */
+  /* Navbar */
+  --navcolor_background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
+  --navcolor_backgroundhover: #e4e3e3; /* makierte Hintergrundfarbe */
+  --navcolor_font: #6b6b6b;         /* Textfarbe */
+  --navcolor_fonthover: #1d1d1d;    /* makierte Texte */
+  --navcolor_arrow: rgb(138, 138, 138); /* Pfeil der Navbar */
+  --navcolor_boarder: rgba(85,85,85, 0.25);  /* Rahmenfarbe */
+  --navcolor_boarderline: rgba(85, 85, 85, 0.55); /* Obere Linie */
+}
+/*----------------- dark mode---------------------------*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* CSS Code wenn Dark Mode aktiv */ 
+    /* Schriftfarben : */
+    --fontcolor_link:#3484cad0;      /* für Links */
+    --fontcolor_linkhover:#dc3434d2; /* für markierte Links */
+    --fontcolor_normal:#d7d7d7;      /* für Texte */
+    --fontcolor_light:#b1b1b1;       /* für Texte dezent */
+    --fontcolor_inv_normal:#000;     /* für Texte mit dunklen Hintergrund */
+    --fontcolor_footer: #d7d7d7;     /* für Texte im Footer */
+    --fontcolor_shadow:#fff;         /* für Schatten für Texte */
+    /* Hintergrundfarbe */
+    --background_website:#121212;    
+    --background_container:#212121;
+    --background_footer: #121212;      
+    /* Rahmenfarbe */
+    --bordercolor_normal:#a1a1a1;     /* Rahmenfarbe */
+    --bordercolor_light: #616161;     /* Rahmenfarbe dezent */
+    --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
+    --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
+    --bordercolor_linkhover:#dc3434d2;/* Rahmenfarbe für Buttons */
+    --bordercolor_shadow: rgba(0, 0, 0, 0.253); /*Rahmenschatten */
+    /* Suchbutton */
+    --fontcolor_search: #d7d7d7;       /* Textfarbe */
+    --background_search: #8a6d3b;      /* Buttonfarbe */
+    /* Navbar */
+    --navcolor_background: #616161e5;  /* Hintergrundfarbe */
+    --navcolor_backgroundhover: #e4e3e3; /* makierte Hintergrundfarbe */
+    --navcolor_font: #d7d7d7;         /* Textfarbe */
+    --navcolor_fonthover: #dc3434d2;    /* makierte Texte */
+    --navcolor_arrow: rgb(138, 138, 138); /* Pfeil der Navbar */
+    --navcolor_boarder: rgba(85,85,85, 0.25);  /* Rahmenfarbe */
+    --navcolor_boarderline: rgba(85, 85, 85, 0.55); /* Obere Linie */
+  }
 }
 
 /* Globale Einstellungen */
@@ -84,7 +135,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   font-family: 'Nothing You Could Do', "PT Sans", Arial;
   font-weight:400;
   font-size: 60px;
-  text-shadow: black 0.1em 0.1em 0.2em /* Text Schatten */
+  text-shadow: var(--fontcolor_shadow); /* Text Schatten */
 }
 @media screen and (max-width: 720px){
   .header-title { /* Container des Webseiten Titel */
@@ -219,8 +270,8 @@ aside {
   padding-left: 6%;
   padding-right: 6%;
   cursor: pointer;
-  color: #fff;
-  background-color: #8a6d3b;
+  color: var(--fontcolor_search);
+  background-color: var(--background_search);
   font-size: 9pt;
 }
 
@@ -243,7 +294,7 @@ aside {
 }
 .tagcloud a:hover,
 .tagcloud a:focus {
-  box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
+  box-shadow:0 1px 2px var(--bordercolor_shadow);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
 
@@ -255,7 +306,7 @@ aside {
   margin: 0;
 }
 .widget_nav_menu li { /* Einzelner Link des Menüs */
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid var(--bordercolor_normal);
   padding:2px 0;
 }
 
@@ -334,8 +385,8 @@ aside {
 .container_footer { /* Container des Footers */
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #1e1e1e !important;
-  color: var(--fontcolor_inv_normal);
+  background-color: var(--background_footer) !important;
+  color: var(--fontcolor_footer);
   text-align: center;
   clear: both;
 }
@@ -343,7 +394,7 @@ aside {
   font-style: italic;
 }
 .footer-widget .widget_nav_menu{
-  background-color: #1e1e1e !important;
+  background-color: var(--background_footer) !important;
   border: 0;
   padding: 0;
   margin: 0;

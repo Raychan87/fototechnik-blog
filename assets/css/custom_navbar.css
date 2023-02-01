@@ -11,7 +11,7 @@ label.responsive-nav-label {
   width: 100%; 
   font-weight: 400;
   font-size: 14px; /* Schriftgroeße */
-  background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
+  background: var(--navcolor_background); /* Hintergrundfarbe */
   line-height: 1.4; /* Hoehe der Leiste */
   margin-top: 0px;
   z-index: 99; /* Damit bleibt die Navigationselemente in den Vordergrund */
@@ -19,14 +19,14 @@ label.responsive-nav-label {
   /* Schattenrand */
   margin-bottom: 20px;
   /* offset-x | offset-y | blur-radius | color */
-  box-shadow: 0px 7px 19px -1px rgba(0,0,0,0.1);
+  box-shadow: 0px 7px 19px -1px var(--bordercolor_shadow);
 }
 /* Container für die Fixierung */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255); /* Hintergrundfarbe */
+  background: var(--navcolor_background); /* Hintergrundfarbe */
 }
 /* die Justierung für den flüssigen Übergang */
 .sticky + .container-main {
@@ -47,14 +47,14 @@ nav ul {
 nav a {
   font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
   display: block; /* Den Block Klickbar machen */
-  color: #6b6b6b; /* Schriftfarbe */
+  color: var(--navcolor_font); /* Schriftfarbe */
   text-transform: uppercase; /*Text in Großbuchstaben umwandeln */
   text-decoration: none; /* Unterstreichen der Links deaktivieren */
 }
 /* Links mit Mauspfeil */
 nav a:hover {
   text-decoration: none; /* Unterstreichen der Links deaktivieren */
-  color: #1d1d1d; /* Schriftfarbe */
+  color: var(--navcolor_fonthover); /* Schriftfarbe */
 }
 /* Listenelemente der ersten Ebene */
 nav ul li {
@@ -69,7 +69,7 @@ nav ul li a {
 }
 /* Die Hintergrundfarbe nach dem markieren */
 nav ul li:hover {
-  background: #e4e3e3;
+  background: var(--navcolor_backgroundhover);
 }
   /* Untermenue */
   nav ul li:hover > ul {
@@ -84,12 +84,12 @@ nav ul ul {
   left: -9999px;
 
   line-height: .8; /* Hoehe der Leiste */
-  background: #fff; /* Hintergrundfarbe */ 
+  background: var(--navcolor_background); /* Hintergrundfarbe */ 
   /* offset-x | offset-y | blur-radius | color */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); /* Schatten */
+  box-shadow: 2px 2px 5px var(--bordercolor_shadow); /* Schatten */
   z-index: 98; /* Damit das Untermenue ueber den Artikel steht */
-  border:1px solid rgba(85,85,85, 0.25); /* Rahmen */
-  border-top: 3px solid rgba(85, 85, 85, 0.55); /* Obere Linie */
+  border:1px solid var(--navcolor_boarder); /* Rahmen */
+  border-top: 3px solid var(--navcolor_boarderline); /* Obere Linie */
 }
 /* Einzelnes Fenster des Untermenues */
 nav ul ul li {
@@ -98,7 +98,7 @@ nav ul ul li {
 /* Link des einzelnes Fensters des Untermenues */
 nav ul ul li a {
   padding: 10px 30px 10px 20px;
-  color: #1d1d1d; /* Schriftfarbe fuer die Untermenues */
+  color: var(--navcolor_font); /* Schriftfarbe fuer die Untermenues */
   text-transform: none; /* Großbuchstaben fuer Unteremenues deaktivieren */
   width: max-content; /* Fenster groeße richtet sich nach den Inhalt */
 }
@@ -115,7 +115,7 @@ nav li > a:after {
   margin-top: 9px;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 4px solid rgb(138, 138, 138);
+  border-top: 4px solid var(--navcolor_arrow);
   border-bottom: 4px solid transparent;
 }
   /* Pfeil nach rechts fuer Untermenues mit Untermenues */
@@ -123,7 +123,7 @@ nav li > a:after {
   position: absolute;
   top: 10%;
   right: 10px;
-  border-left: 4px solid rgb(180, 180, 180);
+  border-left: 4px solid var(--navcolor_arrow);
   border-right: 4px solid transparent;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
@@ -154,9 +154,9 @@ nav li > a:only-child:after {
     position: relative;
     display: block;
     padding: 20px;
-    background: rgba(247, 247, 247, 0.73);;
+    background: var(--navcolor_background);
     cursor: pointer; /* Mauspfeil wird geaendert fuer das Menue */
-    color: #333;
+    color: var(--navcolor_fonthover);
   }
   /* Menue Symbol Container */
   label.responsive-nav-label span {

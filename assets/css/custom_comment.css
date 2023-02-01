@@ -30,7 +30,7 @@
   text-decoration: none; /* Unterstreichen der Links deaktivieren */
   pointer-events: none;
   cursor: default;
-  color:#000;
+  color:var(--fontcolor_normal);
   font-family: 'Open Sans Light Bold';
 }
 .comment-date-time{ /* Text vom Datum und Zeit */
@@ -45,7 +45,7 @@
   display: inline-block;
 }
 .comment-reply-button a:hover { /* "Antworten"- Button */
-  box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
+  box-shadow:0 1px 2px var(--bordercolor_shadow);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
 .container-comment { /* Container des Kommentar Eingabefeldes */
@@ -80,7 +80,7 @@
 .comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
 .comment-form input[type=url] { /* Das URL Eingabefeld */
   border:1px solid var(--bordercolor_light); /* Rahmenfarbe */
-  box-shadow: inset 0 1px 3px rgna(0,0,0,25); /* Schatten vom Feld Rand nach innen */
+  box-shadow: inset 0 1px 3px var(--bordercolor_shadow); /* Schatten vom Feld Rand nach innen */
   margin:.2em 0 1em;
   width: 50%; /* die Breite der Elemente */
 }
@@ -97,6 +97,6 @@
   color: var(--fontcolor_link);
   border-color:  var(--bordercolor_linkhover); /* Rahmen Farbe */
   text-decoration: underline; /* Unterstreichen der Links */
-  box-shadow:0 1px 2px rgba(0, 0, 0, 0.253);
+  box-shadow:0 1px 2px var(--bordercolor_shadow);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
