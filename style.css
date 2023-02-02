@@ -179,6 +179,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   background-color: var(--background_container); /* Hintergrundfarbe */
   padding:10px 15px 15px;
   border: 1px solid var(--bordercolor_normal); /* Rahmenfarbe */
+  color: var(--fontcolor_normal);
 }
 .page-title { /* Überschrift der Seite */
   font-size: 25px;

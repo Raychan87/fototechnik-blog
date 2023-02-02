@@ -24,6 +24,7 @@
 }
 .content-post { /* Container des Beitrags */
   background-color:var(--background_container); /* Hintergrundfarbe */
+  color: var(--fontcolor_light);
   padding:30px 15px 15px;
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   margin-bottom: 15px; /* Artikel Abstand */
@@ -106,6 +107,7 @@
 .content-footer { /* Container der Kategorie, Schlagwoerter und des "Bearbeiten" Button */
   text-align: left;
   font-style: italic;
+  color: var(--fontcolor_light);
 }
 .content-categories { /* Kategorie Links */
   padding-bottom: 10px;
