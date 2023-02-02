@@ -87,6 +87,7 @@
   font-style: italic;
   text-align: center;
   padding: 0 35px;
+  color: var(--fontcolor_light);
 }
 .content-single-text {
   margin: 20px 5px;
@@ -159,7 +160,6 @@
   }
   .content-text { /* Inhalt des Beitrags */
     display: none;
-    color: var(--fontcolor_normal);
   }
   .content-date { 
     display: none;

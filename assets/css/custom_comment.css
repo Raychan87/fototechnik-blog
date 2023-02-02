@@ -41,7 +41,7 @@
   font-size: 11px;
   color: var(--fontcolor_light);
 }
-.comment-reply-title{ /* Kommentarüberschrift fürs Antwortfenster */
+.comment-respond{ /* Kommentar Antwortfenster */
   color: var(--fontcolor_normal);
 }
 .comment-reply-button a { /* "Antworten"- Button */

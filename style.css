@@ -33,18 +33,18 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
   --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
   --bordercolor_linkhover:#225f94d0;/* Rahmenfarbe für Buttons */
-  --bordercolor_shadow: rgba(0, 0, 0, 0.253); /*Rahmenschatten */
+  --bordercolor_shadow: #00000040;  /*Rahmenschatten */
   /* Suchbutton */
   --fontcolor_search: #fff;         /* Textfarbe */
   --background_search: #8a6d3b;     /* Buttonfarbe */
   /* Navbar */
-  --navcolor_background: rgba(255, 255, 255, 0.863); /* Hintergrundfarbe */
-  --navcolor_backgroundhover: #e4e3e3; /* makierte Hintergrundfarbe */
+  --navcolor_background: #ffffffdd; /* Hintergrundfarbe */
+  --navcolor_backgroundhover: #e4e3e3;/* makierte Hintergrundfarbe */
   --navcolor_font: #6b6b6b;         /* Textfarbe */
   --navcolor_fonthover: #1d1d1d;    /* makierte Texte */
-  --navcolor_arrow: rgb(138, 138, 138); /* Pfeil der Navbar */
-  --navcolor_boarder: rgba(85,85,85, 0.25);  /* Rahmenfarbe */
-  --navcolor_boarderline: rgba(85, 85, 85, 0.55); /* Obere Linie */
+  --navcolor_arrow:#878787;         /* Pfeil der Navbar */
+  --navcolor_boarder: #50505038;    /* Rahmenfarbe */
+  --navcolor_boarderline: #5050508a;/* Obere Linie */
 }
 /*----------------- dark mode---------------------------*/
 @media (prefers-color-scheme: dark) {
@@ -69,18 +69,18 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
     --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
     --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
     --bordercolor_linkhover:#dc3434d2;/* Rahmenfarbe für Buttons */
-    --bordercolor_shadow: rgba(0, 0, 0, 0.253); /*Rahmenschatten */
+    --bordercolor_shadow: #00000040;  /*Rahmenschatten */
     /* Suchbutton */
     --fontcolor_search: #d7d7d7;       /* Textfarbe */
     --background_search: #8a6d3b;      /* Buttonfarbe */
     /* Navbar */
-    --navcolor_background: #616161;  /* Hintergrundfarbe */
-    --navcolor_backgroundhover: #e4e3e3; /* makierte Hintergrundfarbe */
-    --navcolor_font: #d7d7d7;         /* Textfarbe */
-    --navcolor_fonthover: #dc3434d2;    /* makierte Texte */
-    --navcolor_arrow: rgb(138, 138, 138); /* Pfeil der Navbar */
-    --navcolor_boarder: rgba(85,85,85, 0.25);  /* Rahmenfarbe */
-    --navcolor_boarderline: rgba(85, 85, 85, 0.55); /* Obere Linie */
+    --navcolor_background: #303030;    /* Hintergrundfarbe */
+    --navcolor_backgroundhover: #6b6b6b;/* makierte Hintergrundfarbe */
+    --navcolor_font: #d7d7d7;          /* Textfarbe */
+    --navcolor_fonthover: #dc3434d2;   /* makierte Texte */
+    --navcolor_arrow: #d7d7d7;         /* Pfeil der Navbar */
+    --navcolor_boarder:#50505038;      /* Rahmenfarbe */
+    --navcolor_boarderline:#5050508a;  /* Obere Linie */
   }
 }
 
