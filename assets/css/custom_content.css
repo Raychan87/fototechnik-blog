@@ -81,6 +81,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
+  color: var(--fontcolor_normal);
 }
 .content-text { /* Inhalt des Beitrags */
   font-style: italic;
@@ -89,6 +90,7 @@
 }
 .content-single-text {
   margin: 20px 5px;
+  color: var(--fontcolor_normal);
 }
 .content-date { /* Datum des Beitrags */
   color: var(--fontcolor_light);
@@ -112,6 +114,7 @@
 .content-single-categories a { /* Kategorie Links */
   padding-left: 10px;
   font-style: italic;
+  color: var(--fontcolor_light);
 }
 .content-single-tags { /* Schlagwoerter Links */
   margin-top: 8px;
@@ -156,6 +159,7 @@
   }
   .content-text { /* Inhalt des Beitrags */
     display: none;
+    color: var(--fontcolor_normal);
   }
   .content-date { 
     display: none;
