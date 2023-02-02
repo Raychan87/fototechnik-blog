@@ -94,6 +94,11 @@ body { /* alle HTML-Seiten */
   font:14px/1.42857143 "Open Sans",Arial;
   margin: 0;
   padding: 0;
+  background-image: url("/assets/images/background.png");
+  background-position: left top;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
 }
 img { /* Alle Bilder */
   /* Bilder in die passende Größe einstellen */
