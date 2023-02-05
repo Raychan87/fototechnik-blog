@@ -52,9 +52,9 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
     /* CSS Code wenn Dark Mode aktiv */ 
     /* Schriftfarben : */
     --fontcolor_link:#0f66d5d9;      /* für Links */
-    --fontcolor_linkhover:#d00101; /* für markierte Links */
+    --fontcolor_linkhover:#d00101;   /* für markierte Links */
     --fontcolor_normal:#d7d7d7;      /* für Texte */
-    --fontcolor_light:#888;       /* für Texte dezent */
+    --fontcolor_light:#888;          /* für Texte dezent */
     --fontcolor_inv_normal:#000;     /* für Texte mit dunklen Hintergrund */
     --fontcolor_footer: #d7d7d7;     /* für Texte im Footer */
     --fontcolor_shadow:#fff;         /* für Schatten für Texte */
@@ -68,7 +68,7 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
     --bordercolor_light: #616161;     /* Rahmenfarbe dezent */
     --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
     --bordercolor_link:#0f66d5d9;     /* Rahmenfarbe für links */
-    --bordercolor_linkhover:#5e1600d1;/* Rahmenfarbe für Buttons */
+    --bordercolor_linkhover:#d00101;  /* Rahmenfarbe für Buttons */
     --bordercolor_shadow: #00000040;  /*Rahmenschatten */
     /* Suchbutton */
     --fontcolor_search: #d7d7d7;       /* Textfarbe */
@@ -77,10 +77,10 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
     --navcolor_background: #131313;;    /* Hintergrundfarbe */
     --navcolor_backgroundhover: #420606;/* makierte Hintergrundfarbe */
     --navcolor_font: #d7d7d7;          /* Textfarbe */
-    --navcolor_fonthover: #fff;   /* makierte Texte */
+    --navcolor_fonthover: #fff;        /* makierte Texte */
     --navcolor_arrow: #d7d7d7;         /* Pfeil der Navbar */
     --navcolor_boarder:#42060600;      /* Rahmenfarbe */
-    --navcolor_boarderline:#420606;  /* Obere Linie */
+    --navcolor_boarderline:#420606;    /* Obere Linie */
   }
 }
 
@@ -121,7 +121,7 @@ a { /* alle Verlinkungen */
 a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   color: var(--fontcolor_linkhover);
   border-color:  var(--bordercolor_linkhover); /* Rahmen Farbe */
-  text-decoration: underline; /* Unterstreichen der Links */
+  /* text-decoration: underline; */ /* Unterstreichen der Links */
 }
 
 /* Webseite (Header,Main,Footer) */
@@ -372,12 +372,6 @@ aside {
   margin-bottom: 15px;
   text-align: center;
 }
-.fototechnik-blog-numeric-posts-nav li a,
-.fototechnik-blog-numeric-posts-nav li a:hover,
-.fototechnik-blog-numeric-posts-nav li.active a,
-.fototechnik-blog-numeric-posts-nav li.disabled {
-    text-decoration:none;
-}
 .fototechnik-blog-numeric-posts-nav li {
     display: inline;
 }
@@ -385,14 +379,18 @@ aside {
 .fototechnik-blog-numeric-posts-nav li a:hover,
 .fototechnik-blog-numeric-posts-nav li.active a,
 .fototechnik-blog-numeric-posts-nav li.disabled {
+    text-decoration:none;
     border-radius: 3px;
     cursor: pointer;
     padding: 12px;
     padding: 0.75rem;
 }
-.fototechnik-blog-numeric-posts-nav li a:hover,
-.fototechnik-blog-numeric-posts-nav li.active a {
-    border:1px solid var(--bordercolor_link); /* Rahmenfarbe */
+.fototechnik-blog-numeric-posts-nav li a,
+.fototechnik-blog-numeric-posts-nav li.active a  {
+  border:1px solid var(--bordercolor_link); /* Rahmenfarbe */
+}
+.fototechnik-blog-numeric-posts-nav li a:hover {
+    border:1px solid var(--bordercolor_linkhover); /* Rahmenfarbe */
 }
 
 /* Footer */
@@ -424,7 +422,10 @@ aside {
   border: 0;
 }
 .footer-widget .widget_nav_menu a{
-  Color: var(--background_website);
+  Color: var(--fontcolor_link);
+}
+.footer-widget .widget_nav_menu a:hover{
+  Color: var(--fontcolor_linkhover);
 }
 /*----------------- Mobile -----------------------------*/
 @media screen and (max-width: 720px) { /* Smartphone Modus */
