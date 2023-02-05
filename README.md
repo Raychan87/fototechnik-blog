@@ -26,6 +26,7 @@ If you are interested, you are welcome to use the theme further, because I would
 - Dropdown Menü (auf CSS Basis)
 - Kommentare (Ohne E-Mail Zwang)
 - Widgets (in Sitebar)
+- Darkmode/Lightmode vom Browser
 - Fonts (PT Sans, Open Sans)
 - Customizer:
   - Headerbild lässt sich anpassen
