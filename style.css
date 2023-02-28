@@ -39,12 +39,13 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
   --background_search: #0e3c01;;    /* Buttonfarbe */
   /* Navbar */
   --navcolor_background: #ffffffdd; /* Hintergrundfarbe */
-  --navcolor_backgroundhover: #e4e3e3;/* makierte Hintergrundfarbe */
+  --navcolor_backgroundhover:#e4e3e3;/* makierte Hintergrundfarbe */
   --navcolor_font: #6b6b6b;         /* Textfarbe */
   --navcolor_fonthover: #1d1d1d;    /* makierte Texte */
   --navcolor_arrow:#878787;         /* Pfeil der Navbar */
   --navcolor_boarder: #50505038;    /* Rahmenfarbe */
   --navcolor_boarderline: #5050508a;/* Obere Linie */
+  --navcolor_boardershadow:#000;  
 }
 /*----------------- dark mode---------------------------*/
 @media (prefers-color-scheme: dark) {
@@ -74,13 +75,14 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
     --fontcolor_search: #d7d7d7;       /* Textfarbe */
     --background_search: #420606;;     /* Buttonfarbe */
     /* Navbar */
-    --navcolor_background: #131313;;    /* Hintergrundfarbe */
-    --navcolor_backgroundhover: #420606;/* makierte Hintergrundfarbe */
+    --navcolor_background:#131313;;    /* Hintergrundfarbe */
+    --navcolor_backgroundhover:#420606;/* makierte Hintergrundfarbe */
     --navcolor_font: #d7d7d7;          /* Textfarbe */
     --navcolor_fonthover: #fff;        /* makierte Texte */
     --navcolor_arrow: #d7d7d7;         /* Pfeil der Navbar */
     --navcolor_boarder:#42060600;      /* Rahmenfarbe */
     --navcolor_boarderline:#420606;    /* Obere Linie */
+    --navcolor_boardershadow:#420606; 
   }
 }
 

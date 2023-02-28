@@ -19,7 +19,7 @@ label.responsive-nav-label {
   /* Schattenrand */
   margin-bottom: 20px;
   /* offset-x | offset-y | blur-radius | color */
-  box-shadow: 0px 7px 19px -1px var(--bordercolor_shadow);
+  box-shadow: 0px 5px 9px -1px var(--navcolor_boardershadow);
 }
 /* Container für die Fixierung */
 .sticky {
