@@ -12,13 +12,14 @@
                 ?><h1><?php the_title();?></h1><?php
             } 
         ?></div><?php
-
+        /*
         if ( has_post_thumbnail() ) {
-            ?><div class ="content-thumb" ><?php
+            ?><div class ="content-thumb" ><?php */
                 /* Beitragsbild anzeigen */
+            /*
                 the_post_thumbnail('fototechnik-blog-post-900');
             ?></div><?php
-        }
+        } */
 
         ?><div class="content-single-text" ><?php
             /* Der Inhalt des Beitrages */
