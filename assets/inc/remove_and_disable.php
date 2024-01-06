@@ -89,6 +89,13 @@ function fototechnik_blog_disable_feed() {
     }
   }
   //add_action('rest_api_init','fototechnik_blog_rest_api');
+
+  /* Whitelist and Blacklist External Requests in WordPress */
+  /* whitelist for WP_HTTP_BLOCK_EXTERNAL */
+  add_filter('wp_allowed_hosts', function ($allowed_hosts) {
+    $allowed_hosts[] = 'meowapps.com'; /* fuer Plugins von Meowapps */
+    return $allowed_hosts;
+  });
   
   /* Hiermit wird die direkte Verbindung von xmlrpc.php und x-pingback entfernt */
   function fototechnik_blog_remove_x_pingback( $headers ){
