@@ -1,18 +1,5 @@
 /*! custom_navbar.js v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 
-/*
-jQuery(document).ready(function() {
-  jQuery('.toggle').on('click', function(e) {
-    e.preventDefault();
-    var submenu = jQuery(this).children('.sub-menu');
-    if (jQuery(submenu).is(':hidden')) {
-      jQuery(submenu).slideDown(200);
-    } else {
-      jQuery(submenu).slideUp(200);
-    }
-  });
-});*/
-
 //Funktion für das Anhaengen des Navmenue am Bildschirmrand
 function sticky_navmenu(x) {
   if (x.matches){
@@ -47,16 +34,3 @@ sticky_navmenu(BigDevice);
 BigDevice.addEventListener("change", function(){
   sticky_navmenu(BigDevice);
 });
-
-
-
-/*const outputElement = document.getElementById("info");
-
-
-
-
-function handleDeviceChange(e) {
-  if (e.matches) outputElement.textContent = "Bigger Than Mobile";
-  else outputElement.textContent = "Mobile";
-}
-*/
