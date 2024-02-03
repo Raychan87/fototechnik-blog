@@ -38,7 +38,7 @@ function sticky_navmenu(x) {
 
 // Überprüft ob der Nutzer an einen großen Bildschirm sitzt
 // Create a MediaQueryList object
-const BigDevice = window.matchMedia("(min-width: 768px)");
+const BigDevice = window.matchMedia("(min-width: 880px)");
 
 // Call the match function at run time
 sticky_navmenu(BigDevice);

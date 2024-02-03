@@ -127,7 +127,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 }
 
 /* Webseite (Header,Main,Footer) */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 880px) {
   .container-website {
     margin:0 auto;
   }
@@ -152,7 +152,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   font-size: 60px;
   text-shadow: var(--fontcolor_shadow); /* Text Schatten */
 }
-@media screen and (max-width: 720px){
+@media screen and (max-width: 880px){
   .header-title { /* Container des Webseiten Titel */
     top: 40px; /* Container Höhe */
   }
@@ -176,7 +176,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
     width: 100%;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
   .container-main {
     width: 100%;
     padding-right: 1px;
@@ -222,7 +222,7 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
 aside {
   text-align: center;
 }
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 880px) {
   aside {
   width:22%;
   float:right;
@@ -430,7 +430,7 @@ aside {
   Color: var(--fontcolor_linkhover);
 }
 /*----------------- Mobile -----------------------------*/
-@media screen and (max-width: 720px) { /* Smartphone Modus */
+@media screen and (max-width: 880px) { /* Smartphone Modus */
   .footer-widget ul { /* Das Footermenü wird jetzt untereinander angezeigt */
     display: block; 
   }

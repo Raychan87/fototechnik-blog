@@ -1,5 +1,5 @@
 /*! custom_content.css v1.0 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 880px) {
   .container-article {
     float:left;
     width:78%;
@@ -155,7 +155,7 @@
   transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
 /*----------------- Mobile -----------------------------*/
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
   .container-posts-galerie { /* Container der Beiträge Posttyp Galerie */
     gap: 10px !important; /* Abstand zwischen den Zellen */
     grid-template-columns: 1fr 1fr !important; /* Groeße der Zellen */
