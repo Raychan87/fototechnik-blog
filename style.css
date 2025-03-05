@@ -125,6 +125,10 @@ a:hover { /* alle Verlinkungen wenn Maus dadrauf liegt */
   border-color:  var(--bordercolor_linkhover); /* Rahmen Farbe */
   /* text-decoration: underline; */ /* Unterstreichen der Links */
 }
+li.active a {
+  background: var(--navcolor_boarderline);
+  color: var(--fontcolor_link);
+}
 
 /* Webseite (Header,Main,Footer) */
 @media screen and (min-width: 880px) {
@@ -385,7 +389,6 @@ aside {
     border-radius: 3px;
     cursor: pointer;
     padding: 12px;
-    padding: 0.75rem;
 }
 .fototechnik-blog-numeric-posts-nav li a,
 .fototechnik-blog-numeric-posts-nav li.active a  {
@@ -393,6 +396,18 @@ aside {
 }
 .fototechnik-blog-numeric-posts-nav li a:hover {
     border:1px solid var(--bordercolor_linkhover); /* Rahmenfarbe */
+}
+/*----------------- Mobile -----------------------------*/
+@media screen and (max-width: 880px) { /* Smartphone Modus */
+  .fototechnik-blog-numeric-posts-nav li a,
+  .fototechnik-blog-numeric-posts-nav li a:hover,
+  .fototechnik-blog-numeric-posts-nav li.active a,
+  .fototechnik-blog-numeric-posts-nav li.disabled {
+      text-decoration:none;
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 8px;
+  }
 }
 
 /* Footer */
