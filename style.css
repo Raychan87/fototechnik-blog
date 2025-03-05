@@ -167,6 +167,14 @@ li.active a {
 
 /* Navigation */
   /* assets/css/custom_navbar.css */
+/* Mobil Navigation Plug-in */
+@media screen and (max-width: 880px){
+  .responsiveSelectContainer 
+  select.responsiveMenuSelect, 
+  select.responsiveMenuSelect {
+    font-size: x-small;
+  }
+}
 
 /* Main */
 .container-main {
@@ -336,6 +344,7 @@ aside {
   gap: 15px; /* Abstand zwischen den Zellen */
   grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
   text-align: center;
+  margin-bottom: 15px;
 }
 .fototechnik-blog-post-next-post, /* Naechster Beitrag */
 .fototechnik-blog-post-prev-post { /* Vorheriger Beitrag */
@@ -448,14 +457,6 @@ aside {
 @media screen and (max-width: 880px) { /* Smartphone Modus */
   .footer-widget ul { /* Das Footermenü wird jetzt untereinander angezeigt */
     display: block; 
-  }
-  .fototechnik-blog-post-next-title, /* Beitragstyp */
-  .fototechnik-blog-post-prev-title {
-    display: none;
-  }
-  .fototechnik-blog-post-next-text, /* Beitragstitel und Datum */
-  .fototechnik-blog-post-prev-text {
-    display: none
   }
   .fototechnik-blog-post-next-post, /* Naechster Beitrag */
   .fototechnik-blog-post-prev-post { /* Vorheriger Beitrag */
