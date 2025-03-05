@@ -405,6 +405,7 @@ aside {
 }
 .fototechnik-blog-numeric-posts-nav li a:hover {
     border:1px solid var(--bordercolor_linkhover); /* Rahmenfarbe */
+    background: var(--background_container);
 }
 /*----------------- Mobile -----------------------------*/
 @media screen and (max-width: 880px) { /* Smartphone Modus */
