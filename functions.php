@@ -84,7 +84,7 @@ function fototechnik_blog_setup() {
   add_theme_support( 'custom-header', $args );
 
   /* Aktivierung der Beitragsformate */
-  add_theme_support( 'post-formats', array( 'aside', 'gallery'));
+  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image' ));
 }
 add_action( 'after_setup_theme', 'fototechnik_blog_setup' );
 
@@ -227,6 +227,73 @@ function fototechnik_blog_create_post_type() {
   register_post_type( 'galerie', $args );
 }
 add_action( 'init', 'fototechnik_blog_create_post_type' );
+
+/* castle Bereich aktivieren */
+function fototechnik_blog_create_castle_post_type() {
+  $labels = array(
+      'name'               => _x('Burgen', 'post type general name', 'your-text-domain'),
+      'singular_name'      => _x('Burg', 'post type singular name', 'your-text-domain'),
+      'menu_name'          => _x('Burgen', 'admin menu', 'your-text-domain'),
+      'name_admin_bar'     => _x('Burg', 'add new on admin bar', 'your-text-domain'),
+      'add_new'            => _x('Neue Burg hinzufügen', 'burg', 'your-text-domain'),
+      'add_new_item'       => __('Neue Burg hinzufügen', 'your-text-domain'),
+      'new_item'           => __('Neue Burg', 'your-text-domain'),
+      'edit_item'          => __('Burg bearbeiten', 'your-text-domain'),
+      'view_item'          => __('Burg ansehen', 'your-text-domain'),
+      'all_items'          => __('Alle Burgen', 'your-text-domain'),
+      'search_items'       => __('Burgen durchsuchen', 'your-text-domain'),
+      'parent_item_colon'  => __('Übergeordnete Burgen:', 'your-text-domain'),
+      'not_found'          => __('Keine Burgen gefunden.', 'your-text-domain'),
+      'not_found_in_trash' => __('Keine Burgen im Papierkorb gefunden.', 'your-text-domain')
+  );
+  // Werte des neuen Custom Post Types werden zugewiesen
+  $args = array(
+      'labels'             => $labels,
+      'public'             => true,
+      'publicly_queryable' => true,
+      'show_ui'            => true,
+      'show_in_menu'       => true,
+      'query_var'          => true,
+      'rewrite'            => array('slug' => 'castle'),
+      'has_archive'        => true,
+      'hierarchical'       => false,
+      'menu_position'      => 5,
+      'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+      'taxonomies'         => array('post_tag') // Hier fügen wir die Kategorien hinzu
+  );
+
+  register_post_type('castle', $args);
+}
+add_action('init', 'fototechnik_blog_create_castle_post_type');
+
+/*  benutzerdefinierte Kategorien speziell für Ihren CPT "castle" */
+function fototechnik_blog_create_castle_category_taxonomy() {
+    $labels = array(
+        'name'              => _x('Burg Kategorien', 'taxonomy general name', 'your-text-domain'),
+        'singular_name'     => _x('Burg Kategorie', 'taxonomy singular name', 'your-text-domain'),
+        'search_items'      => __('Burg Kategorien durchsuchen', 'your-text-domain'),
+        'all_items'         => __('Alle Burg Kategorien', 'your-text-domain'),
+        'parent_item'       => __('Übergeordnete Burg Kategorie', 'your-text-domain'),
+        'parent_item_colon' => __('Übergeordnete Burg Kategorie:', 'your-text-domain'),
+        'edit_item'         => __('Burg Kategorie bearbeiten', 'your-text-domain'),
+        'update_item'       => __('Burg Kategorie aktualisieren', 'your-text-domain'),
+        'add_new_item'      => __('Neue Burg Kategorie hinzufügen', 'your-text-domain'),
+        'new_item_name'     => __('Neuer Burg Kategorie Name', 'your-text-domain'),
+        'menu_name'         => __('Burg Kategorie', 'your-text-domain'),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'castle-category'),
+    );
+
+    register_taxonomy('castle_category', array('castle'), $args);
+}
+add_action('init', 'fototechnik_blog_create_castle_category_taxonomy', 0);
 
 // Ändert die Anzahl an Beiträge für die Fotogalerie
 function fototechnik_blog_fotogalerie_query( $query ) {

@@ -85,8 +85,7 @@
   color: var(--fontcolor_normal);
 }
 .content-text { /* Inhalt des Beitrags */
-  font-style: italic;
-  text-align: center;
+  text-align: justify;
   padding: 0 35px;
   color: var(--fontcolor_light);
 }
