@@ -5,7 +5,6 @@
         <div class="content-single-title">
             <?php /* Wenn eine Kategorie oder Schlagwort Seite aufgerufen wird */?>
             <h1>Galerie "<?php the_title();?>"</h1>
-
         </div>
         <div class="content-single-text" ><?php
             /* Der Inhalt des Beitrages */

@@ -1,6 +1,5 @@
 <?php
-/* Wird zur Ausgabe von einzelnen Beiträge geladen. 
- für Posttype Galerie */
+/* Ruft ein einzelnen Beitrag auf für Posttype Galerie und springt zu content-single-galerie.php */
 
 /* Header aufrufen */
 get_header();

@@ -1,8 +1,8 @@
 <?php
-/* Inhalt eines Posttype castle */?>
+/* Inhalt eines Beitrags aus Posttype Galerie wird von archive-galerie.php aufgerufen. */?>
 <article <?php post_class();?>>
-    <div class="content-post-castle">
-        <div class="content-title-castle"><?php 
+    <div class="content-post-galerie">
+        <div class="content-title-galerie"><?php 
 
             /* Überschrift des Beitrages */
             ?><h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1><?php

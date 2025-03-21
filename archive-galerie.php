@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Archive Galerie Template
+* Wird vom Link domain.de/galerie/ aufgerufen und zeigt alle Beiträge vom PostType Galerie an.
 */
 
 /* Header.php aufrufen */
@@ -21,7 +21,7 @@ get_header();
             if (  have_posts() ) : while (have_posts() ) : the_post();
                     
                     /* Ruft die Content-index.php Datei auf um die Beiträge bzw Seite aufzurufen */
-                    get_template_part('template_parts/content','galerie');
+                    get_template_part('template_parts/content','archive-galerie');
                         
             endwhile;  endif;       
         ?></div>

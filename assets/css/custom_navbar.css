@@ -13,7 +13,6 @@ label.responsive-nav-label {
   font-size: 14px; /* Schriftgroeße */
   background: var(--navcolor_background); /* Hintergrundfarbe */
   line-height: 1.4; /* Hoehe der Leiste */
-  margin-top: 0px;
   z-index: 99; /* Damit bleibt die Navigationselemente in den Vordergrund */
 
   /* Schattenrand */
@@ -138,7 +137,6 @@ nav li > a:only-child:after {
 /*-------------------------------------------------------------*/
 /* Smartphone Navigations Menue */
 @media screen and (max-width: 880px) {
-
   /* Erhoehen der Schriftgroeße fuer kleine Geraete */
   * {
     font-size: 18px;
@@ -148,6 +146,10 @@ nav li > a:only-child:after {
   }
   .sticky {
     display: none;
+  }
+  .container-navbar {
+    float: initial;
+    margin-bottom: 15px;
   }
   /* Menue Label */    
   label.responsive-nav-label {

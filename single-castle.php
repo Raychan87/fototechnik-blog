@@ -1,6 +1,5 @@
 <?php
-/* Wird zur Ausgabe von einzelnen Beiträge geladen. 
- für Posttype castle */
+/* Ruft ein einzelnen Beitrag auf für Posttype Galerie und springt zu content-single-galerie.php */
 
 /* Header aufrufen */
 get_header();
@@ -15,8 +14,10 @@ get_header();
             get_template_part('template_parts/content','single-castle'); 
 
         endwhile;
-    ?></div>
-</main><?php
+    ?></div><?php
+    /* sidebar.php aufrufen */
+    get_sidebar();
+?></main><?php
 
 /* Footer aufrufen */
 get_footer(); ?>
