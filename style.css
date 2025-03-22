@@ -172,7 +172,7 @@ li.active a {
   .responsiveSelectContainer 
   select.responsiveMenuSelect, 
   select.responsiveMenuSelect {
-    font-size: x-small;
+    font-size: 2.5vw;
   }
 }
 
