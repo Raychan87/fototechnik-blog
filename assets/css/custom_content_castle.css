@@ -2,14 +2,11 @@
 .container-article-castle { /* Container der Seite aller Beiträge */
   float:left;
   width:78%;
-  position: relative;
-  min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 .container-posts-castle {
   background-color:var(--background_container); /* Hintergrundfarbe */
-  color: var(--fontcolor_light);
   padding:15px 15px 15px;
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   margin-bottom: 15px; /* Artikel Abstand */
@@ -17,18 +14,8 @@
 .content-article-title-castle{ /*Überschrift der Taxonomy Seite */
   text-align: center;
   color:var(--fontcolor_title);
-  font:30px "Open Sans",Arial;
+  font:1.8em "Open Sans",Arial;
   margin-bottom: 15px;
-}
-.content-post-castle { /* Container der Beiträge Posttyp castle */
-  display: grid; /* Gitter(Tabellen) aktivieren */
-  gap: 15px; /* Abstand zwischen den Zellen */
-  grid-template-columns: 1.5fr 1fr; /* Groeße der Zellen */
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--navcolor_boarderline);
-  padding-left: 140px;
-  margin-right: 140px;
 }
 .content-post-single-castle{
   background-color:var(--background_container); /* Hintergrundfarbe */
@@ -45,29 +32,27 @@
 .content-single-text-castle{
 /* Bilder und Text */
 }
-.content-title-castle { /*Überschrift Posttyps castle */
-  color:var(--fontcolor_normal);
-  font:35px "Open Sans",Arial;
+.content-post-castle { /* Container der Beiträge Posttyp castle */
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  gap: 15px; /* Abstand zwischen den Zellen */
+  grid-template-columns: 10% 40% 30% 10%; /* Groeße der Zellen */
+  align-items: center;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--navcolor_boarderline);
 }
-.content-title-castle h1 { /* Überschrift des Beitrags Posttyps castle */
-  margin: 0;
-  font-size: 35px;
+.content-title-castle { /*Überschrift Posttyps castle */
+  grid-column: 2 / 3; /* Zweite Spalte */
+  font:1.2em "Open Sans",Arial;
 }
 .content-title-castle a { /* Posttyps castle */
-  color:var(--fontcolor_normal);
-  font:22px "Open Sans",Arial;
-  font-weight: 300;
+   color:var(--fontcolor_normal);
 }
 .content-title-castle a:hover { /* Posttyps castle */
   color:var(--bordercolor_linkhover);
 }
-.content-title-castle-subtext {
-  margin-top: 5px;
-  font-size: 13px;
-  color:var(--fontcolor_light);
-  margin-bottom: 30px;
-}
 .content-thumb-castle { /* Beitragsbild */
+  grid-column: 3 / 4; /* Dritte Spalte */
   border-style: solid;
   border-width: 1px;
   margin-bottom: 5px;
@@ -89,12 +74,8 @@
     padding-left: 0px;
     margin-right: 0px;
     border-color: var(--bordercolor_normal);
-    gap: 10px !important; /* Abstand zwischen den Zellen */
-    grid-template-columns: 1fr 1fr !important; /* Groeße der Zellen */
-  }
-  .content-title-castle {
-    display: flex;
-    align-items: center;
+    gap: 10px !important;
+    grid-template-columns: 2% 45% 45% 8%;
   }
   .content-title-castle a {
     font: 15px "Open Sans",Arial;    
