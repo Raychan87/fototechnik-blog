@@ -15,6 +15,8 @@ $args = array(
             'terms'    => $term->slug,
         ),
     ),
+    'orderby' => 'title', // Ändere 'title' in das gewünschte Feld
+    'order' => 'ASC', // Ändere 'ASC' in 'DESC', wenn du absteigend sortieren möchtest
 );
 $query = new WP_Query( $args );
 
