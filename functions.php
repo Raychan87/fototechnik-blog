@@ -303,13 +303,29 @@ add_action('init', 'fototechnik_blog_create_castle_category_taxonomy', 0);
  * Spezielle Funktionen
  * 
  */  
-// Ändert die Anzahl an Beiträge für die Fotogalerie
-function fototechnik_blog_fotogalerie_query( $query ) {
-  if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
-          $query->set( 'posts_per_page', 100 );
+function customize_query($query) {
+      // Anpassen der Sortierung fuer die benutzerdefinierte Kategorie
+      if (is_category('castle-category')) {
+          $query->set('orderby', 'title'); // Aendere 'title' in das gewuenschte Feld
+          $query->set('order', 'ASC'); // Aendere 'ASC' in 'DESC', wenn du absteigend sortieren moechtest
+          error_log('Custom orderby and order set for castle-category');
       }
-  }
-  add_action( 'pre_get_posts', 'fototechnik_blog_fotogalerie_query' );
+
+      // Anpassen der Beitragsanzahl fuer die benutzerdefinierte Kategorie
+      if (is_category('castle-category')) {
+          $query->set('posts_per_page', 100);
+          error_log('Custom posts_per_page set to 100 for castle-category');
+      }
+
+      // Anpassen der Beitragsanzahl fuer Archivseiten
+      if ($query->is_archive()) {
+          $query->set('posts_per_page', 100);
+          error_log('Custom posts_per_page set to 100 for archive pages');
+      }
+}
+if(!is_admin()){
+  add_action('pre_get_posts', 'customize_query');
+}
 
 /**
  * 
