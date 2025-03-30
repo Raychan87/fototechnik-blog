@@ -13,7 +13,7 @@
 }
 .content-article-title-castle{ /*Überschrift der Taxonomy Seite */
   text-align: center;
-  color:var(--fontcolor_title);
+  color:var(--fontcolor_normal);
   font:1.8em "Open Sans",Arial;
   margin-bottom: 15px;
 }
