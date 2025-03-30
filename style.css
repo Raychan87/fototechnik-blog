@@ -16,32 +16,32 @@ Tags:  grid-layout, one-column, two-columns, right-sidebar, flexible-header, cus
 :root {
   /* Schriftfarben : */
   --fontcolor_link:#3484cad0;      /* für Links */
-  --fontcolor_linkhover:#225f94d0; /* für markierte Links */
+  --fontcolor_linkhover:#d00101; /* für markierte Links */
   --fontcolor_normal:#000;         /* für Texte */
   --fontcolor_light:#808080cc;     /* für Texte dezent */
   --fontcolor_inv_normal:#fff;     /* für Texte mit dunklen Hintergrund */
-  --fontcolor_footer: #fff;        /* für Texte im Footer */
+  --fontcolor_footer: #575757;        /* für Texte im Footer */
   --fontcolor_shadow:#000;         /* für Schatten für Texte */
   --fontcolor_title: #fff;         /* für Webseiten Titel */
   /* Hintergrundfarbe */
   --background_website:#ffffff;    
   --background_container:#f1f1f1;
-  --background_footer: #1e1e1e;      
+  --background_footer: #f1f1f1;      
   /* Rahmenfarbe */
   --bordercolor_normal:#a1a1a1;     /* Rahmenfarbe */
   --bordercolor_light: #c5c4c4;     /* Rahmenfarbe dezent */
-  --bordercolor_images:#000;        /* Rahmenfarbe für Bilder */
+  --bordercolor_images:#505050;        /* Rahmenfarbe für Bilder */
   --bordercolor_link:#3484cad0;     /* Rahmenfarbe für links */
-  --bordercolor_linkhover:#225f94d0;/* Rahmenfarbe für Buttons */
+  --bordercolor_linkhover:#d00101;/* Rahmenfarbe für Buttons */
   --bordercolor_shadow: #00000040;  /*Rahmenschatten */
   /* Suchbutton */
   --fontcolor_search: #fff;         /* Textfarbe */
-  --background_search: #0e3c01;;    /* Buttonfarbe */
+  --background_search: #420606;;    /* Buttonfarbe */
   /* Navbar */
-  --navcolor_background: #ffffffdd; /* Hintergrundfarbe */
-  --navcolor_backgroundhover:#e4e3e3;/* makierte Hintergrundfarbe */
-  --navcolor_font: #6b6b6b;         /* Textfarbe */
-  --navcolor_fonthover: #1d1d1d;    /* makierte Texte */
+  --navcolor_background: #f7f7f7ee; /* Hintergrundfarbe */
+  --navcolor_backgroundhover:#c2c2c2;/* makierte Hintergrundfarbe */
+  --navcolor_font: #575757;         /* Textfarbe */
+  --navcolor_fonthover: #000000;    /* makierte Texte */
   --navcolor_arrow:#878787;         /* Pfeil der Navbar */
   --navcolor_boarder: #50505038;    /* Rahmenfarbe */
   --navcolor_boarderline: #5050508a;/* Obere Linie */
@@ -407,7 +407,6 @@ aside {
   background-color:var(--background_container); /* Hintergrundfarbe */
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   padding: 20px;
-  margin-bottom: 15px;
   text-align: center;
 }
 .fototechnik-blog-numeric-posts-nav li {

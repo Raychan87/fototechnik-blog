@@ -11,18 +11,19 @@
                 /* Überschrift des Beitrages */
                 ?><h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1><?php
             } ?>
-        </div>
-
-        <div class ="content-thumb" >
-            <?php /* Beitragsbild anzeigen */
-            the_post_thumbnail('fototechnik-blog-post-900'); ?>
-        </div>
-
-        <div class="content-text" >
-            <?php /* Der Inhalt des Beitrages */
-            the_excerpt(); /* Übergabe Text für gekürtze Beiträge */ ?>
-        </div>
-
+        </div><?php
+        if (has_post_thumbnail() and !has_post_format('aside')) {
+            ?><div class ="content-thumb"><?php
+                /* Beitragsbild anzeigen */
+                the_post_thumbnail('fototechnik-blog-post-900');
+            ?></div><?php
+        }
+        if (has_post_format('aside')) {
+            ?><div class="content-text"><?php
+                /* Der Inhalt des Beitrages */
+                the_excerpt(); /* Übergabe Text für gekürtze Beiträge */
+            ?></div><?php
+        }?>
         <div class="content-date">
             <?php /* Erzeugt Author und Datum des Beitrags */ ?>
             <p>Von <span class="content-author"><?php the_author(); ?></span> <?php the_time('d. M Y');?>.</p>

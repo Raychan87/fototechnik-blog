@@ -18,7 +18,6 @@
         if ( $categories_list ) {
             echo '<div class="content-categories">' . wp_kses_data( $categories_list ) . '</div>';
         }
-
         if (has_post_thumbnail() and !has_post_format('aside')) {
             ?><div class ="content-thumb"><?php
                 /* Beitragsbild anzeigen */
