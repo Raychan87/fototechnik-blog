@@ -18,6 +18,9 @@
 }
 .fototechnik-blog-recent-post-thumb img { /* Beitragsbild */
     max-width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--bordercolor_images);
 }
 .fototechnik-blog-recent-post-date-comments { /* Beitragsdatum */
     font-style: italic;

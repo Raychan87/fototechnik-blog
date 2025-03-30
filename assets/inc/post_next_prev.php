@@ -33,7 +33,7 @@ function fototechnik_blog_post_next_prev(){
           /* Beitragstitel */
           next_post_link( '%link' );
           /* Datum */
-          ?><a href="<?php echo get_page_link($nextPost->ID); ?>">
+          ?><a class="fototechnik-blog-post-next-datum" href="<?php echo get_page_link($nextPost->ID); ?>">
               <?php echo mysql2date('d F Y', $nextPost->post_date, false) ?></a><?php
         ?></div><?php
       ?></div><?php
@@ -53,7 +53,7 @@ function fototechnik_blog_post_next_prev(){
           /* Beitragstitel */
           previous_post_link( '%link' );
           /* Datum */
-          ?><a href="<?php echo get_page_link($previousPost->ID); ?>">
+          ?><a class="fototechnik-blog-post-prev-datum" href="<?php echo get_page_link($previousPost->ID); ?>">
               <?php echo mysql2date('d F Y', $previousPost->post_date, false) ?></a><?php
         ?></div><?php
         ?><div class="fototechnik-blog-post-prev-picture"><?php

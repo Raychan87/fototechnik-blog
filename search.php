@@ -6,7 +6,7 @@ get_header();
 <main class="container-main"> 
     <div class="container-article">
         <div class="container-search-h1">
-          <h1>Suchergebnisse für: <?php echo $s ;?></h1>
+          <h1>Suchergebnis: <?php echo $s ;?></h1>
         </div>
     
         <?php /* Der Loop laeuft nur die Anzahl der angegeben Beitraege in den Einstellungen */

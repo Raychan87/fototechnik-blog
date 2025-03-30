@@ -6,10 +6,6 @@ line-height:1.15;
 body {
 margin:0;
 }
-h1 {
-font-size:2em;
-margin:.67em 0;
-}
 hr {
 box-sizing:content-box;
 height:0;
@@ -39,9 +35,6 @@ bottom:-.25em;
 }
 sup {
 top:-.5em;
-}
-img {
-border-style:none;
 }
 button,input,optgroup,select,textarea {
 font-family:inherit;

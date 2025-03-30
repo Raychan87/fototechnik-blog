@@ -9,6 +9,15 @@
     padding-right: 15px;
   }
 }
+.content-tag-title { /* Schlagwort Ueberschrift */
+  text-align: center;
+  background-color: var(--background_container);
+  color: var(--fontcolor_normal);
+  padding: 15px 15px 15px;
+  border: 1px solid var(--bordercolor_normal);
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
 .content-post { /* Container des Beitrags */
   background-color:var(--background_container); /* Hintergrundfarbe */
   color: var(--fontcolor_light);
@@ -54,7 +63,7 @@
   color: var(--fontcolor_light);
 }
 .content-single-text {
-  margin: 20px 5px;
+  margin: 5px;
   color: var(--fontcolor_normal);
 }
 .content-date { /* Datum des Beitrags */
@@ -105,11 +114,11 @@
 }
 .content-readmore {
   text-align: center;
+  margin-bottom: 5px;
 }
 .content-readmore a { /* "Weiterlesen..."-Button */
   padding: 10px 20px; /* Rahmen Abstand */
   margin-top: 5px;
-  margin-bottom: 15px;
   border: 1px solid; /* Rahmen */
   display: inline-block;
 }
@@ -128,4 +137,13 @@
   .content-single-text {
     font-size: 15px;
   }
+  .content-thumb { /* Container des Beitragsbild */
+    margin-bottom: 15px;
+  }
+  .content-tag-title { /* Schlagwort Ueberschrift */
+    font-size: 30px;
+  }
 }
+
+
+

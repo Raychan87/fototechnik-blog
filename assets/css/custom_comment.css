@@ -10,6 +10,7 @@
 .comment-title{ /* Kommentarbereichs Überschrift */
   margin-left:  15px;
   margin-right: 15px;  
+  margin-top: 10px;
   color: var(--fontcolor_normal);
 }
 .comment-single { /* Einzelnes Kommentarfeld */
@@ -43,7 +44,6 @@
 }
 .comment-reply-button a { /* "Antworten"- Button */
   padding: 10px 20px; /* Rahmen Abstand */
-  margin: 0;
   border: 1px solid; /* Rahmen */
   display: inline-block;
 }
@@ -62,6 +62,7 @@
 }
 .container-comment h2 { /* Kommentar Überschrift */
   margin-left: 15px;
+  margin-top: 5px;
 }
 .comment-form { 
   margin-left: 15px;
@@ -90,17 +91,37 @@
 }
 .comment-form input[type=submit] { /* Kommentar "abschicken" Button */
   padding: 10px 20px; /* Rahmen Abstand */
-  margin: 0;
   border: 1px solid; /* Rahmen */
   display: inline-block;
   cursor: pointer;
   color: var(--fontcolor_link); /* Schriftfarbe */
   border-color: var(--bordercolor_link); 
+  background-color: var(--background_container);
 }
 .comment-form input[type=submit]:hover { /* Kommentar "abschicken" Button */
   color: var(--fontcolor_linkhover);
   border-color:  var(--bordercolor_linkhover); /* Rahmen Farbe */
-  text-decoration: underline; /* Unterstreichen der Links */
+  text-decoration: none; /* Unterstreichen der Links */
   box-shadow:0 1px 2px var(--bordercolor_shadow);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
+}
+/*----------------- Mobile -----------------------------*/
+@media screen and (max-width: 880px) {
+  .comment-form input[type=text], /* Das Kommentator Eingabefeld */
+  .comment-form input[type=email], /* Das E-Mail Eingabefeld */ 
+  .comment-form input[type=url] { /* Das URL Eingabefeld */
+    width: 80%; /* die Breite der Elemente */
+  }
+  .comment-notes-after-text{ /* Text hinter den Formular */
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .comment-form input[type=submit] { /* Kommentar "abschicken" Button */
+    margin-bottom: 15px;
+  }
+  .comment-reply-button a { /* "Antworten"- Button */
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
 }

@@ -287,6 +287,15 @@ aside {
 /* Suche - Widget */
 .container-search-h1{ /* Suchergebnis Überschrift */
   text-align: center;
+  background-color: var(--background_container);
+  color: var(--fontcolor_normal);
+  border: 1px solid var(--bordercolor_normal);
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+.container-search-h1 h1{ /* Suchergebnis Überschrift */
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 .site-search{ /*Container Suchfeld & Button */
   text-align: left;
@@ -294,7 +303,7 @@ aside {
   grid-template-columns: 66% 34%; /* Spalten größe einstellen */
 }
 .site-search input[type=search] { /* Suchfeld zur Texteingabe */
-  color: var(--fontcolor_normal);
+  color: var(--fontcolor_linkhover);
 }
 .site-search input[type=submit] { /* Suchen Button */
   border: 0;
@@ -305,11 +314,19 @@ aside {
   background-color: var(--background_search);
   font-size: 9pt;
 }
+/*----------------- Mobile -----------------------------*/
+@media screen and (max-width: 880px) { /* Smartphone Modus */
+  .container-search-h1{ /* Suchergebnis Überschrift */
+    padding: 15px 15px 15px;
+  }
+  .container-search-h1 h1{ /* Suchergebnis Überschrift */
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }  
+}
 
 /* Schlagwörter - Widget */
-.content-tag-title { /* Schlagwort Ueberschrift */
-  text-align: center;
-}
 .tagcloud { /* Container von Schlagwort Widget */
   text-align: left;
   padding-top: 10px;
@@ -357,8 +374,8 @@ aside {
   grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
   padding: 15px;
 }
-.fototechnik-blog-post-next-picture, /* Beitragsbild */
-.fototechnik-blog-post-prev-picture { 
+.fototechnik-blog-post-next-picture img, /* Beitragsbild */
+.fototechnik-blog-post-prev-picture img{ 
   border-style: solid;
   border-width: 2px;
   border-color: var(--bordercolor_images);
@@ -380,12 +397,16 @@ aside {
   padding: 5px 0;
   text-decoration: none; /* Unterstreichen der Links deaktivieren */
 }
+.fototechnik-blog-post-next-datum,
+.fototechnik-blog-post-prev-datum { /* Datum des Beitrags */
+  color: var(--fontcolor_light) !important;
+}
 
 /* Numerische Seitenangabe */
 .fototechnik-blog-numeric-posts-nav {
   background-color:var(--background_container); /* Hintergrundfarbe */
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -430,6 +451,7 @@ aside {
   color: var(--fontcolor_footer);
   text-align: center;
   clear: both;
+  box-shadow: 0px 5px 9px 9px var(--navcolor_boardershadow);
 }
 .footer-copyright { /* Copyright Text im Footer */
   font-style: italic;
