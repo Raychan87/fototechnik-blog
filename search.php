@@ -21,8 +21,13 @@ get_header();
         endif;
         
         /* Beitrags Navigations (vor und zurueck) */
-        previous_posts_link();
-        next_posts_link();
+        ?><div class="container-search-previous-next">
+        <div class="container-search-previous"><?php
+            previous_posts_link();
+        ?></div><?php
+        ?><div class="container-search-next"><?php
+            next_posts_link(); 
+        ?></div></div><?php
     ?></div><?php
     /* sidebar.php aufrufen */
     get_sidebar();

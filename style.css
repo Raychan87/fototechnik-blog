@@ -372,7 +372,7 @@ aside {
   display: grid; /* Gitter(Tabellen) aktivieren */
   gap: 5px; /* Abstand zwischen den Zellen */
   grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
-  padding: 15px;
+  padding: 15px
 }
 .fototechnik-blog-post-next-picture img, /* Beitragsbild */
 .fototechnik-blog-post-prev-picture img{ 
@@ -407,7 +407,7 @@ aside {
   background-color:var(--background_container); /* Hintergrundfarbe */
   border:1px solid var(--bordercolor_normal); /* Rahmenfarbe */
   color: var(--fontcolor_normal); /* Fontcolor */
-  padding: 20px;
+  padding: 15px;
   text-align: center;
 }
 .fototechnik-blog-numeric-posts-nav li {
@@ -448,6 +448,7 @@ aside {
       border-radius: 3px;
       cursor: pointer;
       padding: 8px;
+      font-size: 3vw;
   }
 }
 

@@ -25,9 +25,10 @@
   margin-bottom: 15px; /* Artikel Abstand */
 }
 .content-single-title-castle{
-  font:11px "Open Sans",Arial;
+  font:20px "Open Sans",Arial;
   color:var(--fontcolor_normal);
   text-align: center;
+  margin-bottom: 15px;
 }
 .content-single-text-castle{
 /* Bilder und Text */

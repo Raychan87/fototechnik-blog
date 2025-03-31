@@ -127,6 +127,23 @@
   box-shadow:0 1px 2px var(--bordercolor_shadow);
   transition: .25s; /* Die Zeit der Makierung des Reiters */
 }
+.container-search-previous-next{
+  text-align: center;
+  display: grid; /* Gitter(Tabellen) aktivieren */
+  grid-template-columns: 1fr 1fr; /* Groeße der Zellen */
+  background-color: var(--background_container);
+  color: var(--fontcolor_normal);
+  border: 1px solid var(--bordercolor_normal);
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.container-search-previous a,
+.container-search-next a{
+  padding: 10px 20px;
+  margin: 15px;
+  border: 1px solid;
+  display: inline-block;
+}
 /*----------------- Mobile -----------------------------*/
 @media screen and (max-width: 880px) {
   .container-article {
