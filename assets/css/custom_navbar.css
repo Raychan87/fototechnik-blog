@@ -13,7 +13,6 @@ label.responsive-nav-label {
   font-size: 14px; /* Schriftgroeße */
   background: var(--navcolor_background); /* Hintergrundfarbe */
   line-height: 1.4; /* Hoehe der Leiste */
-  z-index: 99; /* Damit bleibt die Navigationselemente in den Vordergrund */
 
   /* Schattenrand */
   margin-bottom: 20px;
@@ -61,6 +60,7 @@ nav ul li {
   float: left;
   list-style: none;
   transition: .7s; /* Die Zeit der Makierung des Reiters */
+  z-index: 1000; /* Damit bleibt die Navigationselemente in den Vordergrund */
 }
 /* die Links der Listenelemente der ersten Ebene */
 nav ul li a {
@@ -86,7 +86,6 @@ nav ul ul {
   background: var(--navcolor_background); /* Hintergrundfarbe */ 
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 2px 2px 5px var(--bordercolor_shadow); /* Schatten */
-  z-index: 98; /* Damit das Untermenue ueber den Artikel steht */
   border:1px solid var(--navcolor_boarder); /* Rahmen */
   border-top: 3px solid var(--navcolor_boarderline); /* Obere Linie */
 }
