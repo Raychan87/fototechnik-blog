@@ -309,21 +309,15 @@ function customize_query($query) {
           $query->set('orderby', 'title'); // Aendere 'title' in das gewuenschte Feld
           $query->set('order', 'ASC'); // Aendere 'ASC' in 'DESC', wenn du absteigend sortieren moechtest
           error_log('Custom orderby and order set for castle-category');
-      }
-      /*
+      }      
       // Anpassen der Beitragsanzahl fuer die benutzerdefinierte Kategorie
       if (is_category('castle-category')) {
-          $query->set('posts_per_page', 100);
-          error_log('Custom posts_per_page set to 100 for castle-category');
-      }
-      */
-      /*
+          $query->set('posts_per_page', 110);
+      }            
       // Anpassen der Beitragsanzahl fuer Archivseiten
       if ($query->is_archive()) {
-          $query->set('posts_per_page', 100);
-          error_log('Custom posts_per_page set to 100 for archive pages');
-      }
-      */
+          $query->set('posts_per_page', 110);
+      }      
 }
 if(!is_admin()){
   add_action('pre_get_posts', 'customize_query');
