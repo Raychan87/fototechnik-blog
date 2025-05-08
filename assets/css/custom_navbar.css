@@ -13,6 +13,7 @@ label.responsive-nav-label {
   font-size: 14px; /* Schriftgroeße */
   background: var(--navcolor_background); /* Hintergrundfarbe */
   line-height: 1.4; /* Hoehe der Leiste */
+  z-index: 1000;
 
   /* Schattenrand */
   margin-bottom: 20px;
@@ -25,6 +26,7 @@ label.responsive-nav-label {
   top: 0;
   width: 100%;
   background: var(--navcolor_background); /* Hintergrundfarbe */
+  z-index: 1;
 }
 /* die Justierung für den flüssigen Übergang */
 .sticky + .container-main {
