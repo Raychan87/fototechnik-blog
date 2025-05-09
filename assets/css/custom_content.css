@@ -67,6 +67,9 @@
   margin: 5px;
   color: var(--fontcolor_normal);
 }
+.content-single-text h1 {/* Ueberschrift im Beitrag */
+  font-size: 28px;
+}
 .content-date { /* Datum des Beitrags */
   color: var(--fontcolor_light);
   font-style: italic;
