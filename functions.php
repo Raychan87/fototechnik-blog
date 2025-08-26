@@ -93,14 +93,10 @@ add_action( 'after_setup_theme', 'fototechnik_blog_setup' );
  * Required Files
  * 
  */
-/* Remove and disbale function */
-require get_template_directory() . '/assets/inc/remove_and_disable.php';
 /* Naechster und Vorheriger Beitrag */
 require get_template_directory() . '/assets/inc/post_next_prev.php';
 /* Numerische Seitenangabe Funktion */
 require get_template_directory() . '/assets/inc/numeric_posts_nav.php';
-/* Meine Custom Kamera und Lens für Meow Lightbox Plugin */
-require get_template_directory() . '/assets/inc/custom_meow_lightbox_filter.php';
 
 /**
  * 
