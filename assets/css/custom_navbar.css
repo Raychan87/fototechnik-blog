@@ -186,9 +186,10 @@ nav li > a:only-child:after {
     border-bottom: none !important; 
   }
   nav li a {
-    margin-bottom: 10px !important;
+    /*margin-bottom: 10px !important;*/
     padding: 10px 20px !important; 
     width: 100%;
+    font-size: small;
   }
   nav ul ul {
     position: relative !important;
