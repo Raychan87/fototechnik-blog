@@ -15,9 +15,21 @@ $args = array(
             'terms'    => $term->slug,
         ),
     ),
-    'orderby' => 'title', // Ändere 'title' in das gewünschte Feld
-    'order' => 'ASC', // Ändere 'ASC' in 'DESC', wenn du absteigend sortieren möchtest
 );
+
+// BENUTZERDEFINIERTE SORTIERUNG NACH NUMMER IM TITEL
+add_filter('posts_orderby', 'castle_orderby_title_number', 10, 2);
+function castle_orderby_title_number($orderby, $wp_query) {
+    global $wpdb;
+    
+    // Extrahiere die erste Zahl (z. B. aus "13城 – Kawagoe Castle" → 13)
+    // REGEXP_SUBSTR ist ab MySQL 8.0 verfügbar – sicherer als SUBSTRING_INDEX, da robust
+    // Wenn du MySQL < 8.0 hast, ersetze durch SUBSTRING_INDEX mit '城' als Trenner
+    $orderby = "CAST(REGEXP_SUBSTR({$wpdb->posts}.post_title, '^[0-9]+') AS UNSIGNED) ASC";
+    
+    return $orderby;
+}
+
 $query = new WP_Query( $args );
 
 /* Der Loop wird in ein Container gepackt */?>
