@@ -21,14 +21,14 @@ class fototechnik_blog_recent_posts extends WP_Widget {
         /* Anzahl Beitraege die Angezeigt werden. */
         $post_number = !empty( $instance[ 'post_number' ] ) ? $instance[ 'post_number' ] : 4;
 
-        echo $args[ 'before_widget' ]; 
+        echo wp_kses_post( $args[ 'before_widget' ] ); 
 
         /* Container des Widgets */
         ?><div class="fototechnik-blog-container-recent-posts"><?php
 
             /* Ausgabe des Titels */
             if ( !empty( $title ) ) {
-                echo $args[ 'before_title' ] . esc_html( $title ) . $args[ 'after_title' ];
+                echo wp_kses_post( $args[ 'before_title' ] ) . esc_html( $title ) . wp_kses_post( $args[ 'after_title' ] );
             }
             /* WP_Query Parameter */
             $recent_args = array(
@@ -56,7 +56,7 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                             </a>
                             <span class="fototechnik-blog-recent-post-date-comments">
                                 <?php echo get_the_date('j M Y');?></br>
-                                <a href="<?php echo get_comments_link(); ?>" rel="nofollow" title="<?php echo "Kommentar zu ";  the_title_attribute(); ?>">
+                                <a href="<?php echo esc_url( get_comments_link() ); ?>" rel="nofollow" title="<?php echo "Kommentar zu ";  the_title_attribute(); ?>">
                                     <?php echo absint( get_comments_number()); echo " Kommentare"; ?>
                                 </a>
                             </span>
@@ -66,7 +66,7 @@ class fototechnik_blog_recent_posts extends WP_Widget {
                 wp_reset_postdata();
             endif; 
         ?></div><?php
-        echo $args[ 'after_widget' ];
+        echo wp_kses_post( $args[ 'after_widget' ] );
     } 
     /* Erstellt das Kontroll-Formular im WP-Dashboard */
     public function form( $instance ) {

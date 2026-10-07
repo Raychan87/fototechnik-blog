@@ -11,7 +11,7 @@ if ( have_comments() ) :
                 printf('1 Kommentar'); 
             /* Oder wenn es mehr als ein Kommentar ist */
             }else{
-                printf('%1$s Kommentare',$comments_number);
+                printf('%1$s Kommentare', esc_html( $comments_number ));
             }?>
         </h2>
         <?php /* Wenn Kommentare auf mehrere Seiten umgebrochen wird */
@@ -31,6 +31,8 @@ endif;
 if ( comments_open ()) :
     ?><div class="container-comment">
         <?php /* Kommentar Formular */
+        $commenter = wp_get_current_commenter();
+        $user_identity = wp_get_current_user()->display_name;
         $fields = array(
             'author' =>'<p class="comment-form-author">' . '<input id="author" placeholder="Dein Name (erforderlich)" name="author" type="text" value="' .
                 esc_attr( $commenter['comment_author'] ) . '" size="30"' . ' />'.'</p>',
@@ -46,9 +48,9 @@ if ( comments_open ()) :
             'comment_notes_after' => '<p class="comment-notes-after-text">Dein Kommentar wird vor der Veröffentlichung von mir geprüft.</p>', 
             'title_reply' => ( '<h2>Schreibe einen Kommentar</h2>' ),
             'logged_in_as' => '<p class="logged-in-as">'
-                                . sprintf( ( 'Angemeldet als %1$s. <a href="%2s" title="Abmelden deines Accounts">abmelden?</a>'), 
-                                $user_identity),
-                                wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) . '</p>',
+                                . sprintf( 'Angemeldet als %1$s. <a href="%2$s" title="Abmelden deines Accounts">abmelden?</a>',
+                                esc_html( $user_identity ),
+                                esc_url( wp_logout_url( get_permalink() ) ) ) . '</p>',
             'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
         ));?>
     </div>

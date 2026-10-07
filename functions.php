@@ -331,7 +331,7 @@ function fototechnik_blog_comments( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment; ?>
     <li class="comment-single">
     <p class="comment-author"><?php echo get_comment_author_link(); ?> sagte:</p> <?php /* der Link des Kommentierenden */?>
-    <p class="comment-date-time">am <?php echo get_comment_date("d.M.Y"); ?> um <?php echo get_comment_time(); ?> Uhr</p> <?php /* Datum und Zeit */?>
+    <p class="comment-date-time">am <?php echo esc_html( get_comment_date("d.M.Y") ); ?> um <?php echo esc_html( get_comment_time() ); ?> Uhr</p> <?php /* Datum und Zeit */?>
     <?php comment_text(); /* Kommentar Text und der Name des Kommentierenden wird ausgegeben */ ?>
     <div class="comment-reply-button">
         <?PHP /* Button um auf Kommentare zu antworten. */
@@ -438,6 +438,7 @@ function FastWP_seo() {
   $output .= '' . "\n";
 
   $cats = get_the_category();
+    $keys = '';
     if (!empty($cats)) foreach($cats as $cat) $keys .= $cat->name . ', ';
     $keys .= $default_keywords;
   $output .= "\t\t" . '' . "\n";
@@ -455,7 +456,7 @@ function FastWP_seo() {
     $output .= "\t\t" . '' . "\n";
   }
 
-  $url = ltrim(esc_url($_SERVER['REQUEST_URI']), '/');
+  $url = ltrim(esc_url(sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'] ?? ''))), '/');
   $name = get_bloginfo('name', 'display');
   $title = trim(wp_title('', false));
   $cat = single_cat_title('', false);

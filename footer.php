@@ -11,7 +11,7 @@
     endif;
         ?><div class="footer-copyright">
             <?php /* gibt das aktuelle Jahr und den Namen der Webseite aus */?>
-            <p><?php bloginfo('name');?> - Copyright 2018 - <?php echo date('Y'); ?></p>
+            <p><?php bloginfo('name');?> - Copyright 2018 - <?php echo esc_html( date('Y') ); ?></p>
         </div>
     </footer>
 </div> <?php /* die Classe "container_blog" wird hier wieder geschlossen */
