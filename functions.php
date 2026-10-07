@@ -112,7 +112,7 @@ function styles_imports() {
   /* Wordpress Core laden */
   wp_enqueue_style( 'wordpress_core', get_template_directory_uri() . '/assets/css/wordpress_core.css');
   /* Navigations Menue laden */
-  wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css');
+  wp_enqueue_style( 'custom_navbar', get_template_directory_uri() . '/assets/css/custom_navbar.css', array(), filemtime( get_template_directory() . '/assets/css/custom_navbar.css' ) );
   /* Betrags Style laden */
   wp_enqueue_style( 'custom_content', get_template_directory_uri() . '/assets/css/custom_content.css');
   /* Betrags Galerie Style laden */
@@ -130,7 +130,7 @@ add_action('wp_enqueue_scripts','styles_imports');
 function scripts_import() {
 
   /* Navigations Menue Javascript laden */
-  wp_enqueue_script( 'custom_navbar', get_template_directory_uri() . '/assets/js/custom_navbar.js', array('jquery'), '1.0', true );
+  wp_enqueue_script( 'custom_navbar', get_template_directory_uri() . '/assets/js/custom_navbar.js', array('jquery'), filemtime( get_template_directory() . '/assets/js/custom_navbar.js' ), true );
   /* Um auf Kommentare zu antworten */
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );

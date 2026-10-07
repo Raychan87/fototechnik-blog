@@ -1,8 +1,9 @@
 /*! custom_navbar.css v1.2 | by Raychan | https://github.com/Raychan87/FotoTechnik-Blog */
 
-/* Ausblenden der Checkbox und des Labels */
+/* Ausblenden der Checkbox, des Labels und der Untermenue-Schalter */
 input#responsive-nav,
-label.responsive-nav-label {
+label.responsive-nav-label,
+nav button.submenu-toggle {
   display: none;
 }
 /* Der Hauptcontainer der Navigationsleiste */
@@ -151,6 +152,12 @@ nav li > a:only-child:after {
   .container-navbar {
     float: initial;
     margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+  }
+  /* Menue ist hoeher als der Bildschirm: nicht mitscrollen */
+  .container-navbar.no-stick {
+    position: static;
   }
   /* Menue Label */    
   label.responsive-nav-label {
@@ -203,5 +210,49 @@ nav li > a:only-child:after {
   }
   nav ul ul li {
     padding-left: 20px;
+  }
+  /* Ebene fuer Ebene: Untermenues sind eingeklappt bis der Schalter betaetigt wird */
+  nav ul ul {
+    display: none;
+    flex: 0 0 100%;
+  }
+  nav li.submenu-open > ul {
+    display: block;
+  }
+  nav li.menu-item-has-children {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  nav li.menu-item-has-children > a {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: calc(100% - 48px);
+    min-width: 0;
+  }
+  /* Schalter zum Auf- und Zuklappen der naechsten Ebene */
+  nav button.submenu-toggle {
+    display: block;
+    flex: 1 0 48px;
+    background: none;
+    border: none;
+    border-left: 1px solid var(--navcolor_boarder);
+    cursor: pointer;
+    position: relative;
+  }
+  nav button.submenu-toggle:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 20px;
+    margin: -5px 0 0 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid var(--navcolor_arrow);
+    transition: transform .2s;
+  }
+  nav li.submenu-open > button.submenu-toggle:after {
+    transform: rotate(90deg);
   }
 }  
