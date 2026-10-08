@@ -8,6 +8,7 @@ nav button.submenu-toggle {
 }
 /* Der Hauptcontainer der Navigationsleiste */
 .container-navbar {
+  position: relative;
   float: left;
   width: 100%; 
   font-weight: 400;
@@ -27,7 +28,7 @@ nav button.submenu-toggle {
   top: 0;
   width: 100%;
   background: var(--navcolor_background); /* Hintergrundfarbe */
-  z-index: 1;
+  z-index: 1000;
 }
 /* die Justierung für den flüssigen Übergang */
 .sticky + .container-main {
@@ -35,9 +36,16 @@ nav button.submenu-toggle {
 }
 /* Der eigentliche Menue Container */
 nav {
-  width: 900px;
+  width: 100%;
+  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
+}
+@media screen and (min-width: 881px) {
+  nav > div > ul {
+    display: flex;
+    justify-content: center;
+  }
 }
 /* Aufzaehlungslisten */
 nav ul {
@@ -118,6 +126,10 @@ nav li > a:after {
   border-right: 4px solid transparent;
   border-top: 4px solid var(--navcolor_arrow);
   border-bottom: 4px solid transparent;
+}
+nav > div > ul > li > a:after,
+nav > ul > li > a:after {
+  display: none;
 }
   /* Pfeil nach rechts fuer Untermenues mit Untermenues */
   nav ul ul li > a:after {
